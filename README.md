@@ -1,11 +1,10 @@
 # ART 212: DIGITAL MEDIA II
 
-XXX / XXX 0:00–00:00, Fields 205  
+Tuesday / Thursday 8:50–11:20, Fields 205  
 [https://github.com/brianhouse/ART212](https://github.com/brianhouse/ART212)  
 
 Prof. Brian House, [brianhouse@lclark.edu](mailto:brianhouse@lclark.edu)  
-Office hours by [appointment](https://docs.google.com/spreadsheets/d/178ENdP0jeyN6vFB1gyC5QnDdr0T_HiSMiUhkByFlV-0/edit?usp=sharing)  
-Code studio open Monday 13:00–15:00
+Office hours Mondays 13:00–15:00
 
 ## Course Description
 Hybrid worlds studio. Further development of digital media techniques with an emphasis beyond the screen: data collection and sensor systems, 3D fabrication, and augmented reality. Reading and discussion will center on philosophical and tactical responses to a digitally mediated society. Students will work on individual projects for studio critique.
@@ -34,7 +33,7 @@ Each week we will read critical texts that situate digital media in society and 
 
 
 ### Attendance and participation
-You must attend and thoughtfully participate in every class. An unexcused absence will result in a reduction of your final grade by 5%. Excused absences must be discussed with me *prior* to the class to arrange for completing missed work. Being late twice will be treated as the equivalent of one absence. **Use of social media in class twice will also be treated as the equivalent of one absence.**
+You must attend and thoughtfully participate in every class. After the first absence, every absence will result in a reduction of your final grade by 2.5%. Being late twice will be treated as the equivalent of one absence. **Use of social media in class twice will also be treated as the equivalent of one absence.**
 
 
 ## Resources and Policies
@@ -61,57 +60,147 @@ If you have a disability that may impact your academic performance, you may requ
 ## Schedule
 
 ### Week 1
-- Begin project 1
+
+#### Tuesday 1/21
+- Introduction
+- Project 0: begin
+
+#### Thursday 1/23
+- Project 0: crit
 
 ### Week 2
+
+#### Tuesday 1/28
 - Reading and discussion: Jennifer Gabrys, "Program Earth"
+- Project 1: begin
+
+#### Thursday 1/30
+- Project 1: proposals due
+
 
 ### Week 3
-- Crit project 1
+
+#### Tuesday 2/4
+- Survey presentations 1
 - Reading and discussion: Ingrid Burrington, "Effortless Slippage"
 
+#### Thursday 2/6
+- Project 1: check in
+
 ### Week 4
-- Begin project 2
+
+#### Tuesday 2/11
+- Survey presentations 2
 - Reading and discussion: Kate Crawford, "Anatomy of an AI"
 
+
+#### Thursday 2/13
+- Project 1: crit
+
+
 ### Week 5
+
+#### Tuesday 2/18
+- Survey presentations 3
 - Reading and discussion: James Bridle, "The New Aesthetic"
+- Project 2: begin
+
+#### Thursday 2/20
+- Project 2: proposals due
+
 
 ### Week 6
-- Crit project 2
+
+#### Tuesday 2/25
+- Survey presentations 4
 - Reading and discussion: Alex Galloway, "Protocol"
 
+#### Thursday 2/27
+- Project 2: check in
+
+
 ### Week 7
-- Begin project 3
+
+#### Tuesday 3/3
+- Survey presentations 5
 - Reading and discussion: Donna Haraway, "The Cyborg Manifesto"
 
+#### Thursday 3/5
+- Project 2: crit
+
+
 ### Week 8
+
+#### Tuesday 3/10
+- Survey presentations 6
 - Reading and discussion: Wendy Chun, "Update to Remain the Same"
+- Project 3: begin
+
+#### Thursday 3/12
+- Project 3: proposals due
+
 
 ### Week 9
-- Crit project 3
+
+#### Tuesday 3/17
+- Survey presentations 7
 - Reading and discussion: Philip Agre, "Surveillance and Capture"
 
+#### Thursday 3/19
+- Project 3: check in
+
+
 ### Week 10
-- Begin final project
+
+#### Tuesday 3/31
+- Survey presentations 8
 - Reading and discussion: Lisa Nakamura, "Indigenous Circuits"
 
+#### Thursday 4/2
+- Project 3: crit
+
+
 ### Week 11
+
+#### Tuesday 4/7
+- Survey presentations 9
 - Reading and discussion: Trevor Paglen, "Operational Images"
+- Project 4: begin
+
+#### Thursday 4/9
+- Project 4: proposals due
+
 
 ### Week 12
-- Final project critique 1
+
+#### Tuesday 4/14
+- Survey presentations 10
 - Reading and discussion: Shannon Mattern, "Code and Clay, Data and Dirt"
 
+#### Thursday 4/16
+- Project 4: check in 1
+
+
 ### Week 13
+
+#### Tuesday 4/21
+- Survey presentations 11
 - Reading and discussion: Benjamin Bratton, "The Black Stack"
 
-### Week 14
-- Final project critique 2
+#### Thursday 4/23
+- Project 4: check in 2
 
-### Week 15
-- Individual crits
+
+### Week 14
+
+#### Tuesday 4/28
+
+#### Thursday 4/30
+- Project 4: check in 3
+
 
 ### Exam Week
-Final exhibition on campus
 
+
+#### Wednesday 5/6 18:00–21:00
+- Work installed in Fields lobby, final crit
