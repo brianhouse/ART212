@@ -14,7 +14,7 @@ Prerequisites: ART 112 or a CS 100-level course
 #### Objectives:
 - Cultivate an ability to think in terms of systems that span the physical and the digital
 - Understand the ways in which digital tools participate in contemporary culture
-- Survey contemporary artists working critically with code, data, 3d fabrication, and augmented reality
+- Survey contemporary artists working critically with code, data, 3D fabrication, and augmented reality
 - Develop a repertoire of digital methods for studio practice
 - Increase proficiency programming with [Arduino](https://www.arduino.cc) and [p5.js](https://p5js.org)
 
@@ -38,7 +38,7 @@ You must attend and thoughtfully participate in every class. After the first abs
 
 ## Resources and Policies
 
-### Syllabus
+### Living Syllabus
 The version of this syllabus posted online will be updated periodically and is the definitive version. It is your responsibility to consult it and stay up-to-date.
 
 ### Course Fee
@@ -48,7 +48,7 @@ There is a course fee automatically paid through student accounts when registere
 Work for this course should be done on a personal laptop—recent hardware and MacOS is preferred. If you do not have access to a laptop, email me and we will make arrangements for you to borrow a machine.
 
 ### Open Studio
-All students must complete their own work but are encouraged to help each other. To facilitate collective learning, students are encouraged to work in Fields 205 during the times posted above when group questions can be answered by the instructor.
+All students must complete their own work but are encouraged to help each other. To facilitate collective learning, students are encouraged to work in Fields 205.
 
 ### Academic Integrity
 Please refer to the policy on [Academic Integrity](https://docs.lclark.edu/undergraduate/policiesprocedures/academicintegrity/) available on the College's 'Policies and Procedures' webpage. The work submitted in Digital Media courses must be conceived of and programmed by you. While learning from and incorporating code from other sources is a natural part of programming (e.g. [Stack Overflow](https://stackoverflow.com/) and [OpenProcessing](https://www.openprocessing.org)), you must demonstrate understanding and intentionality in your work, and you may not copy and paste others' code wholesale. Always credit your inspirations and be confident in your original concepts.
