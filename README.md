@@ -65,18 +65,18 @@ If you have a disability that may impact your academic performance, you may requ
 #### Tuesday 1/21
 - Introduction
 - In-class reading and discussion: Nam June Paik, "Cybernated Art"
-- Project 0: begin
+- Project 0: [Cybernated Life](assignments/0_cybernated_life/description.md)
 
 #### Thursday 1/23
-- Reading discussion: Donna Haraway, "A Cyborg Manifesto"
+- Reading discussion: Donna Haraway, "A Cyborg Manifesto" (excerpts)
 - Project 0: crit
 
 
 ### Week 2
 
 #### Tuesday 1/28
-- Discussion: Jennifer Gabrys, "Program Earth"
-- Project 1: begin
+- Discussion: Trevor Paglen, "[Invisible Images](https://thenewinquiry.com/invisible-images-your-pictures-are-looking-at-you/)"
+- Project 1: [Networked Automation](assignments/1_networked_automation/description.md)
 
 #### Thursday 1/30
 - Project 1: proposals due
@@ -86,7 +86,8 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 2/4
 - Survey presentations 1
-- Discussion: Ingrid Burrington, "Effortless Slippage"
+- Discussion: Ingrid Burrington, "[Effortless Slippage](https://www.e-flux.com/architecture/dimensions-of-citizenship/178279/effortless-slippage/)"
+
 
 #### Thursday 2/6
 - Project 1: check-in
@@ -95,7 +96,7 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 2/11
 - Survey presentations 2
-- Discussion: Kate Crawford, "Anatomy of an AI"
+- Discussion: Wendy Chun, "[Queerying Homophily](reading/chun_queerying_homophily)"
 
 
 #### Thursday 2/13
@@ -106,7 +107,7 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 2/18
 - Survey presentations 3
-- Discussion: James Bridle, "The New Aesthetic"
+- Discussion: Kate Crawford and Vladan Joler, "[Anatomy of an AI System](https://anatomyof.ai)"
 - Project 2: begin
 
 #### Thursday 2/20
@@ -117,7 +118,7 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 2/25
 - Survey presentations 4
-- Discussion: Alex Galloway, "Protocol"
+- Discussion: Jer Thorp, "[Data (v.)](https://medium.com/memo-random/data-v-da0e0d24777c)"
 
 - Eric Ramos Guerro lecture, 7pm
 
@@ -129,7 +130,7 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 3/3
 - Survey presentations 5
-- Discussion: Donna Haraway, "The Cyborg Manifesto"
+- Discussion: Shannon Mattern, "[Interfacing Urban Intelligence](https://placesjournal.org/article/interfacing-urban-intelligence/)"
 
 #### Thursday 3/5
 - Project 2: crit
@@ -139,7 +140,7 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 3/10
 - Survey presentations 6
-- Discussion: Wendy Chun, "Update to Remain the Same"
+- Discussion: Chris Anderson, "[In the Next Industrial Revolution, Atoms Are the New Bits](https://www.wired.com/2010/01/ff_newrevolution/)
 - Project 3: begin
 
 - Brittany Ransom lecture, 7pm
@@ -152,7 +153,7 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 3/17
 - Survey presentations 7
-- Discussion: Philip Agre, "Surveillance and Capture"
+- Discussion: Morehshin Allahyari and Daniel Rouke, "[The 3D Additivist Manifesto](https://additivism.org/manifesto)"
 
 #### Thursday 3/19
 - Project 3: check-in
@@ -162,7 +163,7 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 3/31
 - Survey presentations 8
-- Discussion: Lisa Nakamura, "Indigenous Circuits"
+- Discussion: James Bridle, "[Waving at the Machines](http://booktwo.org/notebook/waving-at-machines/)"
 
 #### Thursday 4/2
 - Project 3: crit
@@ -172,7 +173,7 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 4/7
 - Survey presentations 9
-- Discussion: Trevor Paglen, "Operational Images"
+- Discussion: Lisa Parks, "[Mediating Animal-Infrastructure Relations](reading/parks_animal_infrastructure.pdf)"
 - Project 4: begin
 
 #### Thursday 4/9
@@ -183,7 +184,7 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 4/14
 - Survey presentations 10
-- Discussion: Shannon Mattern, "Code and Clay, Data and Dirt"
+- Discussion: Jennifer Gabrys, "[Digital Rubbish](reading/gabrys_digital_rubbish.pdf)"
 
 #### Thursday 4/16
 - Project 4: check-in 1
@@ -193,7 +194,7 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 4/21
 - Survey presentations 11
-- Discussion: Benjamin Bratton, "The Black Stack"
+- Discussion: Florian Cramer, "[What is Post-Digital?](reading/kramer_post_digital.pdf)"
 
 #### Thursday 4/23
 - Project 4: check-in 2
