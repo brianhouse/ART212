@@ -4,10 +4,11 @@ Tuesday / Thursday 8:50–11:20, Fields 205
 [https://github.com/brianhouse/ART212](https://github.com/brianhouse/ART212)  
 
 Prof. Brian House, [brianhouse@lclark.edu](mailto:brianhouse@lclark.edu)  
-Office hours Mondays 13:00–15:00
+Office hours MTWR 11:30—13:00
+
 
 ## Course Description
-Hybrid worlds studio. Further development of digital media techniques with an emphasis beyond the screen: data collection and sensor systems, 3D fabrication, and augmented reality. Reading and discussion will center on philosophical and tactical responses to a digitally mediated society. Students will work on individual projects for studio critique.
+Hybrid worlds studio. Further development of digital media techniques with an emphasis beyond the screen: data collection and sensor systems, 3D fabrication, and augmented reality. Seminar-style reading and discussion will center on conceptual issues arising from a digitally mediated society. Students will work on individual projects for studio critique.
 
 Prerequisites: ART 112 or a CS 100-level course
 
@@ -16,7 +17,7 @@ Prerequisites: ART 112 or a CS 100-level course
 - Understand the ways in which digital tools participate in contemporary culture
 - Survey contemporary artists working critically with code, data, 3D fabrication, and augmented reality
 - Develop a repertoire of digital methods for studio practice
-- Increase proficiency programming with [Arduino](https://www.arduino.cc) and [p5.js](https://p5js.org)
+- Increase proficiency programming with [p5.js](https://p5js.org) and [Arduino](https://www.arduino.cc)
 
 
 ## Assignments and Grading
@@ -26,7 +27,7 @@ This course is built around four projects completed over the course of the semes
 
 
 ### Survey presentations
-Each student will give two 10-minute presentations on an artist working in digital media. These presentations, which should be organized in slides, should give an overview of the context in which the artist is working and then precede to show one or two artworks in detail. Students should comment thoughtfully on how the work relates to the themes discussed in class as well as to their own practices. Students will choose artists to present from an approved list on a first-come, first-served basis. These presentations make up 10% of your final grade.
+Each student will give two 10-minute presentations on an artist working in digital media. These presentations, which should be organized in slides, should give an overview of the context in which the artist is working and then precede to show one or two artworks in detail. Students should comment thoughtfully on how the work relates to the themes discussed in class as well as to their own artistic practices. Students will choose artists to present from an approved list on a first-come, first-served basis. These presentations make up 10% of your final grade.
 
 ### Reading
 Each week we will read critical texts that situate digital media in society and its impact on the material world. These will be provided in class.
@@ -63,15 +64,18 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 1/21
 - Introduction
+- In-class reading and discussion: Nam June Paik, "Cybernated Art"
 - Project 0: begin
 
 #### Thursday 1/23
+- Reading discussion: Donna Haraway, "A Cyborg Manifesto"
 - Project 0: crit
+
 
 ### Week 2
 
 #### Tuesday 1/28
-- Reading and discussion: Jennifer Gabrys, "Program Earth"
+- Discussion: Jennifer Gabrys, "Program Earth"
 - Project 1: begin
 
 #### Thursday 1/30
@@ -82,16 +86,16 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 2/4
 - Survey presentations 1
-- Reading and discussion: Ingrid Burrington, "Effortless Slippage"
+- Discussion: Ingrid Burrington, "Effortless Slippage"
 
 #### Thursday 2/6
-- Project 1: check in
+- Project 1: check-in
 
 ### Week 4
 
 #### Tuesday 2/11
 - Survey presentations 2
-- Reading and discussion: Kate Crawford, "Anatomy of an AI"
+- Discussion: Kate Crawford, "Anatomy of an AI"
 
 
 #### Thursday 2/13
@@ -102,7 +106,7 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 2/18
 - Survey presentations 3
-- Reading and discussion: James Bridle, "The New Aesthetic"
+- Discussion: James Bridle, "The New Aesthetic"
 - Project 2: begin
 
 #### Thursday 2/20
@@ -113,17 +117,19 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 2/25
 - Survey presentations 4
-- Reading and discussion: Alex Galloway, "Protocol"
+- Discussion: Alex Galloway, "Protocol"
+
+- Eric Ramos Guerro lecture, 7pm
 
 #### Thursday 2/27
-- Project 2: check in
+- Project 2: check-in
 
 
 ### Week 7
 
 #### Tuesday 3/3
 - Survey presentations 5
-- Reading and discussion: Donna Haraway, "The Cyborg Manifesto"
+- Discussion: Donna Haraway, "The Cyborg Manifesto"
 
 #### Thursday 3/5
 - Project 2: crit
@@ -133,8 +139,10 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 3/10
 - Survey presentations 6
-- Reading and discussion: Wendy Chun, "Update to Remain the Same"
+- Discussion: Wendy Chun, "Update to Remain the Same"
 - Project 3: begin
+
+- Brittany Ransom lecture, 7pm
 
 #### Thursday 3/12
 - Project 3: proposals due
@@ -144,17 +152,17 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 3/17
 - Survey presentations 7
-- Reading and discussion: Philip Agre, "Surveillance and Capture"
+- Discussion: Philip Agre, "Surveillance and Capture"
 
 #### Thursday 3/19
-- Project 3: check in
+- Project 3: check-in
 
 
 ### Week 10
 
 #### Tuesday 3/31
 - Survey presentations 8
-- Reading and discussion: Lisa Nakamura, "Indigenous Circuits"
+- Discussion: Lisa Nakamura, "Indigenous Circuits"
 
 #### Thursday 4/2
 - Project 3: crit
@@ -164,7 +172,7 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 4/7
 - Survey presentations 9
-- Reading and discussion: Trevor Paglen, "Operational Images"
+- Discussion: Trevor Paglen, "Operational Images"
 - Project 4: begin
 
 #### Thursday 4/9
@@ -175,20 +183,20 @@ If you have a disability that may impact your academic performance, you may requ
 
 #### Tuesday 4/14
 - Survey presentations 10
-- Reading and discussion: Shannon Mattern, "Code and Clay, Data and Dirt"
+- Discussion: Shannon Mattern, "Code and Clay, Data and Dirt"
 
 #### Thursday 4/16
-- Project 4: check in 1
+- Project 4: check-in 1
 
 
 ### Week 13
 
 #### Tuesday 4/21
 - Survey presentations 11
-- Reading and discussion: Benjamin Bratton, "The Black Stack"
+- Discussion: Benjamin Bratton, "The Black Stack"
 
 #### Thursday 4/23
-- Project 4: check in 2
+- Project 4: check-in 2
 
 
 ### Week 14
@@ -196,7 +204,7 @@ If you have a disability that may impact your academic performance, you may requ
 #### Tuesday 4/28
 
 #### Thursday 4/30
-- Project 4: check in 3
+- Project 4: check-in 3
 
 
 ### Exam Week
