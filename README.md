@@ -4,7 +4,7 @@ Tuesday / Thursday 8:50–11:20, Fields 205
 [https://github.com/brianhouse/ART212](https://github.com/brianhouse/ART212)  
 
 Prof. Brian House (he/him), [brianhouse@lclark.edu](mailto:brianhouse@lclark.edu)  
-Office hours MTWR 11:30—12:30
+Office hours MTWR 11:30–12:30
 
 
 ## Course Description
@@ -23,7 +23,7 @@ Prerequisites: ART 112 or a CS 100-level course
 ## Assignments and Grading
 
 ### Projects
-This course is built around four projects completed over the course of the semester in the digital media studio, which will be [critiqued by the class](crit_guidelines.md). While there are technical and conceptual parameters for each project, you are expected to be experimental and to develop a personal artistic trajectory. A title and [3-sentence artist statement](artist_statement_guidelines.md) must be included with each project. Cumulatively, the projects account for 90% of your final grade, with the final project given double weight. As work is evaluated via in-class crit, no late work can be accepted.
+This course is built around four projects completed over the course of the semester in the digital media studio, which will be [critiqued by the class](resources/crit_guidelines.md). While there are technical and conceptual parameters for each project, you are expected to be experimental and to develop a personal artistic trajectory. A title and [3-sentence artist statement](resources/artist_statement_guidelines.md) must be included with each project. Cumulatively, the projects account for 90% of your final grade, with the final project given double weight. As work is evaluated via in-class crit, no late work can be accepted.
 
 ### Survey presentations
 Each student will give a 10-minute presentations on an artist working in digital media. These presentations, which should be organized in slides, should give an overview of the context in which the artist is working and then precede to show one or two artworks in detail. You should comment thoughtfully on how the work relates to the themes discussed in class as well as to your own artistic practices. Students will choose artists to present but must receive instructor approval. These presentations make up 10% of your final grade.
@@ -58,7 +58,7 @@ If you have a disability that may impact your academic performance, you may requ
 ### Academic Integrity
 Please refer to the policy on [Academic Integrity](https://docs.lclark.edu/undergraduate/policiesprocedures/academicintegrity/) available on the College's 'Policies and Procedures' webpage. The work submitted in Digital Media courses must be conceived of and programmed by you. While learning from and incorporating code from other sources is a natural part of programming (e.g. [Stack Overflow](https://stackoverflow.com/) and [OpenProcessing](https://www.openprocessing.org)), you must demonstrate understanding and intentionality in your work, and you may not copy and paste others' code wholesale. Always credit your inspirations and be confident in your original concepts.
 
-### Indigenous Land Acknowledgement
+### Land Acknowledgement
 The Fields Center for Visual Arts stands on the ancestral homelands of the Multnomah, Kathlamet, Clackamas, Tumwater, Watalala bands of the Chinook, Tualatin Kalapuya, and other indigenous nations of the Columbia River. It is important to acknowledge the original inhabitants of this place and recognize that we are here because of the sacrifices forced upon them. As artists working in Digital Media, we must be aware of and to resist the many ways computation capitalizes upon and perpetuates colonial violence.
 ##
 
