@@ -23,7 +23,7 @@ Prerequisites: ART 112 or a CS 100-level course
 ## Assignments and Grading
 
 ### Projects
-This course is built around four projects completed over the course of the semester in the digital media studio, which will be critiqued by the class. While there are technical and conceptual parameters for each project, you are expected to be experimental and develop a personal artistic trajectory. Cumulatively, the projects account for 90% of your final grade, with the final project given double weight. As work is evaluated via in-class crit, no late work can be accepted.
+This course is built around four projects completed over the course of the semester in the digital media studio, which will be [critiqued by the class](crit_guidelines.md). While there are technical and conceptual parameters for each project, you are expected to be experimental and to develop a personal artistic trajectory. A title and [3-sentence artist statement](artist_statement_guidelines.md) must be included with each project. Cumulatively, the projects account for 90% of your final grade, with the final project given double weight. As work is evaluated via in-class crit, no late work can be accepted.
 
 ### Survey presentations
 Each student will give a 10-minute presentations on an artist working in digital media. These presentations, which should be organized in slides, should give an overview of the context in which the artist is working and then precede to show one or two artworks in detail. You should comment thoughtfully on how the work relates to the themes discussed in class as well as to your own artistic practices. Students will choose artists to present but must receive instructor approval. These presentations make up 10% of your final grade.
@@ -113,7 +113,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 #### Tuesday 2/18
 - Survey presentations 3
 - Discussion: Kate Crawford and Vladan Joler, "[Anatomy of an AI System](https://anatomyof.ai)"
-- Project 2: begin
+- Project 2: [Remote Sensing](assignments/2_remote_sensing/description.md)
 
 #### Thursday 2/20
 - Project 2: proposals due
@@ -146,7 +146,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 #### Tuesday 3/10
 - Survey presentations 6
 - Discussion: Chris Anderson, "[In the Next Industrial Revolution, Atoms Are the New Bits](https://www.wired.com/2010/01/ff_newrevolution/)
-- Project 3: begin
+- Project 3: [Remote Sensing](assignments/3_physical_digital/description.md)
 
 **Brittany Ransom lecture, 7pm**  
 
@@ -179,7 +179,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 #### Tuesday 4/7
 - Survey presentations 9
 - Discussion: Lisa Parks, "[Mediating Animal-Infrastructure Relations](reading/parks_animal_infrastructure.pdf)"
-- Project 4: begin
+- Project 4: [Hybrid Worlds](assignments/4_hybrid_worlds/description.md)
 
 #### Thursday 4/9
 - Project 4: proposals due
