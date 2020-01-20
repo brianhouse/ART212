@@ -82,9 +82,11 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 #### Tuesday 1/28
 - Discussion: Trevor Paglen, "[Invisible Images](https://thenewinquiry.com/invisible-images-your-pictures-are-looking-at-you/)"
 - Project 1: [Networked Automation](assignments/1_networked_automation/description.md)
+- Workshop: Twitter API + Node
 
 #### Thursday 1/30
 - Project 1: proposals due
+- Workshop: review of for-loops and arrays
 
 
 ### Week 3
@@ -92,17 +94,18 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 #### Tuesday 2/4
 - Survey presentations 1
 - Discussion: Ingrid Burrington, "[Effortless Slippage](https://www.e-flux.com/architecture/dimensions-of-citizenship/178279/effortless-slippage/)"
-
+- Work time
 
 #### Thursday 2/6
 - Project 1: check-in
+
 
 ### Week 4
 
 #### Tuesday 2/11
 - Survey presentations 2
 - Discussion: Wendy Chun, "[Queerying Homophily](reading/chun_queerying_homophily)"
-
+- Work time
 
 #### Thursday 2/13
 - Project 1: crit
@@ -114,9 +117,11 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 - Survey presentations 3
 - Discussion: Kate Crawford and Vladan Joler, "[Anatomy of an AI System](https://anatomyof.ai)"
 - Project 2: [Remote Sensing](assignments/2_remote_sensing/description.md)
+- Workshop: microcontrollers + databases
 
 #### Thursday 2/20
 - Project 2: proposals due
+- Workshop: microcontrollers + databases
 
 
 ### Week 6
@@ -124,6 +129,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 #### Tuesday 2/25
 - Survey presentations 4
 - Discussion: Jer Thorp, "[Data (v.)](https://medium.com/memo-random/data-v-da0e0d24777c)"
+- Work time
 
 **Eric Ramos Guerro lecture, 7pm**  
 
@@ -136,6 +142,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 #### Tuesday 3/3
 - Survey presentations 5
 - Discussion: Shannon Mattern, "[Interfacing Urban Intelligence](https://placesjournal.org/article/interfacing-urban-intelligence/)"
+- Work time
 
 #### Thursday 3/5
 - Project 2: crit
@@ -146,12 +153,14 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 #### Tuesday 3/10
 - Survey presentations 6
 - Discussion: Chris Anderson, "[In the Next Industrial Revolution, Atoms Are the New Bits](https://www.wired.com/2010/01/ff_newrevolution/)
-- Project 3: [Remote Sensing](assignments/3_physical_digital/description.md)
+- Project 3: [Physical Digital](assignments/3_physical_digital/description.md)
+- Workshop: 3D scanning + blender
 
 **Brittany Ransom lecture, 7pm**  
 
 #### Thursday 3/12
 - Project 3: proposals due
+- Workshop: 3D printing
 
 
 ### Week 9
@@ -159,6 +168,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 #### Tuesday 3/17
 - Survey presentations 7
 - Discussion: Morehshin Allahyari and Daniel Rouke, "[The 3D Additivist Manifesto](https://additivism.org/manifesto)"
+- Work time
 
 #### Thursday 3/19
 - Project 3: check-in
@@ -169,6 +179,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 #### Tuesday 3/31
 - Survey presentations 8
 - Discussion: James Bridle, "[Waving at the Machines](http://booktwo.org/notebook/waving-at-machines/)"
+- Work time
 
 #### Thursday 4/2
 - Project 3: crit

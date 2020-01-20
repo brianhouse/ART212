@@ -2,6 +2,8 @@
 - class plan: prep intro, paik
 - list of potential artists for presentation
 - artist statement guidelines
+- reading response form
+- workshops
 
 ### general
 - prepare project 1
