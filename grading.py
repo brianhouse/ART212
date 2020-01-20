@@ -3,10 +3,10 @@
 import yaml, sys, json
 
 F  = 0      # non-existent
-B_ = 80     # unsatisfactory
-B  = 85     # satisfactory
-A_ = 90     # better, but uneven
-A  = 95     # exemplary
+B_ = 80     # unsatisfactory - fails to fulfill the basic requirements
+B  = 85     # satisfactory - functional / conceptually sound as expected
+A_ = 90     # going places, but uneven
+A  = 95     # a level of refinement and/or experimentation beyond the basic requirements
 
 ## sample student data
 student = """

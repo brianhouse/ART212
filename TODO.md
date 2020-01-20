@@ -1,5 +1,5 @@
 ### next class
-- class plan: prep intro, paik, survey
+- class plan: prep intro, paik
 - list of potential artists for presentation
 - artist statement guidelines
 
