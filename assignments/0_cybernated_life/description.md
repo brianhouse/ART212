@@ -5,6 +5,7 @@ In 1964, Nam June Paik called for a "cybernated art" that would address the (new
 In 2020, we live in a world where much of our lives are, arguably, cybernated. In this short project, you will investigate the extent to which this is the case in your own day-to-day experience. This can serve as a starting place or resource for your later artistic work.
 
 For a 24-hour period, catalog every interaction you have that is mediated by electronically encoded information. For example, this might include sending a text message to a friend, using a credit card, being recorded on a security camera, or viewing an image on a social media platform. For each interaction, note:
+
 - the time
 - the place
 - how it influenced your behavior in the world (if it did)

@@ -17,7 +17,7 @@ Prerequisites: ART 112 or a CS 100-level course
 - Understand the ways in which digital tools participate in contemporary culture
 - Survey contemporary artists working critically with code, data, and 3D fabrication
 - Develop a repertoire of digital methods for studio practice
-- Increase proficiency programming with [p5.js](https://p5js.org), [node](https://nodejs.org) and [Arduino](https://www.arduino.cc)
+- Increase proficiency programming with [p5.js](https://p5js.org), [node](https://nodejs.org), and [Arduino](https://www.arduino.cc)
 
 
 ## Assignments and Grading
@@ -26,7 +26,7 @@ Prerequisites: ART 112 or a CS 100-level course
 This course is built around four projects completed over the course of the semester in the digital media studio, which will be [critiqued by the class](resources/crit_guidelines.md). While there are technical and conceptual parameters for each project, you are expected to be experimental and to develop a personal artistic trajectory. A title and [3-sentence artist statement](resources/artist_statement_guidelines.md) must be included with each project. Cumulatively, the projects account for 90% of your final grade, with the final project given double weight. As work is evaluated via in-class crit, no late work can be accepted.
 
 ### Survey presentations
-Each student will give a 10-minute presentations on an artist working in digital media. These presentations, which should be organized in slides, should give an overview of the context in which the artist is working and then precede to show one or two artworks in detail. You should comment thoughtfully on how the work relates to the themes discussed in class as well as to your own artistic practices. Students will choose artists to present but must receive instructor approval. These presentations make up 10% of your final grade.
+[Each student will give a 10-minute presentations on an artist working in digital media](https://docs.google.com/spreadsheets/d/1HHoVP1O-VfYFJsBo8tri8cBQmJLKuMkgraGmMaQAIxU/edit?usp=sharing). These presentations, which should be organized in slides, should give an overview of the context in which the artist is working and then precede to show one or two artworks in detail. You should comment thoughtfully on how the work relates to the themes discussed in class as well as to your own artistic practices. Students will choose artists on which present [from a list](resources/artists.md) or propose their own for instructor approval. These presentations make up 10% of your final grade.
 
 ### Reading
 Each week we will read critical texts that situate digital media in society and its impact on the material world. These will are provided through the links on this syllabus. Reading is due on the day where the text is listed; a reading response must be submit before class on the provided Google Doc. This can be a question raised by the text, a critique of it, a link to related artistic work, or some other brief comment which can stimulate our discussion.
@@ -188,7 +188,6 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 ### Week 11
 
 #### Tuesday 4/7
-- Survey presentations 9
 - Discussion: Lisa Parks, "[Mediating Animal-Infrastructure Relations](reading/parks_animal_infrastructure.pdf)"
 - Project 4: [Hybrid Worlds](assignments/4_hybrid_worlds/description.md)
 
@@ -199,7 +198,6 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 ### Week 12
 
 #### Tuesday 4/14
-- Survey presentations 10
 - Discussion: Jennifer Gabrys, "[Digital Rubbish](reading/gabrys_digital_rubbish.pdf)"
 
 #### Thursday 4/16
@@ -209,7 +207,6 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 ### Week 13
 
 #### Tuesday 4/21
-- Survey presentations 11
 - Discussion: Florian Cramer, "[What is Post-Digital?](reading/kramer_post_digital.pdf)"
 
 #### Thursday 4/23

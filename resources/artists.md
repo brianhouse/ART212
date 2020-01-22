@@ -1,23 +1,96 @@
-# Resources for artist references
-- [Eyebeam](https://www.eyebeam.org/artists/)
-- Eyeo Festival [2011](http://eyeofestival.com/2011), [2012](http://eyeofestival.com/2012), [2013](http://eyeofestival.com/2013), [2014](http://eyeofestival.com/2014), [2015](http://eyeofestival.com/2015), [2016](http://eyeofestival.com/2016), [2017](http://eyeofestival.com/2017), [2018](http://eyeofestival.com/2018), [2019](http://eyeofestival.com/2019) -- [videos](https://vimeo.com/eyeofestival/channels/moderated)
-- ["A Partial List of Women in New Media Arts and Design"](http://cmuems.com/2015c/deliverables/deliverables-10/lists-of-women-media-artists/)
-- [Rhizome Artbase](https://rhizome.org/art/artbase/)
-- [Whitney: Programmed](https://whitney.org/exhibitions/programmed#exhibition-artworks)
-- [MoMA: Talk to Me](https://www.moma.org/interactives/exhibitions/2011/talktome/objects/)
-- [MoMA: Design and the Elastic Mind](https://www.moma.org/artists?exhibition_id=58)
-- [Prix Electronica](http://archive.aec.at/prix/)
-- [Wikipedia](https://en.wikipedia.org/wiki/List_of_new_media_artists)
-- [ZKM](https://zkm.de/en/collection-archives/archives/project-archive)
-- [Transmediale](https://transmediale.de/archive/explore?f[0]=type:artwork)
-
-
-<!--
-Josh Begley
-Wesley Goatley
+## A randomized selection of new media artists
+Iyvone Khoo
+Karolina Sobecka
+Paulo Criolo
+Brenna Murphy
+Laurie Spiegel
+Jonas Lund
+Aram Bartholl
+Rick Silva
 Julian Oliver
-
-
-https://medium.com/@ninzucchi/eyeo-2016-people-politics-speculation-85963b2c0b44
-
--->
+Wafaa Bilal
+Gilberto Esparza
+Fernanda Viégas & Martin Wattenberg
+Carolee Schneemann
+Martin Howse
+Blast Theory
+Ranjit Bhatnagar
+R. Luke DuBois
+Kelly Dobson
+Mimi Onuoha
+Stephanie Dinkins
+Xin Liu
+James Paterson
+Rafael Lozano-Hemmer
+Kate Hartman
+James Bridle
+Alison Parrish
+Meejin Yoon
+Marisa Olson
+Petra Cortright
+F.A.T. Lab
+Afroditi Psarra
+Daito Manabe
+Eva and Franco Mattes
+Nathalie Meibach
+Addie Wagenknecht
+Olia Lialina
+John Maeda
+Rosa Menkman
+Pinar Yoldas
+Ben Rubin
+Theun Karelse
+Mendi & Keith Obadike
+Michael Mandiberg
+Everest Pipkin
+LoVid
+Kevin Slavin
+Claudia Hart
+Cory Arcangel
+Critical Art Ensemble
+American Artist
+Onyx Ashanti
+Carsten Nicolai
+Nadav Assor
+Wesley Goatley
+Lillian Schwartz
+Marina Zurkow
+Ali Momeni
+Mario Kingemann
+Roman Verostko
+Janet Cardiff
+Elisa Giardina-Papa
+Jamie Allen
+Eduardo Kac
+Beatriz da Costa
+Golan Levin
+Tega Brain
+Lauren McCarthy
+Jonathan Harris
+Morehshin Allahyari
+Casey Reas
+Amor Muñoz
+Angela Washko
+Heather Dewey-Hagborg
+Jonah Brucker-Cohen
+Kyle McDonald
+Blast Theory
+Reuben Margolin
+LIA
+Ryoji Ikeda
+Taeyoon Choi
+Andrea Polli
+Lynn Hershman Leeson
+Giorgia Lupi
+Nicole Aptekar
+Natalie Jeremijenko
+Liat Berdugo
+Marius Watz
+Christian Marclay
+Trevor Paglen
+Daphne Oram
+Adam Harvey
+Laura Kurgan
+Chris Woebken
+Josh Begley
+Timo Toots
