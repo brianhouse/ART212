@@ -12,11 +12,3 @@ For a 24-hour period, catalog every interaction you have that is mediated by ele
 - how your behavior influenced something somewhere else (if it did)
 
 Once you have made this list, visually organize the content in some way. This might be a flow-chart, diagram, network, or map of relationships. Use whatever medium you want, such as pen and paper; you will not be evaluated on craft, but be prepared to discuss your observations about how you are situated within digital media.
-
-
-<!--
-
-Discussion: freedom or control? prescriptive protocol or subversive reimaginer?
-
--->
-

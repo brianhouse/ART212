@@ -29,7 +29,7 @@ This course is built around four projects completed over the course of the semes
 [Each student will give a 10-minute presentations on an artist working in digital media](https://docs.google.com/spreadsheets/d/1HHoVP1O-VfYFJsBo8tri8cBQmJLKuMkgraGmMaQAIxU/edit?usp=sharing). These presentations, which should be organized in slides, should give an overview of the context in which the artist is working and then precede to show one or two artworks in detail. You should comment thoughtfully on how the work relates to the themes discussed in class as well as to your own artistic practices. Students will choose artists on which present [from a list](resources/artists.md) or propose their own for instructor approval. These presentations make up 10% of your final grade.
 
 ### Reading
-Each week we will read critical texts that situate digital media in society and its impact on the material world. These will are provided through the links on this syllabus. Reading is due on the day where the text is listed; a reading response must be submit before class on the provided Google Doc. This can be a question raised by the text, a critique of it, a link to related artistic work, or some other brief comment which can stimulate our discussion.
+Each week we will read critical texts that situate digital media in society and its impact on the material world. These will are provided through the links on this syllabus. Reading is due on the day where the text is listed; a reading response must be submitted before class on the provided Google Doc. This can be a question raised by the text, a critique of it, a link to related artistic work, or some other brief comment which can stimulate our discussion.
 
 ### Attendance and participation
 You must attend and thoughtfully participate in every class. After the first absence, every absence will result in a reduction of your final grade by 2.5%. Being late twice will be treated as the equivalent of one absence. **Use of social media in class twice will also be treated as the equivalent of one absence.**
@@ -80,7 +80,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 ### Week 2
 
 #### Tuesday 1/28
-- Discussion: Trevor Paglen, "[Invisible Images](https://thenewinquiry.com/invisible-images-your-pictures-are-looking-at-you/)"
+- [Discussion](https://docs.google.com/document/d/1nAzZjMqFbAssrSuYCorXm4HQHX2UMgyvu_1xyyvpyqs/edit): Trevor Paglen, "[Invisible Images](https://thenewinquiry.com/invisible-images-your-pictures-are-looking-at-you/)"
 - Project 1: [Networked Automation](assignments/1_networked_automation/description.md)
 - Workshop: Twitter API + Node
 
