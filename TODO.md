@@ -1,10 +1,11 @@
 ### next class
 - prep Paglen
-- crit guidelines review
-- artist statement guidelines
 - project 1 brief!
+- project 1 examples
 
 ### general
+- crit guidelines review
+- artist statement guidelines
 - reading response google docs for all the readings
 - prepare project 1
 - prepare project 2

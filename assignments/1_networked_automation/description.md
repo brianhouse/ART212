@@ -1,36 +1,34 @@
-# Project #1: Social Automation
+# Project #1: Networked Automation
 
-Representing data is foundational to digital media. "Data" can mean many things, from sensor readings to photographs to search engine results to geospatial coordinates to audio to financial transactions. In all cases, however, how we organize that which has been digitally encoded and make it available to the human sensorium is in itself a matter of interpretation and added meaning.
+Much of the interaction that happens online is not between people, but between people and algorithms, or even between algorithms and algorithms. For example, huge platforms like Facebook, Google, and Twitter are constantly monitoring our activity and manipulating our feeds accordingly—and these platforms provide the environment for third-parties to attempt to game the system. From benign bots that tweet jokes to malicious fake followers that sow disinformation, we're not not alone out there.
 
-In this project, you will create an experimental "data visualization" using [p5.js](https://p5js.org) (or another programming language with instructor approval). This will involve finding and manipulating a pre-existing data set (in future work, you will generate your own), deciding how to represent those data, and being intentional about the implications your choices have. You are expected to go beyond a straighforward graph or chart that you might find in a science textbook and to produce something unexpected instead.
+In this project, you will create an experimental "Twitter Bot" using [Node.js](https://nodejs.org/en/) (or another programming language with instructor approval). Your bot will maintain a presence online by posting text and/or images, and it may interact socially by replying to others' comments. It may or may not be apparent to others that your bot is automated. It must have an underlying artistic concept that you can articulate in a 3-sentence artistic statement.
 
 This is a 3-week project. This week you will present a proposal of your idea to the class for feedback. Next week, you will present your progress. The following week will be a crit.
 
 
-Requirements:
-- 
-- You must articulate your concept with a title and 3-sentence artist statement
-
-
-<!--
-
-use the data they generated
-
-
--->
-
-
-https://medium.com/@kanarinka/what-would-feminist-data-visualization-look-like-aa3f8fc7f96c
-http://www.kanarinka.com/project/databasic-io/
-
-https://databasic.io/en/wtfcsv/
 
 ### Conceptual References
 
+Examples of artist-made bots:
+- [Constant Dullart](https://www.constantdullaart.com/), [_The Possibility of Raising an Army_](http://army.cheap), article in the [Guardian](https://www.theguardian.com/artanddesign/2015/nov/09/army-for-hire-the-artist-employing-ghost-soldiers-to-invade-facebook-constant-dullaart)
+- [Ramsey Nasser](https://nas.sr), [_Top Gun 555µhz_](https://nas.sr/555µhz/)
+- [Darius Kazemi](http://tinysubversions.com)
+    - https://twitter.com/BodegaBot
+    - https://twitter.com/moonshotbot
+    - https://twitter.com/WhichOneBot
+    - https://twitter.com/rapnamebot
+    - https://twitter.com/EatenBot
+- [Everest Pipkin](https://everest-pipkin.com) and Loren Schmidt, [Moth Generator](https://twitter.com/mothgenerator)
+- Allison Parrish, [Deep Question Bot](https://twitter.com/deepquestionbot)
+- Brian House and [Kyle McDonald](http://kylemcdonald.net), [_Conversnitch_](https://brianhouse.net/works/conversnitch/)
+- https://twitter.com/greatartbot
+- https://twitter.com/tinycarebot
+- https://twitter.com/infinite_scream
 
+Articles on malicious bots:
+- https://www.bbc.com/news/technology-50817561
+- https://duo.com/blog/anatomy-of-twitter-bots-fake-followers
 
 
 ### Technical References
-
-
-
