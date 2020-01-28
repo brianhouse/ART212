@@ -1,7 +1,6 @@
 ### next class
 - prep Paglen
-- project 1 brief!
-- project 1 examples
+- postImageTweet stub
 
 ### general
 - crit guidelines review
