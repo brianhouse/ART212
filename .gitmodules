@@ -1,0 +1,3 @@
+[submodule "assignments/1_networked_automation/networked_automation"]
+	path = assignments/1_networked_automation/networked_automation
+	url = https://github.com/brianhouse/networked_automation
