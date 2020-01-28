@@ -45,7 +45,7 @@ Articles on malicious bots:
 For this project, we'll be using [Node.js](https://nodejs.org/en/). Node is Javascript, but instead of running in the browser to make graphics like [p5](https://p5js.org), in runs on the command line. Unlike the graphics programming we did in Digital Media I, this is called "server-side" programming.
 
 - Download install [Node](https://nodejs.org/en/download/)
-- Download and unzip the [template](template.zip)
+- Download and unzip the [template](https://brianhouse.github.io/networked_automation)
 - Copy `config.js` to `config_.js` in the template directory, and fill in the latter with your Twitter key information
 - Open the Terminal (`/Applications/Utilities/Terminal.app`) or Windows Command Prompt
 - Change directories to the template folder by typing `cd`, space, and then dragging the folder to the Terminal window
