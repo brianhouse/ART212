@@ -3,7 +3,7 @@ const path = require('path')
 const fs = require('fs')
 const request = require('request')
 
-const config = require('./config.js')
+const config = require('./config_.js')
 const print = console.log
 
 const client = new Twitter(config)
@@ -44,12 +44,18 @@ function search(q, callback) {
 			if (tweet.entities.media != undefined) {
 				let image_url = tweet.entities.media[0].media_url
 				let tokens = image_url.split('/')
-				download(image_url, "images/" + tokens[tokens.length-1], function () {})
+				download(image_url, "downloaded_images/" + tokens[tokens.length-1], function () {})
 			}
 		}
 		callback(tweets)
 	})
 }
+
+// follow
+// reply
+// retweet
+// get timeline
+
 
 exports.postTweet = postTweet
 exports.postImageTweet = postImageTweet

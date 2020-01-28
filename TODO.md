@@ -1,6 +1,9 @@
 ### next class
 - prep Paglen
-- postImageTweet stub
+- postImageTweet stub, how to load from disk
+- tech reference: loading a file and using a for loop to iterate
+- tech reference: time and pausing
+- tech references: string manipulation
 
 ### general
 - crit guidelines review

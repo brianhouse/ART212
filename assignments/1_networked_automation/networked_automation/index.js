@@ -4,7 +4,7 @@ const print = console.log
 print("Hello World")
 
 
-search("bernie", readResults)
+search("grammys", readResults)
 
 function readResults(tweets) {
     for (let tweet of tweets) {
@@ -16,11 +16,11 @@ function readResults(tweets) {
 }
 
 //
-// postTweet("just a test"), function(tweet) {
+// postTweet("Hello World"), function(tweet) {
 //     print(tweet)
 // })
 
 //
-// postImageTweet("just a test"), ***, function(tweet) {
+// postImageTweet("just a test", "pio.jpg", function(tweet) {
 //     print(tweet)
 // })

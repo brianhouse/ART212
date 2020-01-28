@@ -46,6 +46,10 @@ For this project, we'll be using [Node.js](https://nodejs.org/en/). Node is Java
 
 - Download install [Node](https://nodejs.org/en/download/)
 - Download and unzip the [template](template.zip)
+- Copy `config.js` to `config_.js` in the template directory, and fill in the latter with your Twitter key information
 - Open the Terminal (`/Applications/Utilities/Terminal.app`) or Windows Command Prompt
 - Change directories to the template folder by typing `cd`, space, and then dragging the folder to the Terminal window
-- Run the example by typing `node example.js`
+- Run the example by typing `node index.js`
+
+
+[Twitter API](https://developer.twitter.com/en/docs/api-reference-index)
