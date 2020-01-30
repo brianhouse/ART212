@@ -93,7 +93,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 
 #### Tuesday 2/4
 - Survey presentations 1
-- Discussion: Ingrid Burrington, "[Effortless Slippage](https://www.e-flux.com/architecture/dimensions-of-citizenship/178279/effortless-slippage/)"
+- [Discussion](https://docs.google.com/document/d/1xoQ_fZTu90enxv8ccPiqcK-us2YjvaqwZ8U7A0hO7-8/edit?usp=sharing): Ingrid Burrington, "[Effortless Slippage](https://www.e-flux.com/architecture/dimensions-of-citizenship/178279/effortless-slippage/)"
 - Work time
 
 #### Thursday 2/6
