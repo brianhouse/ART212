@@ -22,7 +22,7 @@ For this project, we'll be working in following groups:
 For this project, we'll be using [Node.js](https://nodejs.org/en/). Node is Javascript, but instead of running in the browser to make graphics like [p5](https://p5js.org), in runs on the command line. Unlike the graphics programming we did in Digital Media I, this is called "server-side" programming.
 
 - Download install [Node](https://nodejs.org/en/download/)
-- Download and unzip the [template](https://github.com/brianhouse/networked_automation)
+- Download and unzip the [template](https://github.com/brianhouse/networked_automation/releases)
 - Copy `config.js.smp` to `config.js` in the template directory, and fill in the latter with your Twitter key information
 - On MacOS, open the Terminal (`/Applications/Utilities/Terminal.app`) and practice navigating:
 	- `pwd` shows the path of your current directory
