@@ -126,7 +126,7 @@ print(verb.past)
 
 ```
 
-[Allison Parrish](https://www.decontextualize.com), a poet who works extensively with computation, provides a [tool]((http://static.decontextualize.com/lines-to-json/)) to convert plain lines of text to arrays. So, for example, if you find a list somewhere with the names of superheroes, you can convert it into a format that you can use in javascript without having to add in a bunch of quotes and commas yourself.
+[Allison Parrish](https://www.decontextualize.com), a poet who works extensively with computation, provides a [tool](http://static.decontextualize.com/lines-to-json/) to convert plain lines of text to arrays. So, for example, if you find a list somewhere with the names of superheroes, you can convert it into a format that you can use in javascript without having to add in a bunch of quotes and commas yourself.
 
 
 ## Technical References
