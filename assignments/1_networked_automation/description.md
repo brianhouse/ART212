@@ -82,11 +82,11 @@ let student = students.pop()		// remove the last element of the array ("Elias")
 ```js
 
 // make a new object and store it in a variable
-let student = {name: "Daniel", favorite_course: "lunch"}
+let student = {name: "Daniel", favorite_course: "Lunch"}
 
 // print out attributes of the object
 print(student.name)					// "Daniel"
-print(student.favorite_course)			// "lunch"
+print(student.favorite_course)				// "lunch"
 
 // make an array of objects
 let students = [
@@ -114,7 +114,7 @@ Botmaster [Darius Kazemi](http://tinysubversions.com/) has made a [resource](htt
 
 Note that these collections are already formatted in a way that will work with your javascript code—they are usually formatted as lists inside objects. Just save them into a .js file in your folder and load them into your programs.
 
-For example, this is a list of verbs: https://github.com/dariusk/corpora/blob/master/data/words/verbs.json
+For example, [this is a list of verbs](https://github.com/dariusk/corpora/blob/master/data/words/verbs.json).
 
 If you look at the file, the outermost layer is formatted as an object. So to get the list of words, we have to use the dot syntax (`.verbs`) when loading the file. It also includes both present and past tenses.
 
