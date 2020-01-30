@@ -46,13 +46,13 @@ s.includes("bot")		// check if s includes the given string (true)
 s.startsWith("bot")		// check if s starts with the given string (false)
 s.endsWith("bot")		// check if s ends with the given string (true)
 
-let words = s.split(" ")// split the string into words (['I', 'am', 'a', 'Twitter', 'bot'])
+let words = s.split(" ")	// split the string into words (['I', 'am', 'a', 'Twitter', 'bot'])
 s = words.join(" ")		// join an array of strings into a new long string
 
 s = s.replace("Twitter bot", "real boy") // replace one substring with another and return a new string
 
-s.toUpperCase() // I AM A REAL BOY
-s.toLowerCase() // i am a real boy
+s.toUpperCase() 		// I AM A REAL BOY
+s.toLowerCase() 		// i am a real boy
 
 ```
 
@@ -63,18 +63,18 @@ let students = ["Ethan", "Shannon", "Dae", "Falcon"]	// declare an array
 
 students[0] 			// "Ethan"
 students[2] 			// "Dae"
-students.slice(1, 2) 	// ["Shannon", "Dae"]
+students.slice(1, 2) 		// ["Shannon", "Dae"]
 
 for (let i=0; i<students.length; i++) {	// loop through the array by index
 	print(students[i])
 }
 
-for (let student of students) {	// loop through the array by element
+for (let student of students) {		// loop through the array by element
 	print(student)
 }
 
 students.push("Elias")			// add an element to the array
-let student = students.pop()	// remove the last element of the array ("Elias")
+let student = students.pop()		// remove the last element of the array ("Elias")
 
 ```
 
@@ -86,13 +86,13 @@ let student = {name: "Daniel", favorite_course: "lunch"}
 
 // print out attributes of the object
 print(student.name)					// "Daniel"
-print(student.favorite_course)		// "lunch"
+print(student.favorite_course)			// "lunch"
 
 // make an array of objects
 let students = [
-	{name: "Daniel", favorite_course: "lunch"},
-	{name: "Sam", favorite_course: "DM2"},
-	{name: "Andrew", favorite_course: "Marxist Poetry"},
+	{name: "Daniel", favorite_course: "Lunch"},
+	{name: "Sam", favorite_course: "Digital Media II"},
+	{name: "Andrew", favorite_course: "Intro to Marxist Poetry"},
 ]
 
 // loop over the array and print out object attributes
@@ -100,11 +100,17 @@ for (let student in students) {
 	print(student.favorite_course)
 }
 
+/*
+"Lunch"
+"Digital Media II"
+"Intro to Marxist Poetry"
+*/
+
 ```
 
 ## Data
 
-Botmaster [Darius Kazemi](http://tinysubversions.com/) has made a resource with various collections of words that could be useful for you projects: https://github.com/dariusk/corpora/tree/master/data
+Botmaster [Darius Kazemi](http://tinysubversions.com/) has made a [resource](https://github.com/dariusk/corpora/tree/master/data) with various collections of words that could be useful for you projects.
 
 Note that these collections are already formatted in a way that will work with your javascript code—they are usually formatted as lists inside objects. Just save them into a .js file in your folder and load them into your programs.
 
@@ -120,15 +126,7 @@ print(verb.past)
 
 ```
 
-
-Look in the “words” category in particular—here’s a list of verbs:
-
-
-
-
-On the assignment page, there is also a utility that converts plain lines of text to arrays. So, for example, if you find a list somewhere with the names of superheroes, you can convert it into a format that you can save as “superheroes.js” and then load into your program using loadData. http://static.decontextualize.com/lines-to-json/
-
-- [Lines-to-JSON](http://static.decontextualize.com/lines-to-json/) utility
+[Allison Parrish](https://www.decontextualize.com), a poet who works extensively with computation, provides a [tool]((http://static.decontextualize.com/lines-to-json/)) to convert plain lines of text to arrays. So, for example, if you find a list somewhere with the names of superheroes, you can convert it into a format that you can use in javascript without having to add in a bunch of quotes and commas yourself.
 
 
 ## Technical References
