@@ -21,6 +21,7 @@ For this project, we'll be working in following groups:
 
 For this project, we'll be using [Node.js](https://nodejs.org/en/). Node is Javascript, but instead of running in the browser to make graphics like [p5](https://p5js.org), in runs on the command line. Unlike the graphics programming we did in Digital Media I, this is called "server-side" programming.
 
+### Setup
 - Download install [Node](https://nodejs.org/en/download/)
 - Download and unzip the [template](https://github.com/brianhouse/networked_automation/releases)
 - Copy `config.js.smp` to `config.js` in the template directory, and fill in the latter with your Twitter key information
@@ -37,30 +38,7 @@ For this project, we'll be using [Node.js](https://nodejs.org/en/). Node is Java
 - Run the example by typing `node index.js` in the "networked_automation" directory
 
 
-Arrays and loops in javascript:
-```js
-
-let students = ["ethan", "shannon", "dae", "falcon"]	// declare an array
-
-students[0] 			// "ethan"
-students[2] 			// "dae"
-students.slice(1, 2) 	// ["shannon", "dae"]
-
-for (let i=0; i<students.length; i++) {	// loop through the array by index
-	print(students[i])
-}
-
-for (let student of students) {	// loop through the array by element
-	print(student)
-}
-
-students.push("elias")			// add an element to the array
-let student = students.pop()	// remove the last element of the array (elias)
-
-```
-
-
-String functions in javascript:
+### String functions in javascript
 ```js
 let s = "I am a Twitter bot"
 
@@ -78,11 +56,86 @@ s.toLowerCase() // i am a real boy
 
 ```
 
+### Arrays and loops in javascript
+```js
+
+let students = ["Ethan", "Shannon", "Dae", "Falcon"]	// declare an array
+
+students[0] 			// "Ethan"
+students[2] 			// "Dae"
+students.slice(1, 2) 	// ["Shannon", "Dae"]
+
+for (let i=0; i<students.length; i++) {	// loop through the array by index
+	print(students[i])
+}
+
+for (let student of students) {	// loop through the array by element
+	print(student)
+}
+
+students.push("Elias")			// add an element to the array
+let student = students.pop()	// remove the last element of the array ("Elias")
+
+```
+
+### Objects in javascript
+```js
+
+// make a new object and store it in a variable
+let student = {name: "Daniel", favorite_course: "lunch"}
+
+// print out attributes of the object
+print(student.name)					// "Daniel"
+print(student.favorite_course)		// "lunch"
+
+// make an array of objects
+let students = [
+	{name: "Daniel", favorite_course: "lunch"},
+	{name: "Sam", favorite_course: "DM2"},
+	{name: "Andrew", favorite_course: "Marxist Poetry"},
+]
+
+// loop over the array and print out object attributes
+for (let student in students) {
+	print(student.favorite_course)
+}
+
+```
+
+## Data
+
+Botmaster [Darius Kazemi](http://tinysubversions.com/) has made a resource with various collections of words that could be useful for you projects: https://github.com/dariusk/corpora/tree/master/data
+
+Note that these collections are already formatted in a way that will work with your javascript code—they are usually formatted as lists inside objects. Just save them into a .js file in your folder and load them into your programs.
+
+For example, this is a list of verbs: https://github.com/dariusk/corpora/blob/master/data/words/verbs.json
+
+If you look at the file, the outermost layer is formatted as an object. So to get the list of words, we have to use the dot syntax (`.verbs`) when loading the file. It also includes both present and past tenses.
+
+```js
+let verbs = util.loadData("verbs.json").verbs
+let verb = util.choice(verbs)
+print(verb.present)
+print(verb.past)
+
+```
+
+
+Look in the “words” category in particular—here’s a list of verbs:
+
+
+
+
+On the assignment page, there is also a utility that converts plain lines of text to arrays. So, for example, if you find a list somewhere with the names of superheroes, you can convert it into a format that you can save as “superheroes.js” and then load into your program using loadData. http://static.decontextualize.com/lines-to-json/
+
+- [Lines-to-JSON](http://static.decontextualize.com/lines-to-json/) utility
+
 
 ## Technical References
 
 - [Twitter API](https://developer.twitter.com/en/docs/api-reference-index)
 - [Javascript arrays](https://javascript.info/array)
+- [Corpora](https://github.com/dariusk/corpora/tree/master/data)
 - [Lines-to-JSON](http://static.decontextualize.com/lines-to-json/) utility
 - [Crontab](https://ole.michelsen.dk/blog/schedule-jobs-with-crontab-on-mac-osx.html)
 
