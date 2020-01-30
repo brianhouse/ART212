@@ -37,6 +37,29 @@ For this project, we'll be using [Node.js](https://nodejs.org/en/). Node is Java
 - Run the example by typing `node index.js` in the "networked_automation" directory
 
 
+Arrays and loops in javascript:
+```js
+
+let students = ["ethan", "shannon", "dae", "falcon"]	// declare an array
+
+students[0] 			// "ethan"
+students[2] 			// "dae"
+students.slice(1, 2) 	// ["shannon", "dae"]
+
+for (let i=0; i<students.length; i++) {	// loop through the array by index
+	print(students[i])
+}
+
+for (let student of students) {	// loop through the array by element
+	print(student)
+}
+
+students.push("elias")			// add an element to the array
+let student = students.pop()	// remove the last element of the array (elias)
+
+```
+
+
 String functions in javascript:
 ```js
 let s = "I am a Twitter bot"
@@ -49,6 +72,9 @@ let words = s.split(" ")// split the string into words (['I', 'am', 'a', 'Twitte
 s = words.join(" ")		// join an array of strings into a new long string
 
 s = s.replace("Twitter bot", "real boy") // replace one substring with another and return a new string
+
+s.toUpperCase() // I AM A REAL BOY
+s.toLowerCase() // i am a real boy
 
 ```
 
