@@ -104,7 +104,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 
 #### Tuesday 2/11
 - Survey presentations 2
-- Discussion: Wendy Chun, "[The Enduring Ephemeral](reading/chun_enduring_ephemeral.pdf)"
+- [Discussion](https://docs.google.com/document/d/1ISR5T8gtLMqLQjKOVEbnAS01WLgbMYkMUQMVmQe2NI0/edit?usp=sharing): Wendy Chun, "[The Enduring Ephemeral](reading/chun_enduring_ephemeral.pdf)"
 - Work time
 
 #### Thursday 2/13
