@@ -1,0 +1,2 @@
+- group collab with CS can also be intimidating
+- use atom terminal again?

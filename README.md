@@ -104,7 +104,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 
 #### Tuesday 2/11
 - Survey presentations 2
-- Discussion: Wendy Chun, "[Queerying Homophily](reading/chun_queerying_homophily)"
+- Discussion: Wendy Chun, "[The Enduring Ephemeral](reading/chun_enduring_ephemeral.pdf)"
 - Work time
 
 #### Thursday 2/13

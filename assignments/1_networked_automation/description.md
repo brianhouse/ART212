@@ -129,7 +129,7 @@ print(verb.past)
 [Allison Parrish](https://www.decontextualize.com), a poet who works extensively with computation, provides a [tool](http://static.decontextualize.com/lines-to-json/) to convert plain lines of text to arrays. So, for example, if you find a list somewhere with the names of superheroes, you can convert it into a format that you can use in javascript without having to add in a bunch of quotes and commas yourself.
 
 
-## Technical References
+## Technical Resources
 
 - [Twitter API](https://developer.twitter.com/en/docs/api-reference-index)
 - [Javascript arrays](https://javascript.info/array)
@@ -137,7 +137,7 @@ print(verb.past)
 - [Lines-to-JSON](http://static.decontextualize.com/lines-to-json/) utility
 - [Crontab](https://ole.michelsen.dk/blog/schedule-jobs-with-crontab-on-mac-osx.html)
 
-## Conceptual References
+## Conceptual References and Examples
 
 Examples of artist-made bots:
 - [Constant Dullart](https://www.constantdullaart.com/), [_The Possibility of Raising an Army_](http://army.cheap), article in the [Guardian](https://www.theguardian.com/artanddesign/2015/nov/09/army-for-hire-the-artist-employing-ghost-soldiers-to-invade-facebook-constant-dullaart)
