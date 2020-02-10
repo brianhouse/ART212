@@ -2,7 +2,7 @@
 
 Much of the interaction that happens online is not between people, but between people and algorithms, or even between algorithms and algorithms. For example, huge platforms like Facebook, Google, and Twitter are constantly monitoring our activity and manipulating our feeds accordingly—and these platforms provide the environment for third-parties to attempt to game the system. From benign bots that tweet jokes to malicious fake followers that sow disinformation, we're not not alone out there.
 
-In this project, you will create an experimental "Twitter Bot" using [Node.js](https://nodejs.org/en/) (or another programming language with instructor approval). Your bot will maintain a presence online by posting text and/or images, and it may interact socially by replying to others' comments. It may or may not be apparent to others that your bot is automated. It must have an underlying artistic concept that you can articulate in a 3-sentence artistic statement.
+In this project, you will create an experimental "Twitter Bot" using [Node.js](https://nodejs.org/en/) (or another programming language with instructor approval). Your bot will maintain a presence online by automatically posting text and/or images, and it may interact socially by replying to others' comments. It may or may not be apparent to others that your bot is automated. It must have an underlying artistic concept that you can articulate in a 3-sentence artistic statement.
 
 This is a 3-week project. This week your group will present a proposal of your idea to the class for feedback. Next week, your group will present your progress. The following week will be a crit.
 
