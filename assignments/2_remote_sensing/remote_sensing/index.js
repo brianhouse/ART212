@@ -1,13 +1,16 @@
 const db = require('./db.js')
 const print = console.log
 
+async function main() {
 
-// db.insert('people', {name: 'Sam', role: 'TA'})
+    // await db.insert('people', {name: 'Sam', role: 'TA'})
 
-db.retrieve('people', {name: 'Sam'}, readResults)
+    let results = await db.retrieve('people', {name: 'Sam'})
 
-function readResults(result) {
-    for (let entry of result) {
-        print(entry)
+    for (let result of results) {
+        print(result)
     }
+
 }
+
+main()

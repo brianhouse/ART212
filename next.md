@@ -3,6 +3,9 @@ Networked automation:
 - use atom terminal again?
 - group of 4 is too big, 3 max
 - use the data & society reading on bots
+- emphasize the "automation" bit
+
+--> check if top-level await is available
 
 /
 

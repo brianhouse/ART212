@@ -13,32 +13,32 @@ const dbName = config.db_name
 const client = new MongoClient(url, {useUnifiedTopology: true})
 
 const insert = async function (collection, data, callback) {
-    let response = await client.connect()
+    await client.connect()
     print("Opened connection to database")
     const db = client.db(dbName)
-    db.collection(collection).insertOne(data, function(error, response) {
-        if (error) throw error
-        print(`Inserted entry into ${collection}`)
-        if (callback) {
-            callback(response)
-        }
-        client.close()
-        print("Closed connection to database")
+    return await new Promise((resolve, reject) => {
+        db.collection(collection).insertOne(data, function(error, response) {
+            if (error) throw error
+            print(`Inserted an entry into ${collection}`)
+            client.close()
+            print("Closed connection to database")
+            resolve(response)
+        })
     })
 }
 
-const retrieve = async function (collection, query, callback) {
-    let response = await client.connect()
+const retrieve = async function (collection, query) {
+    await client.connect()
     print("Opened connection to database")
     const db = client.db(dbName)
-    db.collection(collection).find(query).toArray(function(error, response) {
-        if (error) throw error
-        print(`Got ${response.length} entries from ${collection}`)
-        if (callback) {
-            callback(response)
-        }
-        client.close()
-        print("Closed connection to database")
+    return await new Promise((resolve, reject) => {
+        db.collection(collection).find(query).toArray(function(error, results) {
+            if (error) throw error
+            print(`Got ${results.length} entries from ${collection}`)
+            client.close()
+            print("Closed connection to database")
+            resolve(results)
+        })
     })
 }
 
