@@ -1,37 +1,44 @@
 const AIO_USERNAME = "h0use"
 const AIO_KEY = "2507ddf88a73494884935ca76ed2ae0e"
 
+
 function setup() {
-    // put setup code here
     let canvas = createCanvas(640, 480)
     canvas.parent('p5')
-
-    requestData("office-temp")
-    // sendData("office-temp", 100)
-
+    frameRate(1)
 }
 
-function draw() {
-    // put drawing code here
+async function draw() {
+
+    let data = await requestData("office-temp")
+
+    // make a new array with just the numerical values
+    let values = []
+    for (let datum of data) {
+        values.push(datum.value)
+    }
+
+    // find the highest and lowest value
+    let max_value = max(values)
+    let min_value = min(values)
+    // print("max_value " + max_value)
+    // print("min_value " + min_value)
+
+    // normalize the values
+    for (let i=0; i<values.length; i++) {
+        let v = values[i]
+        v = (v - min_value) / (max_value - min_value)
+        v *= height
+        values[i] = v
+    }
 
 
-}
+    background(255)
+
+    // make lines
+    for (let i=1; i<values.length; i++) {
+        line(i-1, values[i-1], i, values[i])
+    }
 
 
-function requestData(feed) {
-    let url = `https://io.adafruit.com/api/v2/${AIO_USERNAME}/feeds/${feed}/data`
-    httpGet(url, 'json', false, receiveData, httpError)
-}
-
-function sendData(feed, value) {
-    let url = `https://io.adafruit.com/api/v2/${AIO_USERNAME}/feeds/${feed}/data`
-    httpPost(url, 'json', {'X-AIO-Key': AIO_KEY, value: value}, receiveData, httpError)
-}
-
-function receiveData(data) {
-    console.log(data)
-}
-
-function httpError(error) {
-    console.log(error.toString())
 }
