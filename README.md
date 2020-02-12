@@ -115,7 +115,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 
 #### Tuesday 2/18
 - Survey presentations 3
-- Discussion: Kate Crawford and Vladan Joler, "[Anatomy of an AI System](https://anatomyof.ai)"
+- Discussion: Jer Thorp, "[Data (v.)](https://medium.com/memo-random/data-v-da0e0d24777c)"
 - Project 2: [Remote Sensing](assignments/2_remote_sensing/description.md)
 - Workshop: microcontrollers + databases
 
@@ -128,7 +128,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 
 #### Tuesday 2/25
 - Survey presentations 4
-- Discussion: Jer Thorp, "[Data (v.)](https://medium.com/memo-random/data-v-da0e0d24777c)"
+- Discussion: Kate Crawford and Vladan Joler, "[Anatomy of an AI System](https://anatomyof.ai)"
 - Work time
 
 **Eric Ramos Guerro lecture, 7pm**  
