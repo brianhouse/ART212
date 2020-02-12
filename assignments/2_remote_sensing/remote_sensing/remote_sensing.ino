@@ -6,6 +6,7 @@ const char* AIO_USERNAME = "your_username";
 const char* AIO_KEY = "your_key";
 
 AdafruitIO_WiFi io(AIO_USERNAME, AIO_KEY, WIFI_SSID, WIFI_PASS);
+
 AdafruitIO_Feed *analog = io.feed("office-temp");
 
 

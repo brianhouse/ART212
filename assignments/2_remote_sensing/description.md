@@ -8,6 +8,7 @@
 # arduino
 
 # esp libraries (how?)
+https://github.com/espressif/arduino-esp32#using-through-arduino-ide
 
 # aio libraries
 https://learn.adafruit.com/adafruit-io-basics-esp8266-arduino/arduino-io-library
