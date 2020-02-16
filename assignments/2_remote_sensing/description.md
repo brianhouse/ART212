@@ -1,4 +1,14 @@
-# Project #2: Remote Sensing
+# Project #2: Poetic Sensing
+
+We connect to the internet with our laptops with our laptops and mobile phones. However, as of 2020, there are __ devices connected to the internet, far outstripping the human population. Most of these devices are sensors collecting data about the physical world, whether monitoring the environment, surveilling people, or directing the actions of innumerable machines. This is the "internet of things."
+
+For this project, you will construct a sensor to gather data on some aspect of your daily life. These data will be transmitted to a server, and they will subsequently be interpreted with a visualization, sonification, or through some other means. To do this, you will use a [ESP32 wireless microcontroller](https://www.espressif.com/en/products/hardware/esp32/overview), the [Adafruit IO platform](https://io.adafruit.com), and [p5](https://p5js.org).
+
+This is a 3-week project that you will complete individually. This week you will present a proposal of your idea to the class for feedback. Next week, your will present your progress. The following week will be a crit.
+
+You must have an underlying artistic concept that you can articulate in a 3-sentence artistic statement.
+
+<!-- Poetic Sensors? -->
 
 ## Code
 
