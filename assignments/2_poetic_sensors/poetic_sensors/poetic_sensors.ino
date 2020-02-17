@@ -1,9 +1,9 @@
 #include "AdafruitIO_WiFi.h"
 
-const char* WIFI_SSID = "your_ssid";
-const char* WIFI_PASS = "your_pass";
-const char* AIO_USERNAME = "your_username";
-const char* AIO_KEY = "your_key";
+const char* WIFI_SSID = "LC Wireless";
+const char* WIFI_PASS = "";
+const char* AIO_USERNAME = "h0use";
+const char* AIO_KEY = "2507ddf88a73494884935ca76ed2ae0e";
 
 AdafruitIO_WiFi io(AIO_USERNAME, AIO_KEY, WIFI_SSID, WIFI_PASS);
 

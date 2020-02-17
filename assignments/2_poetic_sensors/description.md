@@ -1,8 +1,8 @@
 # Project #2: Poetic Sensing
 
-We connect to the internet with our laptops with our laptops and mobile phones. However, as of 2020, there are __ devices connected to the internet, far outstripping the human population. Most of these devices are sensors collecting data about the physical world, whether monitoring the environment, surveilling people, or directing the actions of innumerable machines. This is the "internet of things."
+We connect to the internet with our laptops with our laptops and mobile phones. However, as of 2020, there are [30 billion devices connected to the internet](https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/), far outstripping the human population. Most of these devices are sensors collecting data about the physical world, whether whether they are monitoring the environment, surveilling people, or directing the actions of innumerable machines. This is the "internet of things."
 
-For this project, you will construct a sensor to gather data on some aspect of your daily life. These data will be transmitted to a server, and they will subsequently be interpreted with a visualization, sonification, or through some other means. To do this, you will use a [ESP32 wireless microcontroller](https://www.espressif.com/en/products/hardware/esp32/overview), the [Adafruit IO platform](https://io.adafruit.com), and [p5](https://p5js.org).
+For this project, you will construct a sensor to gather data on some aspect of the world around you. These data will be transmitted to a server, and they will subsequently be interpreted with a visualization, sonification, or through some other means. To do this, you will use a [ESP32 wireless microcontroller](https://www.espressif.com/en/products/hardware/esp32/overview), the [Adafruit IO platform](https://io.adafruit.com), and [p5](https://p5js.org).
 
 This is a 3-week project that you will complete individually. This week you will present a proposal of your idea to the class for feedback. Next week, your will present your progress. The following week will be a crit.
 
@@ -16,6 +16,10 @@ You must have an underlying artistic concept that you can articulate in a 3-sent
 ### Setup
 
 # arduino
+
+# download driver
+https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/using-with-arduino-ide
+https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
 
 # esp libraries (how?)
 https://github.com/espressif/arduino-esp32#using-through-arduino-ide
