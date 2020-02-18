@@ -15,6 +15,13 @@ Networked automation:
 
 /
 
+Poetic sensors:
+- use a ESP on the other side too?
+
+
+
+/
+
 - me in front of group discussion kind of sucks. I can give an intro. structure it by table instead. Specific questions for them to discuss in groups and report?
 
 - the Chun wasn't great. choose a newer one? and swap with Anatomy of an AI?

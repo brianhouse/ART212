@@ -2,11 +2,13 @@
 
 We connect to the internet with our laptops with our laptops and mobile phones. However, as of 2020, there are [30 billion devices connected to the internet](https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/), far outstripping the human population. Most of these devices are sensors collecting data about the physical world, whether whether they are monitoring the environment, surveilling people, or directing the actions of innumerable machines. This is the "internet of things."
 
-For this project, you will construct a sensor to gather data on some aspect of the world around you. These data will be transmitted to a server, and they will subsequently trigger an interaction with another platform and/or be interpreted with a visualization, sonification, or through some other means. To build a sensor, you will use a [ESP32 wireless microcontroller](https://www.espressif.com/en/products/hardware/esp32/overview) and the [Adafruit IO platform](https://io.adafruit.com). To work with the data, you may program something yourself using [p5](https://p5js.org) or [node][https://nodejs.org], use [IFTTT](http://ifttt.com/)(If-This-Then-That, no programming required), or work with some other set of tools.
+For this project, you will construct a sensor to gather data on some aspect of the world around you that might not be otherwise captured. What might _you_ choose to pay attention to for your own poetic purposes? These data will be transmitted to a server, and they will subsequently trigger an interaction with another platform and/or be interpreted with a visualization, sonification, or through some other means that serves your artistic intent.
+
+To build a sensor, you will use a [ESP32 wireless microcontroller](https://www.espressif.com/en/products/hardware/esp32/overview) and the [Adafruit IO platform](https://io.adafruit.com). To work with the data, you may program something yourself using [p5](https://p5js.org) or [node][https://nodejs.org], use [IFTTT](http://ifttt.com/)(If-This-Then-That, no programming required), or work with some other set of tools.
 
 This is a 3-week project that you will complete individually. This week you will present a proposal of your idea to the class for feedback. Next week, your will present your progress. The following week will be a crit.
 
-You must have an underlying artistic concept that you can articulate in a 3-sentence artistic statement.
+You must have an underlying artistic concept that you can articulate in a 3-sentence artistic statement that you will present with the work.
 
 ## Code
 
