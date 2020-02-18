@@ -1,70 +1,68 @@
-#include "AdafruitIO_WiFi.h"
+// load libraries
+#include <WiFi.h>
+#include <HTTPClient.h>
 
+// add credentials
 const char* WIFI_SSID = "LC Wireless";
 const char* WIFI_PASS = "";
-const char* AIO_USERNAME = "h0use";
-const char* AIO_KEY = "2507ddf88a73494884935ca76ed2ae0e";
+const String AIO_USERNAME = "h0use";
+const String AIO_KEY = "2507ddf88a73494884935ca76ed2ae0e";
+const String AIO_FEED = "office-temp";
+HTTPClient http;
 
-AdafruitIO_WiFi io(AIO_USERNAME, AIO_KEY, WIFI_SSID, WIFI_PASS);
-
-AdafruitIO_Feed *analog = io.feed("office-temp");
-
-
-// analog pin 0
-const int PHOTOCELL_PIN = A0;
-
-// photocell state
-int current = 0;
-int last = -1;
+// keep track of sensor pins
+const int FSR_PIN = A2;
 
 
 void setup() {
-
-  // start the serial connection
+  // start the serial connection and wait for it to open
   Serial.begin(115200);
-
-  // wait for serial monitor to open
   while(! Serial);
-
-  // connect to io.adafruit.com
-  Serial.print("Connecting to Adafruit IO");
-  io.connect();
-
-  // wait for a connection
-  while(io.status() < AIO_CONNECTED) {
-    Serial.print(".");
-    delay(500);
-  }
-
-  // we are connected
-  Serial.println();
-  Serial.println(io.statusText());
-
 }
+
 
 void loop() {
 
-  // io.run(); is required for all sketches.
-  // it should always be present at the top of your loop
-  // function. it keeps the client connected to
-  // io.adafruit.com, and processes any incoming data.
-  io.run();
+  // make sure we're connected
+  connectToWifi();
 
-  // grab the current state of the photocell
-  current = analogRead(PHOTOCELL_PIN);
+  // grab the current state of the sensor
+  int fsr_value = analogRead(FSR_PIN);
+  Serial.print("fsr_value -> ");
+  Serial.println(fsr_value);
 
-  // stop if the value hasn't changed
-  if(current == last)
-    return;
+  // if it's a relevant value, send it to AIO
+  if (fsr_value > 10) {
+    //sendData(fsr_value); 
+  }
 
-  // save the current state to the analog feed
-  Serial.print("sending -> ");
-  Serial.println(current);
-  analog->save(current);
+  // always include a short delay
+  delay(50);
+  
+}
 
-  // store last photocell state
-  last = current;
+void connectToWifi() {
+  if (WiFi.status() != WL_CONNECTED) {
+    Serial.print("Connecting to wifi...");
+    WiFi.begin(WIFI_SSID, WIFI_PASS);
+    while (WiFi.status() != WL_CONNECTED) {
+      delay(1000);
+      Serial.print(".");
+    }
+    Serial.println();
+    Serial.println("--> connected");
+  }
+}
 
-  // wait three seconds (1000 milliseconds == 1 second)
-  delay(3000);
+
+void sendData(int datum) {
+  Serial.print("Sending data... ");
+  String url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + AIO_FEED + "/data";
+  String object = "{\"X-AIO-Key\": \"" + AIO_KEY + "\", \"value\": " + datum + "}";
+  http.begin(url);
+  http.addHeader("Content-Type", "application/json"); 
+  int httpResponseCode = http.POST(object);
+  Serial.println(httpResponseCode);
+  http.end();  
+  delay(30000); // delay 30 seconds to avoid AIO rate limit
 }
