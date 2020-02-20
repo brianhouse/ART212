@@ -1,20 +1,19 @@
 # Project #2: Poetic Sensing
 
-We connect to the internet with our laptops with our laptops and mobile phones. However, as of 2020, there are [30 billion devices connected to the internet](https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/), far outstripping the human population. Most of these devices are sensors collecting data about the physical world, whether whether they are monitoring the environment, surveilling people, or directing the actions of innumerable machines. This is the "internet of things."
+As of 2020, there are [30 billion devices connected to the internet](https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/), which far exceeds the human population. Most of these devices include sensors to capture data about the physical world, whether by monitoring the environment, surveilling people, or otherwise providing input to machines. While we may be largely unaware of their presence, these sensors and the systems of which they are a part end up shaping the world around us.
 
-For this project, you will construct a sensor to gather data on some aspect of the world around you that might not be otherwise captured. What might _you_ choose to pay attention to for your own poetic purposes? These data will be transmitted to a server, and they will subsequently trigger an interaction with another platform and/or be interpreted with a visualization, sonification, or through some other means that serves your artistic intent.
+For this project, you will engage with sensor systems as an artistic medium. Choose some aspect of your physical environment and use a sensor to capture it—this could be as simple as how many times you sit at your desk, for example, or the amount of electromagnetic interference you pass during the day. These data will be transmitted to a server. Subsequently, you must interpret the data in some way, whether by visualizing it or using it to trigger some sort of action in the world.
 
-To build a sensor, you will use a [ESP32 wireless microcontroller](https://www.espressif.com/en/products/hardware/esp32/overview) and the [Adafruit IO platform](https://io.adafruit.com). To work with the data, you may program something yourself using [p5](https://p5js.org) or [node][https://nodejs.org], use [IFTTT](http://ifttt.com/)(If-This-Then-That, no programming required), or work with some other set of tools.
+To capture data, you will use a [ESP32 wireless microcontroller](https://www.espressif.com/en/products/hardware/esp32/overview) and the [Adafruit IO platform](https://io.adafruit.com). To interpret the data, you may program something yourself using [p5](https://p5js.org) or [node][https://nodejs.org], use [IFTTT](http://ifttt.com/)(If-This-Then-That, no programming required), or work with some other set of tools, including non-digital mediums.
 
-This is a 3-week project that you will complete individually. This week you will present a proposal of your idea to the class for feedback. Next week, your will present your progress. The following week will be a crit.
+This is a 3-week project that you will complete individually. This week you will present a proposal of your idea to the class for feedback. Next week, you will present your progress. The following week will be a crit. You must have an underlying artistic concept that you can articulate in a 3-sentence artistic statement that you will present with the work.
 
-You must have an underlying artistic concept that you can articulate in a 3-sentence artistic statement that you will present with the work.
 
 ## Code
 
-### Technical Setup
+### Setup
 
-We will be using the Arduino platform to write code for our ESP32s:
+To write code for our ESP32s, we will be using the Arduino IDE:
 
 - Download and install the [ESP driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
 - Download and install the [Arduino IDE](https://www.arduino.cc/en/main/software)
@@ -28,11 +27,12 @@ The Adafruit IO platform provides us with a server:
 
 - Sign up at https://io.adafruit.com
 - Create a new "feed"
+- Note your AIO username, AIO key, and feed-key
 
 
-## Technical References
+### Wiring Sensors
 
-[Adafruit ESP32 Feather](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather)
+The technical specs on the [Adafruit ESP32 Feather](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather)
 
 Basic approach to wiring sensors (use 3v instead of 5v, and analog inputs A2-A5 for now):
 ![](light_cdspulldowndiag.gif)
@@ -40,8 +40,22 @@ Basic approach to wiring sensors (use 3v instead of 5v, and analog inputs A2-A5 
 <!-- - [button](https://www.arduino.cc/en/tutorial/button)
 - [FSR](https://learn.adafruit.com/force-sensitive-resistor-fsr) -->
 
+Sensor types (on hand):
+- Button / switch
+- Force-sensitive resistor (touch / pressure)
+- Photocell (light-level)
+- Tilt-switch (orientation)
+- Vibration detector
+- Temperature (built-in)
+- Magnetic field (built-in)
+- Heartbeat
+- Galvanic skin response ("arousal")
 
-## Code
+Others, to order:
+- Humidity
+- Sound level
+- Water quality
+
 
 ### Arduino Template
 
@@ -116,7 +130,7 @@ void sendData(int datum) {
 }
 ```
 
-### p5 Template
+### p5 Template (Data Visualization)
 
 ```js
 const AIO_USERNAME = "h0use"
@@ -257,3 +271,16 @@ async function main() {
 
 main()
 ```
+
+
+## Conceptual References
+- [Nathalie Miebach](https://nathaliemiebach.com) (weather data)
+- [Karolina Sobecka](http://cargocollective.com/karolinasobecka/filter/matterOfAir/Puff) (car exhaust)
+- [Georgia Lupi](http://giorgialupi.com) (hand-drawn data visualization)
+- [Martin Howse](http://www.1010.co.uk/org/radiomycelium.html) (mycelium)
+- [Afroditi Psarra](http://afroditipsarra.com/index.php?/older-projects/cosmic-bitcasting/) (cosmic rays)
+- [Jer Thorp]()
+- [Ali Momeni](http://alimomeni.net/gutwise) (the gut)
+- [Brian House](https://brianhouse.net/works/animas/) (water quality)
+- [Chris Woebken](https://chriswoebken.com/Amphibious-Architecture) (fish)
+- [Timo Toots](https://www.timo.ee/psa/) (ants)

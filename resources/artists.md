@@ -23,6 +23,7 @@
 - James Paterson
 - Rafael Lozano-Hemmer
 - Kate Hartman
+- Carlos Garcia
 - James Bridle
 - Alison Parrish
 - Meejin Yoon
