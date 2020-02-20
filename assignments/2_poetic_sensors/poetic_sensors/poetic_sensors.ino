@@ -7,7 +7,7 @@ const char* WIFI_SSID = "LC Wireless";
 const char* WIFI_PASS = "";
 const String AIO_USERNAME = "h0use";
 const String AIO_KEY = "2507ddf88a73494884935ca76ed2ae0e";
-const String AIO_FEED = "office-temp";
+const String AIO_FEED = "sensor-test";
 HTTPClient http;
 
 // keep track of sensor pins
@@ -33,7 +33,7 @@ void loop() {
 
   // if it's a relevant value, send it to AIO
   if (fsr_value > 10) {
-    //sendData(fsr_value); 
+    sendData(fsr_value); 
   }
 
   // always include a short delay
@@ -64,5 +64,5 @@ void sendData(int datum) {
   int httpResponseCode = http.POST(object);
   Serial.println(httpResponseCode);
   http.end();  
-  delay(30000); // delay 30 seconds to avoid AIO rate limit
+  delay(2000); // delay 2 seconds to avoid AIO rate limit
 }
