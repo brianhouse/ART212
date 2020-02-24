@@ -17,10 +17,14 @@ Networked automation:
 
 Poetic sensors:
 - use a ESP on the other side too?
+- split weeks into gathering / representing
+
+stock:
+- batteries, sound sensors
 
 /
 
-What's the right order? Maybe sensors first? 
+What's the right order? Maybe sensors first?
 
 
 /

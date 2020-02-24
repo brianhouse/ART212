@@ -45,14 +45,14 @@ Sensor types (on hand):
 - Force-sensitive resistor (touch / pressure)
 - Photocell (light-level)
 - Tilt-switch (orientation)
-- Vibration detector
+- Vibration sensor
 - Temperature (built-in)
-- Magnetic field (built-in)
-- Heartbeat
-- Galvanic skin response ("arousal")
+- [Magnetic field (built-in)](https://randomnerdtutorials.com/esp32-hall-effect-sensor/)
+- [Heartbeat](https://learn.adafruit.com/heart-rate-variability-sensor)
 
 Others, to order:
 - Humidity
+- Galvanic skin response ("arousal")
 - Sound level
 - Water quality
 
@@ -147,44 +147,28 @@ async function draw() { // note "async" keyword
     let data = await fetchData("sensor-test")      // note the "await" keyword
     print(data)
 
-    // resort it by time
+    // re-sort the array by time
     data.sort((a, b) => (a.created_at > b.created_at) ? 1 : -1)
 
     // make a new array with just the sensor values
+    // divide by the max value to "normalize" them to the range 0-1
     let values = []
     for (let datum of data) {
-        values.push(datum.value)
+        values.push(datum.value / 4095)
     }
-
-    // find the highest and lowest value
-    let max_value = max(values)
-    let min_value = min(values)
-    // print("max_value " + max_value)
-    // print("min_value " + min_value)
-
-    // normalize the values between 0 and 1
-    for (let i=0; i<values.length; i++) {
-        let value = values[i]
-        values[i] = (value - min_value) / (max_value - min_value)
-    }
-
-    //// now we have a set of values between and 0-1
-    //// let do the same for the times
 
     // make a new array with just the timestamp
+    // this one is trickier to normalize so we'll do it separately
     let times = []
     for (let datum of data) {
-        // convert the string into numerical time
+        // convert the string into a numerical timestamp
         let time = Date.parse(datum.created_at) / 1000
         times.push(time)
     }
-    // print(times)
-
-    // find the and end time
-    let start_time = min(times)
-    let stop_time = max(times)
 
     // normalize the times to between 0 and 1
+    let start_time = min(times)
+    let stop_time = max(times)
     for (let i=0; i<times.length; i++) {
         let time = times[i]
         times[i] = (time - start_time) / (stop_time - start_time)
@@ -279,7 +263,7 @@ main()
 - [Georgia Lupi](http://giorgialupi.com) (hand-drawn data visualization)
 - [Martin Howse](http://www.1010.co.uk/org/radiomycelium.html) (mycelium)
 - [Afroditi Psarra](http://afroditipsarra.com/index.php?/older-projects/cosmic-bitcasting/) (cosmic rays)
-- [Jer Thorp]()
+- [Jer Thorp](http://jerthorp.com/) (data visualization)
 - [Ali Momeni](http://alimomeni.net/gutwise) (the gut)
 - [Brian House](https://brianhouse.net/works/animas/) (water quality)
 - [Chris Woebken](https://chriswoebken.com/Amphibious-Architecture) (fish)
