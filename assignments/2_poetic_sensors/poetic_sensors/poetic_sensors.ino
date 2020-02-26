@@ -10,14 +10,15 @@ const String AIO_KEY = "2507ddf88a73494884935ca76ed2ae0e";
 const String AIO_FEED = "sensor-test";
 HTTPClient http;
 
-// keep track of sensor pins
-const int FSR_PIN = A2;
+// keep track of the pin attached to the sensor
+const int SENSOR_PIN = A2;
 
 
 void setup() {
   // start the serial connection and wait for it to open
   Serial.begin(115200);
   while(! Serial);
+  pinMode(LED_BUILTIN, OUTPUT);
 }
 
 
@@ -27,16 +28,16 @@ void loop() {
   connectToWifi();
 
   // grab the current state of the sensor
-  int fsr_value = analogRead(FSR_PIN);
-  Serial.print("fsr_value -> ");
-  Serial.println(fsr_value);
+  int value = analogRead(SENSOR_PIN);
+  Serial.print("value -> ");
+  Serial.println(value);
 
   // if it's a relevant value, send it to AIO
-  if (fsr_value > 10) {
-    sendData(fsr_value); 
+  if (value > 10) {
+    sendData(value); 
   }
 
-  // always include a short delay
+  // include a short delay for the circuit to stabilize
   delay(50);
   
 }
@@ -55,8 +56,9 @@ void connectToWifi() {
 }
 
 
-void sendData(int datum) {
+void sendData(int datum) {  
   Serial.print("Sending data... ");
+  digitalWrite(LED_BUILTIN, HIGH);  
   String url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + AIO_FEED + "/data";
   String object = "{\"X-AIO-Key\": \"" + AIO_KEY + "\", \"value\": " + datum + "}";
   http.begin(url);
@@ -65,4 +67,5 @@ void sendData(int datum) {
   Serial.println(httpResponseCode);
   http.end();  
   delay(2000); // delay 2 seconds to avoid AIO rate limit
+  digitalWrite(LED_BUILTIN, LOW);  
 }

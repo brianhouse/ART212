@@ -8,9 +8,9 @@ Office hours MTW 11:30–12:30
 
 
 ## Course Description
-Hybrid worlds studio. Further development of digital media techniques with an emphasis beyond the screen: data collection and sensor systems, 3D fabrication, and augmented reality. Seminar-style reading and discussion will center on conceptual issues arising from a digitally mediated society. Students will work on individual projects for studio critique.
+Hybrid worlds studio. Further development of digital media techniques with an emphasis beyond the screen: sensors and data collection, 3D fabrication, and automated systems. Seminar-style reading and discussion will center on conceptual issues arising from everyday life in a digitally mediated society. Students will work on individual projects for studio critique.
 
-Prerequisites: ART 112 or a CS 100-level course
+Prerequisites: ART 112
 
 #### Objectives:
 - Cultivate an ability to think in terms of systems that span the physical and the digital

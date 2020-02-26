@@ -49,16 +49,19 @@ Sensor types (on hand):
 - Temperature (built-in)
 - [Magnetic field (built-in)](https://randomnerdtutorials.com/esp32-hall-effect-sensor/)
 - [Heartbeat](https://learn.adafruit.com/heart-rate-variability-sensor)
+- [Sound level](https://learn.adafruit.com/adafruit-microphone-amplifier-breakout/assembly-and-wiring)
 
 Others, to order:
 - Humidity
 - Galvanic skin response ("arousal")
-- Sound level
+
 - Water quality
 
 
-### Arduino Template
+### Arduino Templates
 
+#### Basic Sensors
+The following is a basic template for reporting a sensor value. This applies to FSRs, photocells, motion sensors, and temperature + humidity (though you will have to read from two pins to get both values).
 ```c++
 // load libraries
 #include <WiFi.h>
@@ -67,21 +70,20 @@ Others, to order:
 // add credentials
 const char* WIFI_SSID = "LC Wireless";
 const char* WIFI_PASS = "";
-const String AIO_USERNAME = "XXXXX";
-const String AIO_KEY = "XXXXXXXXXX";
-const String AIO_FEED = "XXXXX";
+const String AIO_USERNAME = "";
+const String AIO_KEY = "";
+const String AIO_FEED = "";
 HTTPClient http;
 
-// keep track of sensor pins
-const int FSR_PIN = A2;
-
+// keep track of the pin attached to the sensor
+const int SENSOR_PIN = A2;
 
 void setup() {
   // start the serial connection and wait for it to open
   Serial.begin(115200);
   while(! Serial);
+  pinMode(LED_BUILTIN, OUTPUT);
 }
-
 
 void loop() {
 
@@ -89,16 +91,20 @@ void loop() {
   connectToWifi();
 
   // grab the current state of the sensor
-  int fsr_value = analogRead(FSR_PIN);
-  Serial.print("fsr_value -> ");
-  Serial.println(fsr_value);
+  //int value = digitalRead(SENSOR_PIN); // use this if it's just a trigger
+  int value = analogRead(SENSOR_PIN);   // use this if you want the actual value
+  Serial.print("value -> ");
+  Serial.println(value);
 
-  // if it's a relevant value, send it to AIO
-  if (fsr_value > 10) {
-    //sendData(fsr_value);
+  // modify this condition to fit your application
+  // if you remove the condition entirely, it will send every 2 seconds
+  // (for digital reads, you probably don't need a condition)
+  if (value > 10) {
+    // if it's a relevant value, send it to AIO
+    sendData(value);
   }
 
-  // always include a short delay
+  // include a short delay for the circuit to stabilize
   delay(50);
 
 }
@@ -116,9 +122,9 @@ void connectToWifi() {
   }
 }
 
-
-void sendData(int datum) {
+void sendData(int datum) {  
   Serial.print("Sending data... ");
+  digitalWrite(LED_BUILTIN, HIGH);      // turn the light on when sending data
   String url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + AIO_FEED + "/data";
   String object = "{\"X-AIO-Key\": \"" + AIO_KEY + "\", \"value\": " + datum + "}";
   http.begin(url);
@@ -126,7 +132,93 @@ void sendData(int datum) {
   int httpResponseCode = http.POST(object);
   Serial.println(httpResponseCode);
   http.end();  
-  delay(30000); // delay 30 seconds to avoid AIO rate limit
+  delay(2000); // delay 2 seconds to avoid AIO rate limit
+  digitalWrite(LED_BUILTIN, LOW);  
+}
+```
+
+#### Sound Level
+
+This code sends a value when sound reaches above a certain threshold.
+
+```c
+// load libraries
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+// add credentials
+const char* WIFI_SSID = "LC Wireless";
+const char* WIFI_PASS = "";
+const String AIO_USERNAME = "";
+const String AIO_KEY = "";
+const String AIO_FEED = "";
+HTTPClient http;
+
+// keep track of sensor pins
+const int SENSOR_PIN = A2;
+
+const int window = 50; // Sample window width in ms (50 ms = 20Hz)
+unsigned int sample;
+
+void setup() {
+  // start the serial connection and wait for it to open
+  Serial.begin(115200);
+  while(! Serial);
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+
+  // make sure we're connected
+  connectToWifi();
+
+    unsigned long start_time = millis();  // Start of sample window
+    unsigned int peak = 0;
+
+    // gather samples over a window and find the peak
+    while (millis() - start_time < window) {
+        sample = analogRead(SENSOR_PIN);
+        if (sample > peak) {
+            peak = sample;
+        }
+    }
+    int level = 100 * (peak / 4096.0);  // scale to something nicer to look at
+    Serial.println(level);
+
+
+  // if it's a relevant value, send it to AIO
+  if (level > 60) {
+    sendData(1);
+  }
+
+}
+
+void connectToWifi() {
+  if (WiFi.status() != WL_CONNECTED) {
+    Serial.print("Connecting to wifi...");
+    WiFi.begin(WIFI_SSID, WIFI_PASS);
+    while (WiFi.status() != WL_CONNECTED) {
+      delay(1000);
+      Serial.print(".");
+    }
+    Serial.println();
+    Serial.println("--> connected");
+  }
+}
+
+
+void sendData(int datum) {  
+  Serial.print("Sending data... ");
+  digitalWrite(LED_BUILTIN, HIGH);  
+  String url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + AIO_FEED + "/data";
+  String object = "{\"X-AIO-Key\": \"" + AIO_KEY + "\", \"value\": " + datum + "}";
+  http.begin(url);
+  http.addHeader("Content-Type", "application/json");
+  int httpResponseCode = http.POST(object);
+  Serial.println(httpResponseCode);
+  http.end();  
+  delay(2000); // delay 2 seconds to avoid AIO rate limit
+  digitalWrite(LED_BUILTIN, LOW);  
 }
 ```
 
