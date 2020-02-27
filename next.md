@@ -24,7 +24,13 @@ Poetic sensors:
 - use fritzing
 
 stock:
-- batteries, sound sensors
+- batteries, sound sensors, motion sensors
+
+get a full setup
+https://makeradvisor.com/how-to-set-up-an-electronics-lab-tools-and-equipment/
+also a set of shallow drawers for tools from uline
+
+
 
 /
 
