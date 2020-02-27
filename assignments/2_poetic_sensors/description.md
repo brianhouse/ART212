@@ -360,7 +360,7 @@ void checkBattery() {
 
 ### Heart Rate
 
-A [Pulse Sensor](https://www.adafruit.com/product/1093) can be used to monitor your heart rate. Note that the sensor works best when the back is covered by something opaque like a piece of electrical tape, and try putting it on your earlobe—read the online guides at [PulseSensor.com](PulseSensor.com). You will need to install the PulseSensor Playground library through the Arduino IDE library manager. Look at the live data using the Serial Plotter; this code reports a BPM every minute.
+A [Pulse Sensor](https://www.adafruit.com/product/1093) can be used to monitor your heart rate. Note that the sensor works best when the back is covered by something opaque like a piece of electrical tape, and try putting it on your earlobe—read the online guides at [PulseSensor.com](http://PulseSensor.com). You will need to install the PulseSensor Playground library through the Arduino IDE library manager. Look at the live data using the Serial Plotter; this code reports a BPM every minute.
 
 #### Wiring
 ![](pulsesensor.jpg)
@@ -421,7 +421,7 @@ void loop() {
 
   // make sure we're connected and check the battery
   connectToWifi();
-//  checkBattery();
+  checkBattery();
 
   if (pulseSensor.sawNewSample()) {
     if (--samplesUntilReport == (byte) 0) {
