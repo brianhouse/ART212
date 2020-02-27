@@ -34,12 +34,6 @@ The Adafruit IO platform provides us with a server:
 
 The technical specs on the [Adafruit ESP32 Feather](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather)
 
-Basic approach to wiring sensors (use 3v instead of 5v, and analog inputs A2-A5 for now):
-![](light_cdspulldowndiag.gif)
-
-<!-- - [button](https://www.arduino.cc/en/tutorial/button)
-- [FSR](https://learn.adafruit.com/force-sensitive-resistor-fsr) -->
-
 Sensor types (on hand):
 - Button / switch
 - Force-sensitive resistor (touch / pressure)
@@ -57,6 +51,11 @@ Others, to order:
 
 - Water quality
 
+#### FSR
+![](fsr.jpg)
+
+#### Sound Level
+![](sound_level.jpg)
 
 ### Arduino Templates
 
