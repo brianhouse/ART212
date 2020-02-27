@@ -9,7 +9,7 @@ To capture data, you will use a [ESP32 wireless microcontroller](https://www.esp
 This is a 3-week project that you will complete individually. This week you will present a proposal of your idea to the class for feedback. Next week, you will present your progress. The following week will be a crit. You must have an underlying artistic concept that you can articulate in a 3-sentence artistic statement that you will present with the work.
 
 
-## Code
+## Code (and Wiring)
 
 ### Setup
 
@@ -30,37 +30,18 @@ The Adafruit IO platform provides us with a server:
 - Note your AIO username and AIO key
 
 
-### Wiring Sensors
+### ESP32 Reference
 
 The technical specs on the [Adafruit ESP32 Feather](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather)
 
-Sensor types (on hand):
-- Button / switch
-- Force-sensitive resistor (touch / pressure)
-- Photocell (light-level)
-- Tilt-switch (orientation)
-- Vibration sensor
-- Temperature (built-in)
-- [Magnetic field (built-in)](https://randomnerdtutorials.com/esp32-hall-effect-sensor/)
-- [Heartbeat](https://learn.adafruit.com/heart-rate-variability-sensor)
-- [Sound level](https://learn.adafruit.com/adafruit-microphone-amplifier-breakout/assembly-and-wiring)
 
-Others, to order:
-- Humidity
-- Galvanic skin response ("arousal")
+### Basic Sensors
+The following is a basic template for reporting a sensor value. This applies to force-sensitive resistors (bending or touching), photocells (light level), and motion sensors (presence).
 
-- Water quality
-
-#### FSR
+#### Wiring
 ![](fsr.jpg)
 
-#### Sound Level
-![](sound_level.jpg)
-
-### Arduino Templates
-
-#### Basic Sensors
-The following is a basic template for reporting a sensor value. This applies to FSRs, photocells, and motion sensors.
+#### Arduino Template
 ```c++
 // load libraries
 #include <WiFi.h>
@@ -156,10 +137,15 @@ void checkBattery() {
 }
 ```
 
-#### Sound Level
+### Sound Level
 
-This code sends a value when sound reaches above a certain threshold. For ambient sound level monitoring, set `window` to 1000 and take out the conditional around `sendData`.
+You can monitor sound level with the [MAX9814](https://www.adafruit.com/product/1713). This setup sends a value when sound reaches above a certain threshold. For ambient sound level monitoring, set `window` to 1000 and take out the conditional around `sendData` in the code.
 
+#### Wiring
+![](sound_level.jpg)
+
+
+#### Arduino Template
 ```c
 // load libraries
 #include <WiFi.h>
@@ -261,9 +247,14 @@ void checkBattery() {
 }
 ```
 
-#### Temperature and Humidity
+### Temperature and Humidity
 
-This variation works with the DHT11 (blue) breakout boards. You'll also need to install the Adafruit DHT Sensor Library and Adafruit Unified Sensor Library through the Arduino IDE library manager. Connect the "out" pin from the sensor to pin 33 on your ESP32.
+This variation works with [DHT11 (blue) breakout boards](https://www.amazon.com/HiLetgo-Temperature-Humidity-Digital-3-3V-5V/dp/B01DKC2GQ0/ref=sr_1_4?crid=29K0T2RXDWMKE&dchild=1&keywords=dht11+temperature+and+humidity+sensor&qid=1582840745&sprefix=DHT11%2Caps%2C204&sr=8-4). You'll also need to install the Adafruit DHT Sensor Library and Adafruit Unified Sensor Library through the Arduino IDE library manager. Connect the "out" pin from the sensor to pin 33 on your ESP32.
+
+#### Wiring
+![](temp.jpg)
+
+#### Arduino Template
 
 ```c
 // REQUIRES the DHT Sensor Library and Adafruit Unified Sensor Library
