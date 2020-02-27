@@ -26,8 +26,8 @@ To write code for our ESP32s, we will be using the Arduino IDE:
 The Adafruit IO platform provides us with a server:
 
 - Sign up at https://io.adafruit.com
-- Create a new "feed"
-- Note your AIO username, AIO key, and feed-key
+- Create a new "feed" called "sensor-test" and one called "battery"
+- Note your AIO username and AIO key
 
 
 ### Wiring Sensors
@@ -71,23 +71,29 @@ const char* WIFI_SSID = "LC Wireless";
 const char* WIFI_PASS = "";
 const String AIO_USERNAME = "";
 const String AIO_KEY = "";
-const String AIO_FEED = "";
 HTTPClient http;
 
-// keep track of the pin attached to the sensor
+// keep track of where the sensor is connected
 const int SENSOR_PIN = A2;
+
+// keep track of when we last checked the battery
+unsigned long battery_check = 0;
+
 
 void setup() {
   // start the serial connection and wait for it to open
   Serial.begin(115200);
   while(! Serial);
+  // set up the LED, we'll use it to show when we're transmitting data
   pinMode(LED_BUILTIN, OUTPUT);
 }
 
+
 void loop() {
 
-  // make sure we're connected
+  // make sure we're connected and check the battery
   connectToWifi();
+  checkBattery();
 
   // grab the current state of the sensor
   //int value = digitalRead(SENSOR_PIN); // use this if it's just a trigger
@@ -100,13 +106,15 @@ void loop() {
   // (for digital reads, you probably don't need a condition)
   if (value > 10) {
     // if it's a relevant value, send it to AIO
-    sendData(value);
+    // paramters for sendData are the AIO feed-key and the numerical value
+    sendData("sensor-test", value);
   }
 
   // include a short delay for the circuit to stabilize
   delay(50);
 
 }
+
 
 void connectToWifi() {
   if (WiFi.status() != WL_CONNECTED) {
@@ -121,10 +129,10 @@ void connectToWifi() {
   }
 }
 
-void sendData(int datum) {  
+void sendData(String feed, float datum) {  
   Serial.print("Sending data... ");
-  digitalWrite(LED_BUILTIN, HIGH);      // turn the light on when sending data
-  String url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + AIO_FEED + "/data";
+  digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on
+  String url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + feed + "/data";
   String object = "{\"X-AIO-Key\": \"" + AIO_KEY + "\", \"value\": " + datum + "}";
   http.begin(url);
   http.addHeader("Content-Type", "application/json");
@@ -132,7 +140,19 @@ void sendData(int datum) {
   Serial.println(httpResponseCode);
   http.end();  
   delay(2000); // delay 2 seconds to avoid AIO rate limit
-  digitalWrite(LED_BUILTIN, LOW);  
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off
+}
+
+void checkBattery() {
+  unsigned long t = millis();
+  if (t - battery_check > 5 * 60 * 1000) {
+    float voltage = ((analogRead(A13) * 2) / 4096.0) * 3.3;
+    Serial.print("Battery at ");
+    Serial.print(voltage);
+    Serial.println("v");
+    sendData("battery", voltage);   // report battery level every 5 minutes
+    battery_check = t;
+  }
 }
 ```
 
@@ -150,13 +170,16 @@ const char* WIFI_SSID = "LC Wireless";
 const char* WIFI_PASS = "";
 const String AIO_USERNAME = "";
 const String AIO_KEY = "";
-const String AIO_FEED = "";
 HTTPClient http;
 
-// keep track of sensor pins
+// keep track of where the sensor is connected
 const int SENSOR_PIN = A2;
 
-const int window = 50; // Sample window width in ms (50 ms = 20Hz)
+// keep track of when we last checked the battery
+unsigned long battery_check = 0;
+
+// Sample window width in ms (50 ms = 20Hz)
+const int window = 50;
 unsigned int sample;
 
 void setup() {
@@ -168,8 +191,9 @@ void setup() {
 
 void loop() {
 
-  // make sure we're connected
-  connectToWifi();
+    // make sure we're connected and check the battery
+    connectToWifi();
+    checkBattery();
 
     unsigned long start_time = millis();  // Start of sample window
     unsigned int peak = 0;
@@ -185,10 +209,10 @@ void loop() {
     Serial.println(level);
 
 
-  // if it's a relevant value, send it to AIO
-  if (level > 60) {
-    sendData(1);
-  }
+    // if it's a relevant value, send it to AIO
+    if (level > 50) {
+      sendData("sound-level", level);
+    }
 
 }
 
@@ -206,10 +230,10 @@ void connectToWifi() {
 }
 
 
-void sendData(int datum) {  
+void sendData(String feed, float datum) {  
   Serial.print("Sending data... ");
   digitalWrite(LED_BUILTIN, HIGH);  
-  String url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + AIO_FEED + "/data";
+  String url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + feed + "/data";
   String object = "{\"X-AIO-Key\": \"" + AIO_KEY + "\", \"value\": " + datum + "}";
   http.begin(url);
   http.addHeader("Content-Type", "application/json");
@@ -218,6 +242,18 @@ void sendData(int datum) {
   http.end();  
   delay(2000); // delay 2 seconds to avoid AIO rate limit
   digitalWrite(LED_BUILTIN, LOW);  
+}
+
+void checkBattery() {
+  unsigned long t = millis();
+  if (t - battery_check > 5 * 60 * 1000) {
+    float voltage = ((analogRead(A13) * 2) / 4096.0) * 3.3;
+    Serial.print("Battery at ");
+    Serial.print(voltage);
+    Serial.println("v");
+    sendData("battery", voltage);   // report battery level every 5 minutes
+    battery_check = t;
+  }
 }
 ```
 

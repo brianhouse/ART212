@@ -21,6 +21,7 @@ Poetic sensors:
 - “spooky action” and have an established set of inputs on one esp32 and outputs on the other ... doesn't have to be 1-1 time wise, does it?
 - explicitly split weeks into gathering / representing
 - have a (short) menu of sensors with wiring examples showing the ESP32 and Arduino code, input(distance/presence ie motion, FSR/touch, light, sound, temp-humidity, heartbeat), output(motor, neopixel, LED, piezo sound)
+- use fritzing
 
 stock:
 - batteries, sound sensors
