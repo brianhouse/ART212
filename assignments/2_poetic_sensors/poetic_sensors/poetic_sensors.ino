@@ -1,4 +1,8 @@
+// PulseSensor Playground
+
 // load libraries
+#define USE_ARDUINO_INTERRUPTS false
+#include <PulseSensorPlayground.h>
 #include <WiFi.h>
 #include <HTTPClient.h>
 
@@ -12,9 +16,17 @@ HTTPClient http;
 // keep track of where the sensor is connected
 const int SENSOR_PIN = A2;
 
+const int THRESHOLD = 550;   // Adjust this number to avoid noise when idle
+byte samplesUntilReport;
+const byte SAMPLES_PER_SERIAL_SAMPLE = 10;
+PulseSensorPlayground pulseSensor;
+
 // keep track of when we last checked the battery
 unsigned long battery_check = 0;
 
+// keep track of when we last sent data
+unsigned long heart_check = 0;
+unsigned long heart_t = 0;
 
 void setup() {
   // start the serial connection and wait for it to open
@@ -22,6 +34,16 @@ void setup() {
   while(! Serial);
   // set up the LED, we'll use it to show when we're transmitting data
   pinMode(LED_BUILTIN, OUTPUT);
+  analogReadResolution(10); // 0-1023
+  analogSetWidth(10);
+  pulseSensor.analogInput(SENSOR_PIN);
+  pulseSensor.blinkOnPulse(LED_BUILTIN);
+  pulseSensor.setSerial(Serial);
+  pulseSensor.setThreshold(THRESHOLD);
+  samplesUntilReport = SAMPLES_PER_SERIAL_SAMPLE;
+  if (!pulseSensor.begin()) {
+    Serial.println("Problems");
+  }
 }
 
 
@@ -29,26 +51,21 @@ void loop() {
 
   // make sure we're connected and check the battery
   connectToWifi();
-  checkBattery();
+//  checkBattery();
 
-  // grab the current state of the sensor
-  //int value = digitalRead(SENSOR_PIN); // use this if it's just a trigger
-  int value = analogRead(SENSOR_PIN);   // use this if you want the actual value
-  Serial.print("value -> ");
-  Serial.println(value);
-
-  // modify this condition to fit your application
-  // if you remove the condition entirely, it will send every 2 seconds
-  // (for digital reads, you probably don't need a condition)
-  if (value > 10) {
-    // if it's a relevant value, send it to AIO
-    // paramters for sendData are the AIO feed-key and the numerical value
-    sendData("sensor-test", value);
+  if (pulseSensor.sawNewSample()) {
+    if (--samplesUntilReport == (byte) 0) {
+      samplesUntilReport = SAMPLES_PER_SERIAL_SAMPLE;
+      pulseSensor.outputSample();
+      heart_t = millis();      
+      if (heart_t - heart_check > 60 * 1000) {
+        int bpm = pulseSensor.getBeatsPerMinute();
+        sendData("bpm", bpm);
+        heart_check = heart_t;
+      }      
+    }
   }
-
-  // include a short delay for the circuit to stabilize
-  delay(50);
-
+  
 }
 
 

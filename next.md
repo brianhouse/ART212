@@ -22,10 +22,10 @@ Poetic sensors:
 - explicitly split weeks into gathering / representing
 - have a (short) menu of sensors with wiring examples showing the ESP32 and Arduino code, input(distance/presence ie motion, FSR/touch, light, sound, temp-humidity, heartbeat), output(motor, neopixel, LED, piezo sound)
 - use fritzing
+- need tilt sensor / vibration example
 
 stock:
 - batteries, sound sensors, motion sensors
-
 get a full setup
 https://makeradvisor.com/how-to-set-up-an-electronics-lab-tools-and-equipment/
 also a set of shallow drawers for tools from uline
@@ -34,7 +34,7 @@ also a set of shallow drawers for tools from uline
 
 /
 
-What's the right order? Maybe sensors first?
+What's the right order? Maybe sensors first? or after 3D printing?
 
 
 /
