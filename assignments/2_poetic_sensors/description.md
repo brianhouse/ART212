@@ -145,7 +145,7 @@ void sendData(String feed, float datum) {
 
 void checkBattery() {
   unsigned long t = millis();
-  if (t - battery_check > 5 * 60 * 1000) {
+  if (battery_check == 0 || t - battery_check > 5 * 60 * 1000) {
     float voltage = ((analogRead(A13) * 2) / 4096.0) * 3.3;
     Serial.print("Battery at ");
     Serial.print(voltage);
@@ -178,7 +178,7 @@ const int SENSOR_PIN = A2;
 // keep track of when we last checked the battery
 unsigned long battery_check = 0;
 
-// Sample window width in ms (50 ms = 20Hz)
+// Sample window width in ms (50 ms = 20Hz, 1000 ms = 1hz)
 const int window = 50;
 unsigned int sample;
 
@@ -197,20 +197,24 @@ void loop() {
 
     unsigned long start_time = millis();  // Start of sample window
     unsigned int peak = 0;
+    unsigned int low = 4096;
 
     // gather samples over a window and find the peak
     while (millis() - start_time < window) {
         sample = analogRead(SENSOR_PIN);
-        if (sample > peak) {
+        if (sample < 4095) {      // ignore high signal glitches
+          if (sample > peak) {
             peak = sample;
+          } else if (sample < low) {
+            low = sample;          
+          }
         }
     }
-    int level = 100 * (peak / 4096.0);  // scale to something nicer to look at
+    float level = 100 * ((peak - low) / 4096.0);
     Serial.println(level);
 
-
     // if it's a relevant value, send it to AIO
-    if (level > 50) {
+    if (level > 5) {
       sendData("sound-level", level);
     }
 
@@ -246,7 +250,7 @@ void sendData(String feed, float datum) {
 
 void checkBattery() {
   unsigned long t = millis();
-  if (t - battery_check > 5 * 60 * 1000) {
+  if (battery_check == 0 || t - battery_check > 5 * 60 * 1000) {
     float voltage = ((analogRead(A13) * 2) / 4096.0) * 3.3;
     Serial.print("Battery at ");
     Serial.print(voltage);

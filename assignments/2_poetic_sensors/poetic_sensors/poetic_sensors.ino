@@ -81,7 +81,7 @@ void sendData(String feed, float datum) {
 
 void checkBattery() {
   unsigned long t = millis();
-  if (t - battery_check > 5 * 60 * 1000) {
+  if (battery_check == 0 || t - battery_check > 5 * 60 * 1000) {
     float voltage = ((analogRead(A13) * 2) / 4096.0) * 3.3;
     Serial.print("Battery at ");
     Serial.print(voltage);
