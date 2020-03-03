@@ -481,16 +481,21 @@ void checkBattery() {
 
 ### p5 Template (Data Visualization)
 
+You will need to make your feed public to retrieve the data using javascript.
+
 ```js
 const AIO_USERNAME = ""
 const AIO_KEY = ""
 
-function setup() {
-    let canvas = createCanvas(640, 480)
-    noLoop()
-}
+let values = []
+let times = []
 
-async function draw() { // note "async" keyword
+let index = 0
+
+async function setup() {
+
+    let canvas = createCanvas(640, 480)
+    canvas.parent('p5')
 
     // fetch our data
     let data = await fetchData("sensor-test")      // note the "await" keyword
@@ -501,14 +506,12 @@ async function draw() { // note "async" keyword
 
     // make a new array with just the sensor values
     // divide by the max value to "normalize" them to the range 0-1
-    let values = []
     for (let datum of data) {
         values.push(datum.value / 4095)
     }
 
     // make a new array with just the timestamp
     // this one is trickier to normalize so we'll do it separately
-    let times = []
     for (let datum of data) {
         // convert the string into a numerical timestamp
         let time = Date.parse(datum.created_at) / 1000
@@ -523,7 +526,9 @@ async function draw() { // note "async" keyword
         times[i] = (time - start_time) / (stop_time - start_time)
     }
 
-    // now we can draw
+}
+
+function draw() {
 
     background(255)
 
@@ -557,9 +562,15 @@ async function draw() { // note "async" keyword
         line(x1, y1, x2, y2)
     }
 
+    // try an animation
+    circle(times[index] * width, (1 - values[index]) * height, 50)
+    index += 1
+    if (index == times.length) {
+        index = 0
+    }
+
 }
 
-// this function fetches our data
 async function fetchData(feed) {
     return await new Promise((resolve, reject) => {
         let url = `https://io.adafruit.com/api/v2/${AIO_USERNAME}/feeds/${feed}/data`
@@ -568,10 +579,13 @@ async function fetchData(feed) {
         })
     })
 }
+
 ```
 
 
 ### Node Template
+
+You will need to make your feed public to retrieve the data using javascript.
 
 ```js
 const request = require('request') // install with "npm install request"

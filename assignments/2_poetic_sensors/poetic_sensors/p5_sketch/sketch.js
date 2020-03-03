@@ -1,16 +1,15 @@
 const AIO_USERNAME = "h0use"
 const AIO_KEY = "2507ddf88a73494884935ca76ed2ae0e"
 
-function setup() {
+let values = []
+let times = []
+
+let index = 0
+
+async function setup() {
+
     let canvas = createCanvas(640, 480)
     canvas.parent('p5')
-
-    // low framerate
-    // frameRate(1)
-    noLoop()
-}
-
-async function draw() {
 
     // fetch our data
     let data = await fetchData("sensor-test")      // note the "await" keyword
@@ -21,14 +20,12 @@ async function draw() {
 
     // make a new array with just the sensor values
     // divide by the max value to "normalize" them to the range 0-1
-    let values = []
     for (let datum of data) {
         values.push(datum.value / 4095)
     }
 
     // make a new array with just the timestamp
     // this one is trickier to normalize so we'll do it separately
-    let times = []
     for (let datum of data) {
         // convert the string into a numerical timestamp
         let time = Date.parse(datum.created_at) / 1000
@@ -43,7 +40,9 @@ async function draw() {
         times[i] = (time - start_time) / (stop_time - start_time)
     }
 
-    // now we can draw
+}
+
+function draw() {
 
     background(255)
 
@@ -75,6 +74,13 @@ async function draw() {
         let x2 = times[i] * width
         let y2 = (1 - values[i]) * height
         line(x1, y1, x2, y2)
+    }
+
+    // try an animation
+    circle(times[index] * width, (1 - values[index]) * height, 50)
+    index += 1
+    if (index == times.length) {
+        index = 0
     }
 
 }
