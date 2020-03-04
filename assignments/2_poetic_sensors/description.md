@@ -40,444 +40,46 @@ Use A2, A3, and A4 for analog inputs and 32 and 33 for GPIOs. The other pins hav
 ### Basic Sensors
 The following is a basic template for reporting a sensor value. This applies to force-sensitive resistors (bending or touching), photocells (light level), and motion sensors (presence). You will also need a 10k Ohm resistor.
 
-#### Wiring
-![](fsr.jpg)
+##### Arduino Template
+[basic.ino]("basic.ino")
 
-#### Arduino Template
-```c++
-// load libraries
-#include <WiFi.h>
-#include <HTTPClient.h>
+##### Wiring
+![](basic.jpg)
 
-// add credentials
-const char* WIFI_SSID = "LC Wireless";
-const char* WIFI_PASS = "";
-const String AIO_USERNAME = "";
-const String AIO_KEY = "";
-HTTPClient http;
-
-// keep track of where the sensor is connected
-const int SENSOR_PIN = A2;
-
-// keep track of when we last checked the battery
-unsigned long battery_check = 0;
-
-
-void setup() {
-  // start the serial connection and wait for it to open
-  Serial.begin(115200);
-  while(! Serial);
-  // set up the LED, we'll use it to show when we're transmitting data
-  pinMode(LED_BUILTIN, OUTPUT);
-}
-
-
-void loop() {
-
-  // make sure we're connected and check the battery
-  connectToWifi();
-  checkBattery();
-
-  // grab the current state of the sensor
-  //int value = digitalRead(SENSOR_PIN); // use this if it's just a trigger
-  int value = analogRead(SENSOR_PIN);   // use this if you want the actual value
-  Serial.print("value -> ");
-  Serial.println(value);
-
-  // modify this condition to fit your application
-  // if you remove the condition entirely, it will send every 2 seconds
-  // (for digital reads, you probably don't need a condition)
-  if (value > 10) {
-    // if it's a relevant value, send it to AIO
-    // paramters for sendData are the AIO feed-key and the numerical value
-    sendData("sensor-test", value);
-  }
-
-  // include a short delay for the circuit to stabilize
-  delay(50);
-
-}
-
-
-void connectToWifi() {
-  if (WiFi.status() != WL_CONNECTED) {
-    Serial.print("Connecting to wifi...");
-    WiFi.begin(WIFI_SSID, WIFI_PASS);
-    while (WiFi.status() != WL_CONNECTED) {
-      delay(1000);
-      Serial.print(".");
-    }
-    Serial.println();
-    Serial.println("--> connected");
-  }
-}
-
-void sendData(String feed, float datum) {  
-  Serial.print("Sending data... ");
-  digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on
-  String url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + feed + "/data";
-  String object = "{\"X-AIO-Key\": \"" + AIO_KEY + "\", \"value\": " + datum + "}";
-  http.begin(url);
-  http.addHeader("Content-Type", "application/json");
-  int httpResponseCode = http.POST(object);
-  Serial.println(httpResponseCode);
-  http.end();  
-  delay(2000); // delay 2 seconds to avoid AIO rate limit
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off
-}
-
-void checkBattery() {
-  unsigned long t = millis();
-  if (battery_check == 0 || t - battery_check > 5 * 60 * 1000) {
-    float voltage = ((analogRead(A13) * 2) / 4096.0) * 3.3;
-    Serial.print("Battery at ");
-    Serial.print(voltage);
-    Serial.println("v");
-    sendData("battery", voltage);   // report battery level every 5 minutes
-    battery_check = t;
-  }
-}
-```
 
 ### Sound Level
 
 You can monitor sound level with the [MAX9814](https://www.adafruit.com/product/1713). This setup sends a value when sound reaches above a certain threshold. For ambient sound level monitoring, set `window` to 1000 and take out the conditional around `sendData` in the code.
 
-#### Wiring
+##### Arduino Template
+[sound_level.ino]("sound_level.ino")
+
+##### Wiring
 ![](sound_level.jpg)
 
 
-#### Arduino Template
-```c
-// load libraries
-#include <WiFi.h>
-#include <HTTPClient.h>
-
-// add credentials
-const char* WIFI_SSID = "LC Wireless";
-const char* WIFI_PASS = "";
-const String AIO_USERNAME = "";
-const String AIO_KEY = "";
-HTTPClient http;
-
-// keep track of where the sensor is connected
-const int SENSOR_PIN = A2;
-
-// keep track of when we last checked the battery
-unsigned long battery_check = 0;
-
-// Sample window width in ms (50 ms = 20Hz, 1000 ms = 1hz)
-const int window = 50;
-unsigned int sample;
-
-void setup() {
-  // start the serial connection and wait for it to open
-  Serial.begin(115200);
-  while(! Serial);
-  pinMode(LED_BUILTIN, OUTPUT);
-}
-
-void loop() {
-
-    // make sure we're connected and check the battery
-    connectToWifi();
-    checkBattery();
-
-    unsigned long start_time = millis();  // Start of sample window
-    unsigned int peak = 0;
-    unsigned int low = 4096;
-
-    // gather samples over a window and find the peak
-    while (millis() - start_time < window) {
-        sample = analogRead(SENSOR_PIN);
-        if (sample < 4095) {      // ignore high signal glitches
-          if (sample > peak) {
-            peak = sample;
-          } else if (sample < low) {
-            low = sample;          
-          }
-        }
-    }
-    float level = 100 * ((peak - low) / 4096.0);
-    Serial.println(level);
-
-    // if it's a relevant value, send it to AIO
-    if (level > 5) {
-      sendData("sound-level", level);
-    }
-
-}
-
-void connectToWifi() {
-  if (WiFi.status() != WL_CONNECTED) {
-    Serial.print("Connecting to wifi...");
-    WiFi.begin(WIFI_SSID, WIFI_PASS);
-    while (WiFi.status() != WL_CONNECTED) {
-      delay(1000);
-      Serial.print(".");
-    }
-    Serial.println();
-    Serial.println("--> connected");
-  }
-}
-
-
-void sendData(String feed, float datum) {  
-  Serial.print("Sending data... ");
-  digitalWrite(LED_BUILTIN, HIGH);  
-  String url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + feed + "/data";
-  String object = "{\"X-AIO-Key\": \"" + AIO_KEY + "\", \"value\": " + datum + "}";
-  http.begin(url);
-  http.addHeader("Content-Type", "application/json");
-  int httpResponseCode = http.POST(object);
-  Serial.println(httpResponseCode);
-  http.end();  
-  delay(2000); // delay 2 seconds to avoid AIO rate limit
-  digitalWrite(LED_BUILTIN, LOW);  
-}
-
-void checkBattery() {
-  unsigned long t = millis();
-  if (battery_check == 0 || t - battery_check > 5 * 60 * 1000) {
-    float voltage = ((analogRead(A13) * 2) / 4096.0) * 3.3;
-    Serial.print("Battery at ");
-    Serial.print(voltage);
-    Serial.println("v");
-    sendData("battery", voltage);   // report battery level every 5 minutes
-    battery_check = t;
-  }
-}
-```
-
 ### Temperature and Humidity
 
-This variation works with [DHT11 (blue) breakout boards](https://www.amazon.com/HiLetgo-Temperature-Humidity-Digital-3-3V-5V/dp/B01DKC2GQ0/ref=sr_1_4?crid=29K0T2RXDWMKE&dchild=1&keywords=dht11+temperature+and+humidity+sensor&qid=1582840745&sprefix=DHT11%2Caps%2C204&sr=8-4). You'll also need to install the Adafruit DHT Sensor Library and Adafruit Unified Sensor Library through the Arduino IDE library manager. Connect the "out" pin from the sensor to pin 33 on your ESP32.
+This variation works with [DHT11 (blue) breakout boards](https://www.amazon.com/HiLetgo-Temperature-Humidity-Digital-3-3V-5V/dp/B01DKC2GQ0/ref=sr_1_4?crid=29K0T2RXDWMKE&dchild=1&keywords=dht11+temperature+and+humidity+sensor&qid=1582840745&sprefix=DHT11%2Caps%2C204&sr=8-4). You'll also need to install the "Adafruit DHT Sensor" library and "Adafruit Unified Sensor" library through the Arduino IDE library manager (make sure these titles match exactly—there are a lot of similarly named modules). Connect the "out" pin from the sensor to pin 33 on your ESP32.
 
-#### Wiring
+##### Arduino Template
+[temp.ino]("temp.ino")
+
+##### Wiring
 ![](temp.jpg)
 
-#### Arduino Template
-
-```c
-// REQUIRES the DHT Sensor Library and Adafruit Unified Sensor Library
-
-// load libraries
-#include <WiFi.h>
-#include <HTTPClient.h>
-#include "DHT.h"
-#define DHTTYPE DHT11
-#define DHTPIN 33       // Digital pin connected to the DHT sensor
-
-// add credentials
-const char* WIFI_SSID = "LC Wireless";
-const char* WIFI_PASS = "";
-const String AIO_USERNAME = "";
-const String AIO_KEY = "";
-
-HTTPClient http;
-DHT dht(DHTPIN, DHTTYPE);
-
-// keep track of when we last checked the battery
-unsigned long battery_check = 0;
-
-
-void setup() {
-  // start the serial connection and wait for it to open
-  Serial.begin(115200);
-  while(! Serial);
-  // set up the LED, we'll use it to show when we're transmitting data
-  pinMode(LED_BUILTIN, OUTPUT);
-  dht.begin();
-}
-
-
-void loop() {
-
-  // make sure we're connected and check the battery
-  connectToWifi();
-  checkBattery();
-
-  float h = dht.readHumidity();
-  float t = dht.readTemperature(true);
-  if (isnan(h) || isnan(t)) {
-    Serial.println(F("Failed to read from DHT sensor!"));
-    return;
-  }
-  Serial.print(F("Humidity: "));
-  Serial.println(h);
-  Serial.print(F("%  Temperature: "));
-  Serial.println(t);
-
-  sendData("humidity", h);
-  sendData("temperature", t);
-
-  // delay for a minute
-  delay(60 * 1000);
-
-}
-
-
-void connectToWifi() {
-  if (WiFi.status() != WL_CONNECTED) {
-    Serial.print("Connecting to wifi...");
-    WiFi.begin(WIFI_SSID, WIFI_PASS);
-    while (WiFi.status() != WL_CONNECTED) {
-      delay(1000);
-      Serial.print(".");
-    }
-    Serial.println();
-    Serial.println("--> connected");
-  }
-}
-
-void sendData(String feed, float datum) {  
-  Serial.print("Sending data... ");
-  digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on
-  String url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + feed + "/data";
-  String object = "{\"X-AIO-Key\": \"" + AIO_KEY + "\", \"value\": " + datum + "}";
-  http.begin(url);
-  http.addHeader("Content-Type", "application/json");
-  int httpResponseCode = http.POST(object);
-  Serial.println(httpResponseCode);
-  http.end();  
-  delay(2000); // delay 2 seconds to avoid AIO rate limit
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off
-}
-
-void checkBattery() {
-  unsigned long t = millis();
-  if (battery_check == 0 || t - battery_check > 5 * 60 * 1000) {
-    float voltage = ((analogRead(A13) * 2) / 4096.0) * 3.3;
-    Serial.print("Battery at ");
-    Serial.print(voltage);
-    Serial.println("v");
-    sendData("battery", voltage);   // report battery level every 5 minutes
-    battery_check = t;
-  }
-}
-
-```
 
 ### Heart Rate
 
 A [Pulse Sensor](https://www.adafruit.com/product/1093) can be used to monitor your heart rate. Note that the sensor works best when the back is covered by something opaque like a piece of electrical tape, and try putting it on your earlobe—read the online guides at [PulseSensor.com](http://PulseSensor.com). You will need to install the PulseSensor Playground library through the Arduino IDE library manager. Look at the live data using the Serial Plotter; this code reports a BPM every minute.
 
-#### Wiring
-![](pulsesensor.jpg)
-
-#### Arduino Template
-
-```c
-// REQUIRES the PulseSensor Playground library
-
-// load libraries
-#define USE_ARDUINO_INTERRUPTS false
-#include <PulseSensorPlayground.h>
-#include <WiFi.h>
-#include <HTTPClient.h>
-
-// add credentials
-const char* WIFI_SSID = "LC Wireless";
-const char* WIFI_PASS = "";
-const String AIO_USERNAME = "";
-const String AIO_KEY = "";
-HTTPClient http;
-
-// keep track of where the sensor is connected
-const int SENSOR_PIN = A2;
-
-const int THRESHOLD = 550;   // Adjust this number to avoid noise when idle
-byte samplesUntilReport;
-const byte SAMPLES_PER_SERIAL_SAMPLE = 10;
-PulseSensorPlayground pulseSensor;
-
-// keep track of when we last checked the battery
-unsigned long battery_check = 0;
-
-// keep track of when we last sent data
-unsigned long heart_check = 0;
-unsigned long heart_t = 0;
-
-void setup() {
-  // start the serial connection and wait for it to open
-  Serial.begin(115200);
-  while(! Serial);
-  // set up the LED, we'll use it to show when we're transmitting data
-  pinMode(LED_BUILTIN, OUTPUT);
-  analogReadResolution(10); // 0-1023
-  analogSetWidth(10);
-  pulseSensor.analogInput(SENSOR_PIN);
-  pulseSensor.blinkOnPulse(LED_BUILTIN);
-  pulseSensor.setSerial(Serial);
-  pulseSensor.setThreshold(THRESHOLD);
-  samplesUntilReport = SAMPLES_PER_SERIAL_SAMPLE;
-  if (!pulseSensor.begin()) {
-    Serial.println("Problems");
-  }
-}
+##### Arduino Template
+[pulse.ino]("pulse.ino")
 
 
-void loop() {
+##### Wiring
+![](pulse.jpg)
 
-  // make sure we're connected and check the battery
-  connectToWifi();
-  checkBattery();
-
-  if (pulseSensor.sawNewSample()) {
-    if (--samplesUntilReport == (byte) 0) {
-      samplesUntilReport = SAMPLES_PER_SERIAL_SAMPLE;
-      pulseSensor.outputSample();
-      heart_t = millis();      
-      if (heart_t - heart_check > 60 * 1000) {
-        int bpm = pulseSensor.getBeatsPerMinute();
-        sendData("bpm", bpm);
-        heart_check = heart_t;
-      }      
-    }
-  }
-
-}
-
-
-void connectToWifi() {
-  if (WiFi.status() != WL_CONNECTED) {
-    Serial.print("Connecting to wifi...");
-    WiFi.begin(WIFI_SSID, WIFI_PASS);
-    while (WiFi.status() != WL_CONNECTED) {
-      delay(1000);
-      Serial.print(".");
-    }
-    Serial.println();
-    Serial.println("--> connected");
-  }
-}
-
-void sendData(String feed, float datum) {  
-  Serial.print("Sending data... ");
-  digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on
-  String url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + feed + "/data";
-  String object = "{\"X-AIO-Key\": \"" + AIO_KEY + "\", \"value\": " + datum + "}";
-  http.begin(url);
-  http.addHeader("Content-Type", "application/json");
-  int httpResponseCode = http.POST(object);
-  Serial.println(httpResponseCode);
-  http.end();  
-  delay(2000); // delay 2 seconds to avoid AIO rate limit
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off
-}
-
-void checkBattery() {
-  unsigned long t = millis();
-  if (battery_check == 0 || t - battery_check > 5 * 60 * 1000) {
-    float voltage = ((analogRead(A13) * 2) / 4096.0) * 3.3;
-    Serial.print("Battery at ");
-    Serial.print(voltage);
-    Serial.println("v");
-    sendData("battery", voltage);   // report battery level every 5 minutes
-    battery_check = t;
-  }
-}
-```
 
 ### p5 Template (Data Visualization)
 
