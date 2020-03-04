@@ -41,7 +41,7 @@ Use A2, A3, and A4 for analog inputs and 32 and 33 for GPIOs. The other pins hav
 The following is a basic template for reporting a sensor value. This applies to force-sensitive resistors (bending or touching), photocells (light level), and motion sensors (presence). You will also need a 10k Ohm resistor.
 
 ##### Arduino Template
-[basic.ino]("basic.ino")
+[basic.ino](basic.ino)
 
 ##### Wiring
 ![](basic.jpg)
@@ -52,7 +52,7 @@ The following is a basic template for reporting a sensor value. This applies to 
 You can monitor sound level with the [MAX9814](https://www.adafruit.com/product/1713). This setup sends a value when sound reaches above a certain threshold. For ambient sound level monitoring, set `window` to 1000 and take out the conditional around `sendData` in the code.
 
 ##### Arduino Template
-[sound_level.ino]("sound_level.ino")
+[sound_level.ino](sound_level.ino)
 
 ##### Wiring
 ![](sound_level.jpg)
@@ -63,7 +63,7 @@ You can monitor sound level with the [MAX9814](https://www.adafruit.com/product/
 This variation works with [DHT11 (blue) breakout boards](https://www.amazon.com/HiLetgo-Temperature-Humidity-Digital-3-3V-5V/dp/B01DKC2GQ0/ref=sr_1_4?crid=29K0T2RXDWMKE&dchild=1&keywords=dht11+temperature+and+humidity+sensor&qid=1582840745&sprefix=DHT11%2Caps%2C204&sr=8-4). You'll also need to install the "Adafruit DHT Sensor" library and "Adafruit Unified Sensor" library through the Arduino IDE library manager (make sure these titles match exactly—there are a lot of similarly named modules). Connect the "out" pin from the sensor to pin 33 on your ESP32.
 
 ##### Arduino Template
-[temp.ino]("temp.ino")
+[temp.ino](temp.ino)
 
 ##### Wiring
 ![](temp.jpg)
@@ -74,7 +74,7 @@ This variation works with [DHT11 (blue) breakout boards](https://www.amazon.com/
 A [Pulse Sensor](https://www.adafruit.com/product/1093) can be used to monitor your heart rate. Note that the sensor works best when the back is covered by something opaque like a piece of electrical tape, and try putting it on your earlobe—read the online guides at [PulseSensor.com](http://PulseSensor.com). You will need to install the PulseSensor Playground library through the Arduino IDE library manager. Look at the live data using the Serial Plotter; this code reports a BPM every minute.
 
 ##### Arduino Template
-[pulse.ino]("pulse.ino")
+[pulse.ino](pulse.ino)
 
 
 ##### Wiring
