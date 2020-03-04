@@ -57,19 +57,25 @@ void loop() {
 
 }
 
+
 void connectToWifi() {
   if (WiFi.status() != WL_CONNECTED) {
     Serial.print("Connecting to wifi...");
-    WiFi.begin(WIFI_SSID, WIFI_PASS);
+    int i = 0;
     while (WiFi.status() != WL_CONNECTED) {
+      if (i % 10 == 0) {
+        WiFi.disconnect();
+        delay(250);
+        WiFi.begin(WIFI_SSID, WIFI_PASS);
+      }
       delay(1000);
       Serial.print(".");
+      i++;
     }
     Serial.println();
     Serial.println("--> connected");
   }
 }
-
 
 void sendData(String feed, float datum) {
   Serial.print("Sending data... ");
