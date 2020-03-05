@@ -23,7 +23,7 @@ function setup() {
         // make a new array with just the sensor values
         // divide by the max value to "normalize" them to the range 0-1
         for (let datum of data) {
-            values.push(datum.value / 10)
+            values.push(datum.value / 10)   // change "10" to the max expected value for your data
         }
 
         // make a new array with just the timestamp
