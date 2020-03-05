@@ -94,39 +94,43 @@ let times = []
 
 let index = 0
 
-async function setup() {
+function setup() {
 
     let canvas = createCanvas(640, 480)
     canvas.parent('p5')
 
     // fetch our data
-    let data = await fetchData("sensor-test")      // note the "await" keyword
-    print(data)
+    let feed = 'sound-level'
+    let url = `https://io.adafruit.com/api/v2/${AIO_USERNAME}/feeds/${feed}/data`
+    httpGet(url, 'json', false, function(data) {
 
-    // re-sort the array by time
-    data.sort((a, b) => (a.created_at > b.created_at) ? 1 : -1)
+        print(data)
+        // re-sort the array by time
+        data.sort((a, b) => (a.created_at > b.created_at) ? 1 : -1)
 
-    // make a new array with just the sensor values
-    // divide by the max value to "normalize" them to the range 0-1
-    for (let datum of data) {
-        values.push(datum.value / 4095)
-    }
+        // make a new array with just the sensor values
+        // divide by the max value to "normalize" them to the range 0-1
+        for (let datum of data) {
+            values.push(datum.value / 4095)
+        }
 
-    // make a new array with just the timestamp
-    // this one is trickier to normalize so we'll do it separately
-    for (let datum of data) {
-        // convert the string into a numerical timestamp
-        let time = Date.parse(datum.created_at) / 1000
-        times.push(time)
-    }
+        // make a new array with just the timestamp
+        // this one is trickier to normalize so we'll do it separately
+        for (let datum of data) {
+            // convert the string into a numerical timestamp
+            let time = Date.parse(datum.created_at) / 1000
+            times.push(time)
+        }
 
-    // normalize the times to between 0 and 1
-    let start_time = min(times)
-    let stop_time = max(times)
-    for (let i=0; i<times.length; i++) {
-        let time = times[i]
-        times[i] = (time - start_time) / (stop_time - start_time)
-    }
+        // normalize the times to between 0 and 1
+        let start_time = min(times)
+        let stop_time = max(times)
+        for (let i=0; i<times.length; i++) {
+            let time = times[i]
+            times[i] = (time - start_time) / (stop_time - start_time)
+        }
+
+    })
 
 }
 
@@ -172,16 +176,6 @@ function draw() {
     }
 
 }
-
-async function fetchData(feed) {
-    return await new Promise((resolve, reject) => {
-        let url = `https://io.adafruit.com/api/v2/${AIO_USERNAME}/feeds/${feed}/data`
-        httpGet(url, 'json', false, function(data) {
-            resolve(data)
-        })
-    })
-}
-
 ```
 
 
