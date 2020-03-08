@@ -20,11 +20,15 @@ Poetic sensors:
 - use a ESP on the other side too?
 - “spooky action” and have an established set of inputs on one esp32 and outputs on the other ... doesn't have to be 1-1 time wise, does it?
 - explicitly split weeks into gathering / representing
-- have a (short) menu of sensors with wiring examples showing the ESP32 and Arduino code, input(distance/presence ie motion, FSR/touch, light, sound, temp-humidity, heartbeat, distance), output(motor, neopixel, LED, piezo sound)
+- have a (short) menu of sensors with wiring examples showing the ESP32 and Arduino code, input(distance/presence ie motion, proximity, FSR/touch, light, sound, temp-humidity, heartbeat, distance), output(motor, neopixel, LED, piezo sound)
 - use fritzing
 - need tilt sensor / vibration example
+- need working proximity
 - need distance example
 - more links to adafruit guides
+- presentation should not be front of the room. should be placards.
+- filter all 4095s as error
+- sound should use FFT
 
 stock:
 - batteries, sound sensors, motion sensors
@@ -33,19 +37,15 @@ get a full setup
 https://makeradvisor.com/how-to-set-up-an-electronics-lab-tools-and-equipment/
 also a set of shallow drawers for tools from uline
 
+/
+
+Atoms
+
+
 
 
 /
-
-What's the right order? Maybe sensors first? or after 3D printing?
-
-
-/
-
-- me in front of group discussion limits engagement. structure it by table instead. Specific questions for them to discuss in groups and report?
 
 - the Chun wasn't great. choose a newer one? and swap with Anatomy of an AI?
 - Mattern was great
-
-/
 - might need to have a participation grade, depending on how this is structured
