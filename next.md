@@ -16,7 +16,7 @@ Networked automation:
 
 /
 
-Poetic sensors:
+Poetic sensors: (--> poetic sensing)
 - use a ESP on the other side too?
 - “spooky action” and have an established set of inputs on one esp32 and outputs on the other ... doesn't have to be 1-1 time wise, does it?
 - explicitly split weeks into gathering / representing

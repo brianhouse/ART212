@@ -153,7 +153,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 #### Tuesday 3/10
 - Survey presentations 6
 - Discussion (write a question from the text in advance [here](https://docs.google.com/document/d/1LAheTrASb06PRbm20aLHvk1XjeyQHWnUcgMBBztkNoY/edit?usp=sharing): Chris Anderson, "[In the Next Industrial Revolution, Atoms Are the New Bits](https://www.wired.com/2010/01/ff_newrevolution/)
-- Project 3: [Physical Digital](assignments/3_physical_digital/description.md)
+- Project 3: [Physical Digital](assignments/3_real_digital_objects/description.md)
 - Workshop: 3D scanning + Meshmixer
 
 **Brittany Ransom lecture, 7pm**  
