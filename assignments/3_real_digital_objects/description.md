@@ -9,6 +9,18 @@ To capture data, you may use the Structure Sensor + iPads from the Digital Media
 This is a 3-week project (not counting spring break) that you will complete individually. This week you will experimented with 3D tools. Next week, you will present a proposal and your progress. The Thursday of the week after spring break will be a crit. To present the work, you will display your prints (and any other objects as relevant) along with a (2D-printed) title and a 3-sentence artistic statement.
 
 
+## Practical constraints
+
+- While you are 3D printing, you must be present in the digital media studio
+- Limit your print time for any given model to **2 hours**
+- Sign up for print time on the Google calendars for each of the 3D printers
+    - [Bart](https://calendar.google.com/calendar?cid=bGNsYXJrLmVkdV9wYmFsMTJzNGNydTR2YnI4bzYxaThzc3BqNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t) Original Prusa i3 MK3S
+    - [Lisa](https://calendar.google.com/calendar?cid=bGNsYXJrLmVkdV92M21vYTM4dW12MXM1MDBrb2tqZ3NuMHBzY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t) Original Prusa i3 MK3S
+    - [Lulzbot](https://calendar.google.com/calendar?cid=bGNsYXJrLmVkdV9vcmM5N3U2YXZiY2poZDQ2aG9zbWtla2QzZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t) Mini
+- Please use the iPads with Structure Sensors at the studio. If you want to scan an object that isn't at Fields, please email the professor before you take from the studio and when you have returned it.
+
+
+
 ## Technical Resources
 
 Software Tools
@@ -34,9 +46,4 @@ Sources for 3D models:
 - [Nervous System](https://n-e-r-v-o-u-s.com)
 - Rick Silva, [Western Fronts](http://westernfronts.com)
 - [Form](https://form.xyz)
-
-
-<!--
-
-- check out sheet
--->
+- [Brittany Ransom](https://www.brittanyransom.com)

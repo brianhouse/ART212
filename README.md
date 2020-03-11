@@ -167,7 +167,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 
 #### Tuesday 3/17
 - Survey presentations 7
-- Discussion: Morehshin Allahyari and Daniel Rouke, "[The 3D Additivist Manifesto](https://additivism.org/manifesto)"
+- [Discussion](https://docs.google.com/document/d/1_j-3PaXcW_vF5sKd5eZ5EwFJfHpv_7f7TUifgRpYhus/edit?usp=sharing): Morehshin Allahyari and Daniel Rouke, "[The 3D Additivist Manifesto](https://additivism.org/manifesto)"
 - Work time
 
 #### Thursday 3/19
@@ -178,7 +178,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 
 #### Tuesday 3/31
 - Survey presentations 8
-- Discussion: James Bridle, "[Waving at the Machines](http://booktwo.org/notebook/waving-at-machines/)"
+- [Discussion](https://docs.google.com/document/d/1O4XjbmWwuQz6AFHCdE5WHiFpqEk2GGXLIfopVn_CclQ/edit?usp=sharing): James Bridle, "[Waving at the Machines](http://booktwo.org/notebook/waving-at-machines/)"
 - Work time
 
 #### Thursday 4/2
@@ -188,7 +188,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 ### Week 11
 
 #### Tuesday 4/7
-- Discussion: Lisa Parks, "[Mediating Animal-Infrastructure Relations](reading/parks_animal_infrastructure.pdf)"
+- [Discussion](https://docs.google.com/document/d/1I7eHP2E0OTC57RZlWdtxL7lPDjsV1EIrvOK0-tnwQSo/edit?usp=sharing): Lisa Parks, "[Mediating Animal-Infrastructure Relations](reading/parks_animal_infrastructure.pdf)"
 - Project 4: [Hybrid Worlds](assignments/4_hybrid_worlds/description.md)
 
 #### Thursday 4/9
@@ -198,7 +198,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 ### Week 12
 
 #### Tuesday 4/14
-- Discussion: Jennifer Gabrys, "[Digital Rubbish](reading/gabrys_digital_rubbish.pdf)"
+- [Discussion](https://docs.google.com/document/d/1ZsXtFB8r3XGa9drIvQqxLJQPNl88PjXJYbWcNF30b84/edit?usp=sharing): Jennifer Gabrys, "[Digital Rubbish](reading/gabrys_digital_rubbish.pdf)"
 
 #### Thursday 4/16
 - Project 4: check-in 1
@@ -207,7 +207,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 ### Week 13
 
 #### Tuesday 4/21
-- Discussion: Florian Cramer, "[What is Post-Digital?](reading/kramer_post_digital.pdf)"
+- [Discussion](https://docs.google.com/document/d/1j1exfnm-Qo00sElo26Voz9Co8yqyUc1Z4vij_4ImUG4/edit?usp=sharing): Florian Cramer, "[What is Post-Digital?](reading/kramer_post_digital.pdf)"
 
 #### Thursday 4/23
 - Project 4: check-in 2
