@@ -9,16 +9,34 @@ To capture data, you may use the Structure Sensor + iPads from the Digital Media
 This is a 3-week project (not counting spring break) that you will complete individually. This week you will experimented with 3D tools. Next week, you will present a proposal and your progress. The Thursday of the week after spring break will be a crit. To present the work, you will display your prints (and any other objects as relevant) along with a (2D-printed) title and a 3-sentence artistic statement.
 
 
+## Technical Resources
+
+Software Tools
+- [Meshmixer](http://www.meshmixer.com)
+- [Tinkercad](http://tinkercad.com/)
+- [PrusaSlicer](https://www.prusa3d.com/prusaslicer/)
+
+Sources for 3D models:
+- Creative Commons cultural heritage collections on [SketchFab](https://sketchfab.com/nebulousflynn/collections/cc0)
+- Community Models on [Turbosquid](https://www.turbosquid.com)
+
+
+## Conceptual References and Examples
+
+- [Pinar Yoldas](https://www.dezeen.com/2018/09/28/designer-babies-genetically-modified-istanbul-design-biennial-pinar-yoldas/)  
+- [Morehshin Allahyari](http://www.morehshin.com)
+- [Birch Cooper](http://birchcooper.net)
+- Addie Wagenknect, [Liberator Vases](http://www.placesiveneverbeen.com/details/liberator-vases)
+- [Clement Valla](http://clementvalla.com)
+- Golan Levin and Shawn Sims, [The Free Universal Construction Kit](http://www.flong.com/projects/free-universal-construction-kit/)
+- Rafael Lozano Hemmer, [Volute 1: Au Clair de la Lune](http://www.lozano-hemmer.com/volute_1_au_clair_de_la_lune.php)
+- [Gilles Azzaro](http://www.gillesazzaro.com/pages/en/oeuvres.htm)
+- [Nervous System](https://n-e-r-v-o-u-s.com)
+- Rick Silva, [Western Fronts](http://westernfronts.com)
+- [Form](https://form.xyz)
+
+
 <!--
 
 - check out sheet
-- work displayed in classroom on benches
--->
-
-
-
-<!--
-
-clement valla
-rick silva
 -->
