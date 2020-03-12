@@ -12,7 +12,7 @@ This is a 3-week project (not counting spring break) that you will complete indi
 ## Practical constraints
 
 - While you are 3D printing, you must be present in the digital media studio
-- Limit your print time for any given model to **2 hours**
+- Limit your print time for any given model to **4 hours**
 - Sign up for print time on the Google calendars for each of the 3D printers
     - [Bart](https://calendar.google.com/calendar?cid=bGNsYXJrLmVkdV9wYmFsMTJzNGNydTR2YnI4bzYxaThzc3BqNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t) Original Prusa i3 MK3S
     - [Lisa](https://calendar.google.com/calendar?cid=bGNsYXJrLmVkdV92M21vYTM4dW12MXM1MDBrb2tqZ3NuMHBzY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t) Original Prusa i3 MK3S
@@ -23,9 +23,18 @@ This is a 3-week project (not counting spring break) that you will complete indi
 
 ## Technical Resources
 
-Software Tools
+Cleaning up meshes and sculpting solids:
 - [Meshmixer](http://www.meshmixer.com)
-- [Tinkercad](http://tinkercad.com/)
+- Tutorial: [How to clean up 3D scans](https://www.youtube.com/watch?v=i5e2S8o7Ujc)
+
+Manipulating 3D models and designing 3D shapes:
+- [Tinkercad](http://tinkercad.com/) (easy)
+- [Blender](http://blender.org/) (powerful)
+
+Utilities:
+- [fbx-converter](https://www.autodesk.com/developer-network/platform-technologies/fbx-converter-archives)
+
+3D printing prep:
 - [PrusaSlicer](https://www.prusa3d.com/prusaslicer/)
 
 Sources for 3D models:
@@ -39,6 +48,7 @@ Sources for 3D models:
 - [Morehshin Allahyari](http://www.morehshin.com)
 - [Birch Cooper](http://birchcooper.net)
 - Addie Wagenknect, [Liberator Vases](http://www.placesiveneverbeen.com/details/liberator-vases)
+- [Kai Franz](http://www.kaifranz.de)
 - [Clement Valla](http://clementvalla.com)
 - Golan Levin and Shawn Sims, [The Free Universal Construction Kit](http://www.flong.com/projects/free-universal-construction-kit/)
 - Rafael Lozano Hemmer, [Volute 1: Au Clair de la Lune](http://www.lozano-hemmer.com/volute_1_au_clair_de_la_lune.php)
