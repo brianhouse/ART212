@@ -44,8 +44,11 @@ Sources for 3D models:
 
 ## Conceptual References and Examples
 
+Many examples in the [3D Additivist Cookbook](https://additivism.org/cookbook)
+
 - [Pinar Yoldas](https://www.dezeen.com/2018/09/28/designer-babies-genetically-modified-istanbul-design-biennial-pinar-yoldas/)  
 - [Morehshin Allahyari](http://www.morehshin.com)
+- [Chris Coleman](http://digitalcoleman.com/Secure-Shell-Copy-Series)
 - [Birch Cooper](http://birchcooper.net)
 - Addie Wagenknect, [Liberator Vases](http://www.placesiveneverbeen.com/details/liberator-vases)
 - [Kai Franz](http://www.kaifranz.de)

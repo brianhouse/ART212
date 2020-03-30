@@ -167,7 +167,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 
 #### Tuesday 3/17
 - Survey presentations 7
-- <!--[Discussion](https://docs.google.com/document/d/1_j-3PaXcW_vF5sKd5eZ5EwFJfHpv_7f7TUifgRpYhus/edit?usp=sharing)-->
+<!-- - [Discussion](https://docs.google.com/document/d/1_j-3PaXcW_vF5sKd5eZ5EwFJfHpv_7f7TUifgRpYhus/edit?usp=sharing)-->
 Post comments on Slack: Morehshin Allahyari and Daniel Rouke, [The 3D Additivist Manifesto](https://additivism.org/manifesto)
 - Work time
 
@@ -223,11 +223,13 @@ Post comments on Slack: Florian Cramer, "[What is Post-Digital?](reading/kramer_
 #### Tuesday 4/28
 
 #### Thursday 4/30
-- Project 4: check-in 3
+<!-- - Project 4: check-in 3 -->
+- Project 4: documentation draft due
 
 
 ### Exam Week
 
+- Final documentation due
 
-#### Wednesday 5/6 18:00–21:00
-- Work installed in Fields lobby, final crit
+<!-- #### Wednesday 5/6 18:00–21:00
+- Work installed in Fields lobby, final crit -->
