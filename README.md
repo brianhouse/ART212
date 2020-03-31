@@ -211,7 +211,7 @@ Post comments on Slack: Jennifer Gabrys, "[Digital Rubbish](reading/gabrys_digit
 ### Week 13
 
 #### Tuesday 4/21
-- <!-- [Discussion](https://docs.google.com/document/d/1j1exfnm-Qo00sElo26Voz9Co8yqyUc1Z4vij_4ImUG4/edit?usp=sharing) -->
+<!-- - [Discussion](https://docs.google.com/document/d/1j1exfnm-Qo00sElo26Voz9Co8yqyUc1Z4vij_4ImUG4/edit?usp=sharing) -->
 Post comments on Slack: Florian Cramer, "[What is Post-Digital?](reading/kramer_post_digital.pdf)"
 
 #### Thursday 4/23
