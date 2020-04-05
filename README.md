@@ -195,36 +195,38 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 - Project 4: [Hybrid Worlds](assignments/4_hybrid_worlds/description.md)
 
 #### Thursday 4/9
-- Project 4: proposals due
+- Remaining 3D crits
+- Project 4: post ideas to Slack and discussion on Zoom (time permitting)
 
 
 ### Week 12
 
 #### Tuesday 4/14
+- Project 4 proposals due: slides posted to Slack and presentations on Zoom
+
+#### Thursday 4/16
 <!-- [Discussion](https://docs.google.com/document/d/1ZsXtFB8r3XGa9drIvQqxLJQPNl88PjXJYbWcNF30b84/edit?usp=sharing)-->
 - Post comments on Slack: Jennifer Gabrys, "[Digital Rubbish](reading/gabrys_digital_rubbish.pdf)"
 
-#### Thursday 4/16
-- Project 4: check-in 1
 
 
 ### Week 13
 
 #### Tuesday 4/21
-<!-- - [Discussion](https://docs.google.com/document/d/1j1exfnm-Qo00sElo26Voz9Co8yqyUc1Z4vij_4ImUG4/edit?usp=sharing) -->
-- Post comments on Slack: Florian Cramer, "[What is Post-Digital?](reading/kramer_post_digital.pdf)"
+- Project 4 check-in #1 on Zoom
 
 #### Thursday 4/23
-- Project 4: check-in 2
+<!-- - [Discussion](https://docs.google.com/document/d/1j1exfnm-Qo00sElo26Voz9Co8yqyUc1Z4vij_4ImUG4/edit?usp=sharing) -->
+- Post comments on Slack: Florian Cramer, "[What is Post-Digital?](reading/kramer_post_digital.pdf)"
 
 
 ### Week 14
 
 #### Tuesday 4/28
+- Project 4 check-in #2 on Zoom
 
 #### Thursday 4/30
-<!-- - Project 4: check-in 3 -->
-- Project 4: documentation draft due
+- Project 4: draft of documentation video due
 
 
 ### Exam Week

@@ -15,9 +15,14 @@ The final deliverable for your project will consist of a title, 3-sentence artis
 Your video should be uploaded to Vimeo with your title and description with a link posted to Slack. We will put these together on a website for a virtual final exhibition.
 
 Schedule:
-- Tuesday 4/7: discuss ideas
-- Thursday 4/9: proposal slides posted to Slack and presented on Zoom
-- Thursday 4/16: check-in presentations on Zoom
+Please refer to the syllabus
+
+~~- Tuesday 4/7: discuss ideas~~
+~~- Thursday 4/9: proposal slides posted to Slack and presented on Zoom~~
+~~- Thursday 4/16: check-in presentations on Zoom~~
+
+- Thursday 4/9: discuss ideas
+- Tuesday 4/14: proposal slides posted to Slack and presented on Zoom
 - Thursday 4/23: check-in presentations on Zoom
 - Thursday 4/30: documentation draft due
 - Exam Week: final documentation due
