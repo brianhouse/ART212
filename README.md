@@ -186,11 +186,10 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 #### Thursday 4/2
 - Project 3: crit
 
-
+<!--
 ### Week 11
 
 #### Tuesday 4/7
-<!-- [Discussion](https://docs.google.com/document/d/1I7eHP2E0OTC57RZlWdtxL7lPDjsV1EIrvOK0-tnwQSo/edit?usp=sharing)-->
 - Post comments on Slack: Lisa Parks, "[Mediating Animal-Infrastructure Relations](reading/parks_animal_infrastructure.pdf)"
 - Project 4: [Hybrid Worlds](assignments/4_hybrid_worlds/description.md)
 
@@ -205,7 +204,6 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 - Project 4 proposals due: slides posted to Slack and presentations on Zoom
 
 #### Thursday 4/16
-<!-- [Discussion](https://docs.google.com/document/d/1ZsXtFB8r3XGa9drIvQqxLJQPNl88PjXJYbWcNF30b84/edit?usp=sharing)-->
 - Post comments on Slack: Jennifer Gabrys, "[Digital Rubbish](reading/gabrys_digital_rubbish.pdf)"
 
 
@@ -216,7 +214,6 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 - Project 4 check-in #1 on Zoom
 
 #### Thursday 4/23
-<!-- - [Discussion](https://docs.google.com/document/d/1j1exfnm-Qo00sElo26Voz9Co8yqyUc1Z4vij_4ImUG4/edit?usp=sharing) -->
 - Post comments on Slack: Florian Cramer, "[What is Post-Digital?](reading/kramer_post_digital.pdf)"
 
 
@@ -231,7 +228,43 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 
 ### Exam Week
 
-- Final documentation due
+- Final documentation due -->
 
 <!-- #### Wednesday 5/6 18:00–21:00
 - Work installed in Fields lobby, final crit -->
+
+### Remaing weeks:
+
+#### Tuesday 4/7:
+- Post comments on Slack: Lisa Parks, "[Mediating Animal-Infrastructure Relations](reading/parks_animal_infrastructure.pdf)"
+- Read [project #4 description](assignments/4_hybrid_worlds/description.md) and start thinking
+- No Zoom meeting
+
+#### Thursday 4/9:
+- Post project #4 ideas to Slack
+- Zoom: Remaining 3D crits (and project discussion if time permits)
+
+#### Tuesday 4/14:
+- Project proposal slides posted to Slack
+- Zoom: discuss project proposals
+
+#### Thursday 4/16:
+- Post comments on Slack: Jennifer Gabrys, "[Digital Rubbish](reading/gabrys_digital_rubbish.pdf)"
+- Zoom: reading discussion
+
+#### Tuesday 4/21:
+- Zoom: project check-in #1
+
+#### Thursday 4/23:
+- Post comments on Slack: Florian Cramer, "[What is Post-Digital?](reading/kramer_post_digital.pdf)"
+- Zoom: reading discussion
+
+#### Tuesday 4/28:
+- Zoom: project check-in #2
+
+#### Thursday 4/30:
+- Project 4: draft of documentation video due (Vimeo link posted to Slack)
+- Give feedback on Slack
+
+#### Exam Week
+- Final documentation due
