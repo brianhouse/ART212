@@ -195,8 +195,8 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 - Project 4: [Hybrid Worlds](assignments/4_hybrid_worlds/description.md)
 
 #### Thursday 4/9
-- Remaining 3D crits
-- Project 4: post ideas to Slack and discussion on Zoom (time permitting)
+- Remaining 3D crits on Zoom
+- Project 4: post ideas to Slack (and discussion on Zoom if time permits)
 
 
 ### Week 12
