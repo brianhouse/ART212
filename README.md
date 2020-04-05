@@ -233,7 +233,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 <!-- #### Wednesday 5/6 18:00–21:00
 - Work installed in Fields lobby, final crit -->
 
-### Remaing weeks:
+### Remaining weeks:
 
 #### Tuesday 4/7:
 - Post comments on Slack: Lisa Parks, "[Mediating Animal-Infrastructure Relations](reading/parks_animal_infrastructure.pdf)"
