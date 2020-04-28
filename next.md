@@ -49,3 +49,8 @@ Atoms
 - the Chun wasn't great. choose a newer one? and swap with Anatomy of an AI?
 - Mattern was great
 - might need to have a participation grade, depending on how this is structured
+- add Gabrys, maybe "sensing an experimental forest"?
+- shit, what about Parikka? I feel like he's really accessible in a good way (summarizing discourse too)
+///
+
+templates for proposals, my work maybe
