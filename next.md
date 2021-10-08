@@ -54,3 +54,13 @@ Atoms
 ///
 
 templates for proposals, my work maybe
+
+
+you have to have the postscript in there. it's too classic.
+
+
+////////
+
+so... firmata really works. could use that straight to python for processing? does it work over wireless? pair with an accelerometer?
+
+point being, creating a hardware interface with the glowforge and controls is cool, the question is what it controls (and why) on the processing side

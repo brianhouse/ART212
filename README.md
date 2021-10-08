@@ -1,23 +1,23 @@
 # ART 212: DIGITAL MEDIA II
 
-Tuesday / Thursday 8:50–11:20, Fields 205  
-[https://github.com/brianhouse/ART212](https://github.com/brianhouse/ART212)  
+Monday / Wednesday 12:40–3:10, Fields 205  
+Course materials on [Google Classroom](https://classroom.google.com/c/NDA5NzQ5Njc5ODk4)
 
 Prof. Brian House (he/him), [brianhouse@lclark.edu](mailto:brianhouse@lclark.edu)  
-Office hours MTW 11:30–12:30
+Office hours TBD
 
 
 ## Course Description
-Hybrid worlds studio. Further development of digital media techniques with an emphasis beyond the screen: sensors and data collection, 3D fabrication, and automated systems. Seminar-style reading and discussion will center on conceptual issues arising from everyday life in a digitally mediated society. Students will work on individual projects for studio critique.
+Hybrid worlds studio. Further development of digital media techniques with an emphasis beyond the screen: automated systems, microcontrollers and sensors, and 3D fabrication. Seminar-style reading and discussion will center on conceptual issues arising from everyday life in a digitally mediated society. Students will work on individual projects for studio critique.
 
 Prerequisites: ART 112
 
 #### Objectives:
 - Cultivate an ability to think in terms of systems that span the physical and the digital
 - Understand the ways in which digital tools participate in contemporary culture
-- Survey contemporary artists working critically with code, data, and 3D fabrication
+- Survey contemporary artists working critically with code, physical computing, and 3D fabrication
 - Develop a repertoire of digital methods for studio practice
-- Increase proficiency programming with [p5.js](https://p5js.org), [node](https://nodejs.org), and [Arduino](https://www.arduino.cc)
+- Increase programming proficiency with Python and learn basic skills in electronics and 3D printing
 
 
 ## Assignments and Grading
@@ -26,25 +26,22 @@ Prerequisites: ART 112
 This course is built around four projects completed over the course of the semester in the digital media studio, which will be [critiqued by the class](resources/crit_guidelines.md). While there are technical and conceptual parameters for each project, you are expected to be experimental and to develop a personal artistic trajectory. A title and [3-sentence description](resources/description_guidelines.md) must be included with each project. Cumulatively, the projects account for 90% of your final grade, with the final project given double weight. As work is evaluated via in-class crit, no late work can be accepted.
 
 ### Survey presentations
-[Each student will give a 10-minute presentations on an artist working in digital media](https://docs.google.com/spreadsheets/d/1HHoVP1O-VfYFJsBo8tri8cBQmJLKuMkgraGmMaQAIxU/edit?usp=sharing). These presentations, which should be organized in slides, should give an overview of the context in which the artist is working and then precede to show one or two artworks in detail. You should comment thoughtfully on how the work relates to the themes discussed in class as well as to your own artistic practices. Students will choose artists on which present [from a list](resources/artists.md) or propose their own for instructor approval. These presentations make up 10% of your final grade.
+Each student will give a 10-minute presentation on an artist working in digital media. These presentations, which must be organized in slides, should give an overview of the context in which the artist is working and then precede to show one or two artworks in detail. Students should comment thoughtfully on how the work relates to the themes discussed in class as well as to their own practices. The presentation should end with a couple of questions posed to the class for discussion that relate to the technique or themes of the artist's work. Students will [sign up to present](https://docs.google.com/spreadsheets/d/1HHoVP1O-VfYFJsBo8tri8cBQmJLKuMkgraGmMaQAIxU/edit?usp=sharing) on an artist chosen from [a list](resources/artists.md) on a first-come, first-served basis. These presentations make up 10% of your final grade.
 
 ### Reading
 Each week we will read critical texts that situate digital media in society and its impact on the material world. These will are provided through the links on this syllabus. Reading is due on the day where the text is listed; a reading response must be submitted before class on the provided Google Doc. This can be a question raised by the text, a critique of it, a link to related artistic work, or some other brief comment which can stimulate our discussion.
-
-### Attendance and participation
-You must attend and thoughtfully participate in every class. After the first absence, every absence will result in a reduction of your final grade by 2.5%. Being late twice will be treated as the equivalent of one absence. **Use of social media in class twice will also be treated as the equivalent of one absence.**
 
 
 ## Policies
 
 ### Values
-It is my intent to lead a course that serves students from diverse backgrounds and perspectives, and that our varied life experiences may be a common benefit. Content in this studio art course may at times challenge our aethestic and/or ethical values; free exchange of ideas and critique is encouraged and expected, but harassment and disrespect will not be tolerated. During class discussion and critique we aim to be mindful and generous in our interactions and to make everyone feel heard.
+It is my intent to lead a course that serves students from diverse backgrounds and perspectives, and that our varied life experiences may be a common benefit. Content in this studio art course may at times challenge our aesthetic and/or ethical values; free exchange of ideas and critique is encouraged and expected, but harassment and disrespect will not be tolerated. During class discussion and critique we aim to be mindful and generous in our interactions and to make everyone feel heard.
 
 ### Dynamic Syllabus
-This is a new course, and as such is highly subject to change. The version of this syllabus posted online will be updated periodically and is the definitive version. It is your responsibility to consult it and stay up-to-date.
+The version of this syllabus posted online will be updated periodically and is the definitive version. It is your responsibility to consult it and stay up-to-date.
 
 ### Laptop Use
-Work for this course should be done on a personal laptop—recent hardware and MacOS is preferred. If you do not have access to a laptop, email me and we will make arrangements for you to borrow a machine.
+Work for this course should be done on a personal laptop—recent hardware and MacOS is preferred (Windows and Linux are also fine; Chromebooks will not work). If you do not have access to a laptop, email me and we will make arrangements for you to borrow a machine.
 
 ### Open Studio
 All students must complete their own work but are encouraged to help each other. To facilitate collective learning, students are encouraged to work in Fields 205.
@@ -58,10 +55,10 @@ If you have a disability that may impact your academic performance, you may requ
 ### Academic Integrity
 Please refer to the policy on [Academic Integrity](https://docs.lclark.edu/undergraduate/policiesprocedures/academicintegrity/) available on the College's 'Policies and Procedures' webpage. The work submitted in Digital Media courses must be conceived of and programmed by you. While learning from and incorporating code from other sources is a natural part of programming (e.g. [Stack Overflow](https://stackoverflow.com/) and [OpenProcessing](https://www.openprocessing.org)), you must demonstrate understanding and intentionality in your work, and you may not copy and paste others' code wholesale. Always credit your inspirations and be confident in your original concepts.
 
-### Land Acknowledgement
-The Fields Center for Visual Arts stands on the ancestral homelands of the Multnomah, Kathlamet, Clackamas, Tumwater, Watalala bands of the Chinook, Tualatin Kalapuya, and other indigenous nations of the Columbia River. It is important to acknowledge the original inhabitants of this place and recognize that we are here because of the sacrifices forced upon them. As artists working in Digital Media, we must be aware of and resist the many ways computation capitalizes upon and perpetuates violence toward marginalized people.
-##
-
+### Settler Responsibility
+The Fields Art Center is built on land belonging to the Multnomah, Kathlamet, Clackamas, Tumwater, Watalala bands of the Chinook, the Tualatin Kalapuya, and other indigenous nations of the Columbia River, and we are here because of the sacrifices forced upon them. Furthermore, we are at an institution named after white colonizers in a city with a racist history. As artists working in Digital Media, we must be aware of and resist the many ways computation capitalizes upon and perpetuates violence toward marginalized people.
+&nbsp;  
+&nbsp;   
 
 ## Schedule
 
@@ -105,6 +102,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 #### Tuesday 2/11
 - Survey presentations 2
 - [Discussion](https://docs.google.com/document/d/1ISR5T8gtLMqLQjKOVEbnAS01WLgbMYkMUQMVmQe2NI0/edit?usp=sharing): Wendy Chun, "[The Enduring Ephemeral](reading/chun_enduring_ephemeral.pdf)"
+** replace with Software
 - Work time
 
 #### Thursday 2/13
@@ -186,7 +184,7 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 #### Thursday 4/2
 - Project 3: crit
 
-<!--
+
 ### Week 11
 
 #### Tuesday 4/7
@@ -228,12 +226,12 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 
 ### Exam Week
 
-- Final documentation due -->
+- Final documentation due
 
-<!-- #### Wednesday 5/6 18:00–21:00
-- Work installed in Fields lobby, final crit -->
+#### Wednesday 5/6 18:00–21:00
+- Work installed in Fields lobby, final crit
 
-### Remaining weeks:
+<!-- ### Remaining weeks:
 
 #### Tuesday 4/7:
 - Post comments on Slack: Lisa Parks, "[Mediating Animal-Infrastructure Relations](reading/parks_animal_infrastructure.pdf)"
@@ -271,4 +269,4 @@ The Fields Center for Visual Arts stands on the ancestral homelands of the Multn
 - Zoom: Final crit (watch videos as a group)
 
 #### Exam week
-- Launch website
+- Launch website -->
