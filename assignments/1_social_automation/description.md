@@ -85,7 +85,7 @@ Click next, and you'll be shown a screen with some long key strings. We'll need 
 </p>
 
 <p align="center">
-  <img src="img/sketch_keys.png" width=500 />
+  <img src="img/sketch_keys_.png" width=500 />
 </p>
 
 
@@ -113,7 +113,7 @@ Click "Generate":
 </p>
 
 <p align="center">
-  <img src="img/sketch_access_token.png" width=600 />
+  <img src="img/sketch_access_token_.png" width=600 />
 </p>
 
 Once you've copied and pasted these strings into new variables in your sketch, go ahead and click "Yes, I saved them."
@@ -125,6 +125,7 @@ All of these settings and "tokens" and "secrets" are security measures to make s
 
 Now that we have everything set up "phew" we're ready to begin coding.
 
+in tutorial first do post, then search, then retweet, then reply, then follow, then timeline, then post and download images
 
 
 ## References

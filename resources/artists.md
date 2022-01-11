@@ -77,7 +77,6 @@
 - Kyle McDonald
 - Blast Theory
 - Reuben Margolin
-- LIA
 - Ryoji Ikeda
 - Taeyoon Choi
 - Andrea Polli
@@ -96,3 +95,7 @@
 - Josh Begley
 - Timo Toots
 - Revita Cohen and Tuur Van Balen
+- Robert Henke
+- Steve Mann
+- Philip Beesley
+- Karolina Sobeka
