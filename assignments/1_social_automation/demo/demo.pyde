@@ -4,10 +4,10 @@ from twitter_functions import *
 # @infr4s0und
 # l;kahds[982h4uvdfh
 
-api_key = "j6VkHZsqkTzll0cnz9zfzNJtm"
-api_key_secret = "7FXWhbilB1NSVksvj9V7iirhn0pHcLLuzSvLpGjoYTw8KAyB4t"
-access_token = "1446526046971461634-pYlDkQD4cLkEChDPINgDSsU7ltvvH4"
-access_token_secret = "GodS4MDoFHYwTHgfnRvN18jNvbJDSyfVxfpyoa612ltuM"
+api_key = ""
+api_key_secret = ""
+access_token = ""
+access_token_secret = ""
 
 login(api_key, api_key_secret, access_token, access_token_secret)
 
