@@ -18,32 +18,32 @@ Additionally, we're going to need to need to add some modules to Python in order
 
 To do this, open a terminal window. At the prompt ($), type:
 ```
-$ python -m pip install TwitterAPI
+$ python -m pip install git+https://github.com/brianhouse/TwitterAPI --user
 ```
 You should see a stream of output as your computer downloads and installs various libraries. This should conclude with the line:
 ```
-Successfully installed TwitterAPI-2.7.5
+Successfully installed TwitterAPI-2.7.11
 ```
 If not, get help, and we'll troubleshoot.
 
-In addition, we're going to add some files to our Processing sketch before we begin. First, open a new sketch, and save it. Then, to add files, remember that you can use Processing's "Add File..." menu option:
+Finally, we're going to add some files to our Processing sketch before we begin. First, open a new sketch, and save it. Then, to add files, remember that you can use Processing's "Add File..." menu option:
 <p align="center">
   <img src="https://github.com/brianhouse/ART112/blob/master/units/5_recombination/code/1_add_file.png" width=200 />
 </p>
 
 The first file to add is some code that I've written to help us get up and running faster. Download this and add it to your sketch:
-- [twitter_functions.py](twitter_functions.py)
+- [twitter_functions.py](demo/twitter_functions.py)
 
-Secondly, we're going to be using text handling techniques similar to those from our "Recombination" unit in Digital Media I (review that [here](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/lecture.md) if you need a reminder about strings and lists). To use these, we're going to want to have some word lists on hand:
+Secondly, we're going to be using text handling techniques similar to those from our "Recombination" unit in Digital Media I (review that [here](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/code.md) if you need a reminder about strings and lists). To use these, we're going to want to have some word lists on hand:
 
 
-- [list_stop_words.txt](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/list_stop_words.txt)
-- [list_adjectives.txt](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/list_adjectives.txt)
-- [list_interjections.txt](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/list_interjections.txt)
-- [list_nouns.txt](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/list_nouns.txt)
-- [list_prepositions.txt](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/list_prepositions.txt)
-- [list_pronouns.txt](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/list_pronouns.txt)
-- [list_verbs.txt](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/list_verbs.txt)
+- [list_stop_words.txt](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/word_tools/list_stop_words.txt)
+- [list_adjectives.txt](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/word_tools/list_adjectives.txt)
+- [list_interjections.txt](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/word_tools/list_interjections.txt)
+- [list_nouns.txt](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/word_tools/list_nouns.txt)
+- [list_prepositions.txt](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/word_tools/list_prepositions.txt)
+- [list_pronouns.txt](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/word_tools/list_pronouns.txt)
+- [list_verbs.txt](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/word_tools/list_verbs.txt)
 
 Download and add each of these files to your sketch.
 
@@ -64,7 +64,7 @@ If you get an error instead, get help and we'll figure it out.
 
 You'll need a [Twitter](https://twitter.com) account (even if you already have one, create a new one for this project). Sign up using your lclark.edu email address by clicking the "Sign up with Google" option. The Twitter handle you choose will be the name of your bot. Choose something now, but don't worry, you can change it later.
 
-After you create an account, send me the handle so I can add you to our developer team. You should then receive an invite in your email. Accept the invite—you'll have to agree to terms and conditions, and then you'll be taken to the Twitter developer portal.
+After you create an account, send me the handle so I can add you to our developer team. You should then receive an invite in your email. Accept the invite—you'll have to agree to terms and conditions, and then you'll be taken to the [Twitter developer portal](https://developer.twitter.com/en/portal/dashboard).
 
 Next, you'll create a "Standalone App":
 
