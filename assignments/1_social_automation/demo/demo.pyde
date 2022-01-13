@@ -1,36 +1,42 @@
-import time
-from twitter_functions import *
+from twitter_helper import *
 
-# @infr4s0und
-# l;kahds[982h4uvdfh
+init(SimpleTweet(this))
+api_key("V75SFbPLj9Oe9f0d8wFIq6X9G");
+api_key_secret("SdTri0TMiP3fV0tDsVO1GF5tI3ygIyixdXDMrzPGUg2ElrmYen");
+access_token("1446526046971461634-FsEvD5O9jLT3ZYE3mU6YiR3Hvdrbmq");
+access_token_secret("S4ZV11hA0fFz3affNbsV9kJkYR5UmVnBcvE9RaTSVsmeu");
 
-api_key = "j6VkHZsqkTzll0cnz9zfzNJtm"
-api_key_secret = "7FXWhbilB1NSVksvj9V7iirhn0pHcLLuzSvLpGjoYTw8KAyB4t"
-access_token = "1446526046971461634-pYlDkQD4cLkEChDPINgDSsU7ltvvH4"
-access_token_secret = "GodS4MDoFHYwTHgfnRvN18jNvbJDSyfVxfpyoa612ltuM"
+size(400, 400)
 
-login(api_key, api_key_secret, access_token, access_token_secret)
+background(255)
+fill(255, 0, 0)
+for i in range(10):
+    square(random(width), random(height), random(200))
 
-# tweet = post("%s #test #teaching https://lclark.edu" % time.time())
+post_image("another")
+
+
+# tweets = search("fart")
+
+# print(tweets[0])
+
+# list_methods()
+
+# tweet = get_tweet("1432824803761610752")
 # print(tweet)
 
-# tweet = {'id': '1446620831606403072', 'text': '@infr4s0und Thank you', 'time': 'Fri Oct 08 23:37:37 +0000 2021', 'user': 'infr4s0und', 'user_name': 'infr4s0und', 'user_follows': 2, 'user_followers': 0, 'hashtags': [], 'mentions': ['infr4s0und'], 'links': [], 'likes': 0, 'retweets': 0, 'is_quote': False, 'url': 'https://twitter.com/infr4s0und/statuses/1446620831606403072'}
+# post("outside")
 
-# res = reply(tweet, "You're welcome! ish.")
-# print(res)
+# tweet = unretweet(tweet)
+# print(tweet)
 
-# tweet = {'id': '1481030155841773578', 'url': 'https://twitter.com/POTUS/status/1481030155841773578'}
-#
-# res = quote_post("good point", tweet)
-# print(res)
+# unfollow("@h0use")
 
-# tweets = timeline()
+# unlike(tweet)
+
+# tweets = mentions()
 # for tweet in tweets:
-#     tprint(tweet)
+#     print(tweet)
 
-tweet = get_tweet("1480957453260836866")
-tprint(tweet)
-
-# tweets = search("sound")
-# for tweet in tweets:
-#     tprint(tweet)
+# t = quote(tweet, "this is the right idea")
+# print(t)

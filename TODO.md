@@ -2,12 +2,9 @@
 
 ### discussion
 
-The schedule is not bad.
 4 main units. more crit, more iterations, more proposals and things like that.
 critical reading.
 
-
-Previously, we had:
 - Social automation, via Twitter
 - Poetic Sensors with Arduino input
 - Real digital objects, 3D printing
@@ -15,11 +12,30 @@ Previously, we had:
 
 So basically splitting the course into networks, pcomp, and 3D. That's not terrible.
 
-The question is whether this should go all pcomp.
+but could nix the 3D printing and do output. still have to keep Twitter because of the delayed start anyway.
 
-I'm not actually sure I'm prepared for that. What about just adding a unit that does output as well? I mean, we can grandfather this in.
+
+poetic sensors needs a processing template (and the p5 template)
+
+- port to micropython?
+
+
+Then do inputs connected to outputs
+
+can the data vis all be within processing.py?
+
+3D could be a separate 2-week mini unit
+
+could nix the environmental data question. except that's cool.
+
+
+### questions
+- twitter all within the IDE
+- data vis all within python
+- micropython IDE?
 
 ### pcomp futures
+
 
 inputs
 - various sensors
@@ -35,10 +51,16 @@ what's in-between?
 - delays
 - state machines (nonlinear-narrative)
 
-need an intro of basic electronics info?
+need an intro of basic electronics info? maybe no.
 
-could nix the 3D printing and do output. still have to keep Twitter because of the delayed start anyway.
 
 ### code
 
 ok, so see if you can put things into the Processing IDE. that would be insane, but it could work.
+
+what does this get me, other than a pain in the ass?
+
+no terminal. ability for people to generate and put in images.
+
+
+https://randomnerdtutorials.com/esp32-touch-pins-arduino-ide/
