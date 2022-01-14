@@ -5,7 +5,7 @@ import twitter4j.Status as Status
 import twitter4j.StatusUpdate as StatusUpdate
 import twitter4j.TwitterException as TwitterException
 import twitter4j.User as User
-import json
+import os, json, time
 from random import choice as rand_choice
 
 
@@ -15,8 +15,15 @@ user = None
 def init(o):
     global api, user
     api = o
+    if os.path.exists("credentials.json"):
+        with open("credentials.json") as f:
+            creds = json.loads(f.read())
+            api_key(creds['api_key'])
+            api_key_secret(creds['api_key_secret'])
+            access_token(creds['access_token'])
+            access_token_secret(creds['access_token_secret'])    
     print("Successfully loaded Twitter API")
-    
+        
 def api_key(s):
     api.setOAuthConsumerKey(s)
 

@@ -393,20 +393,37 @@ link = choice(links)
 post("People get ready: " + link)
 ```
 
-### Rate Limiting and Time
+### Rate Limiting
 
 Rather than choosing one link and making one tweet in the previous example, why not use a loop and tweet every link? We _could_ do that. But posting too many things at once is usually a bad idea with Twitter. For one thing, that's not how a person would tweet, and we want our bots to reasonably approximate a human user. But secondly, there is also something called rate limiting.
 
+Unless we pay a lot of money, Twitter only allows a certain amount of calls to their API within a given amount of time. The policy is explained [here](https://developer.twitter.com/en/docs/twitter-api/v1/rate-limits). So we have to be judicious how many times we post or search. It's usually not a problem, but if we have things within a loop, it quickly can be.
 
-Rate limiting
-https://developer.twitter.com/en/docs/twitter-api/v1/rate-limits
-
-### Putting it together
-
-Here's a bot that follows people that are interested in douglas fir trees, for example. We'd first do a search for "douglas fir", and then follow all of those people.
+The general rule is this: **don't use Twitter functions within a loop**.
 
 
+### Time and Automation
 
+So far, all of our examples have run once when we run the sketch. But that's not how a bot works—it needs to run continuously as an automatic process.
+
+To do this, first we'll put all of our code within a function, like this:
+
+```py
+from twitter_helper import *
+init(SimpleTweet(this))
+
+api_key("XXXXXXXXXXXXXXXXXXXXXXXXX")
+api_key_secret("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+access_token("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+access_token_secret("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+
+def run():
+    size(400, 400)
+    for i in range(20):
+        color(random(255), random(255), random(255))
+        square(random(400), random(400), random(200))    
+    post_image("A new generative drawing")
+```
 
 ## References
 
