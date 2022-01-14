@@ -86,7 +86,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 - Reading response due for discussion: [Ingrid Burrington, "Effortless Slippage"](https://www.e-flux.com/architecture/dimensions-of-citizenship/178279/effortless-slippage/)
 - Project 0: crit
 - Project 1: [Social Automation](assignments/1_social_automation/description.md)
-- Workshop: Twitter API
+- Discussion and workshop: Twitter
 
 #### Wednesday 1/26 — Fields 205
 - Project 1: proposals due
