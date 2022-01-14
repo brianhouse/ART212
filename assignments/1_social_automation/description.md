@@ -417,13 +417,47 @@ api_key_secret("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 access_token("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 access_token_secret("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
+size(400, 400) # size() stays outside the function
+
 def run():
-    size(400, 400)
+    background(255)
     for i in range(20):
         color(random(255), random(255), random(255))
         square(random(400), random(400), random(200))    
     post_image("A new generative drawing")
 ```
+
+Notice that `size()` stays outside of the function, because Processing only lets us call it once, and that we're using `background()` to clear the canvas every time we use this function.
+
+Now, we're going to add the mechanism to put this on a timer. Remember when I said not to call Twitter functions inside of a loop? This is the only exception.
+
+```py
+from twitter_helper import *
+init(SimpleTweet(this))
+
+api_key("XXXXXXXXXXXXXXXXXXXXXXXXX")
+api_key_secret("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+access_token("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+access_token_secret("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+
+size(400, 400) # size() stays outside the function
+
+def run():
+    background(255)
+    for i in range(20):
+        color(random(255), random(255), random(255))
+        square(random(400), random(400), random(200))    
+    post_image("A new generative drawing")
+
+while True:
+    run()
+    time.sleep(10*60) # 10 minutes * 60 seconds per minute
+```
+We haven't seen `while` before, but it's another way of constructing a loop. `while True` is just a quick way of writing "infinite loop". So anything in this code block is going to repeat forever (or until you stop the sketch).
+
+`time.sleep()` pauses the code for a given number of seconds. In this case, we setting it to 10 times 60, or 600, which is 10 minutes. So every 10 minutes, `run()` will be called and this sketch will post an image to Twitter.
+
+And there it is. That's how you make an automated Twitter bot.
 
 ## References
 

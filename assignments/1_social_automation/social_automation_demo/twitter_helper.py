@@ -11,30 +11,36 @@ from random import choice as rand_choice
 
 api = None
 user = None
+creds = None
+if os.path.exists("data/credentials.json"):
+    with open("credentials.json") as f:
+        creds = json.loads(f.read())
 
 def init(o):
     global api, user
     api = o
-    if os.path.exists("credentials.json"):
-        with open("credentials.json") as f:
-            creds = json.loads(f.read())
-            api_key(creds['api_key'])
-            api_key_secret(creds['api_key_secret'])
-            access_token(creds['access_token'])
-            access_token_secret(creds['access_token_secret'])    
+    if creds:
+        api.setOAuthConsumerKey(creds['api_key'])
+        api.setOAuthConsumerSecret(creds['api_key_secret'])
+        api.setOAuthAccessToken(creds['access_token'])
+        api.setOAuthAccessTokenSecret(creds['access_token_secret'])    
     print("Successfully loaded Twitter API")
         
 def api_key(s):
-    api.setOAuthConsumerKey(s)
+    if not creds:
+        api.setOAuthConsumerKey(s)
 
 def api_key_secret(s):
-    api.setOAuthConsumerSecret(s)
+    if not creds:
+        api.setOAuthConsumerSecret(s)
     
 def access_token(s):
-    api.setOAuthAccessToken(s)
+    if not creds:
+        api.setOAuthAccessToken(s)
     
 def access_token_secret(s):
-    api.setOAuthAccessTokenSecret(s)
+    if not creds:
+        api.setOAuthAccessTokenSecret(s)
 
 def get_tweet(tweet_id):
     try:
@@ -186,9 +192,8 @@ def search(term):
     
 def format_tweet(data):
     # https://twitter4j.org/javadoc/twitter4j/Status.html
-    if (data is None) or (type(data) is not dict) or ('id' not in data):
-        print('{}')
-        return
+    if data is None:
+        return {}
     try:
         tweet = {}
         tweet['id'] = str(data.getId())

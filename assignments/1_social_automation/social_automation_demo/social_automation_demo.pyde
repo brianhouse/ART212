@@ -8,11 +8,12 @@ access_token_secret("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 size(400, 400)
 
-
 def run():
     for i in range(20):
         color(random(255), random(255), random(255))
         square(random(400), random(400), random(200))    
     post_image("A new generative drawing")
-    
-# run()
+        
+while True:
+    run()
+    time.sleep(10*60) # 10 minutes * 60 seconds per minute
