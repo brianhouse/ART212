@@ -6,107 +6,158 @@ import twitter4j.StatusUpdate as StatusUpdate
 import twitter4j.TwitterException as TwitterException
 import twitter4j.User as User
 import json
-from random import choice
+from random import choice as rand_choice
 
 
 api = None
+user = None
 
 def init(o):
-    global api
+    global api, user
     api = o
     print("Successfully loaded Twitter API")
     
 def api_key(s):
-    api.setOAuthConsumerKey(s);
+    api.setOAuthConsumerKey(s)
 
 def api_key_secret(s):
-    api.setOAuthConsumerSecret(s);
+    api.setOAuthConsumerSecret(s)
     
 def access_token(s):
-    api.setOAuthAccessToken(s);
+    api.setOAuthAccessToken(s)
     
 def access_token_secret(s):
-    api.setOAuthAccessTokenSecret(s);
+    api.setOAuthAccessTokenSecret(s)
 
 def get_tweet(tweet_id):
-    tweets = api.twitter.lookup(int(tweet_id))
-    return format_tweet(tweets[0]) if tweets else None
+    try:
+        tweets = api.twitter.lookup(int(tweet_id))
+    except TwitterException as e:        
+        print("Error: " + e.getErrorMessage())
+        return None
+    else:
+        return format_tweet(tweets[0]) if tweets else None
 
 def post(s):
-    tweet = api.twitter.updateStatus(s)
-    print('Tweeted ' + str(tweet.getId()))
-    return format_tweet(tweet) if tweet else None
+    try:
+        tweet = api.twitter.updateStatus(s)
+    except TwitterException as e:        
+        print("Error: " + e.getErrorMessage())    
+    else:    
+        print("Tweeted " + str(tweet.getId()))
 
 def post_image(s):
-    tweet = api.tweetImage(get(), s)
-    return True
+    try:
+        tweet = api.tweetImage(get(), s)
+    except TwitterException as e:        
+        print("Error: " + e.getErrorMessage())
+    else:
+        print("Tweeted")
 
 def reply(tweet, s):
-    s = "@%s %s" % (tweet['user'], s)
-    update = StatusUpdate(s)
-    update.setInReplyToStatusId(int(tweet['id']))
-    tweet = api.twitter.updateStatus(update)
-    print('Replied ' + str(tweet.getId()))
-    return format_tweet(tweet) if tweet else None
+    if tweet is None:
+        return
+    try:
+        s = "@%s %s" % (tweet['user'], s)
+        update = StatusUpdate(s)
+        update.setInReplyToStatusId(int(tweet['id']))
+        tweet = api.twitter.updateStatus(update)
+    except TwitterException as e:        
+        print("Error: " + e.getErrorMessage())
+    else:
+        print("Tweeted " + str(tweet.getId()))
     
 def retweet(tweet):
-    tweet = api.twitter.retweetStatus(int(tweet['id']))
-    print('Retweeted ' + str(tweet.getId()))
-    return format_tweet(tweet) if tweet else None
+    try:
+        tweet = api.twitter.retweetStatus(int(tweet['id']))
+    except TwitterException as e:        
+        print("Error: " + e.getErrorMessage())
+    else:
+        print('Retweeted ' + str(tweet.getId()))
 
 def unretweet(tweet):
-    tweet = api.twitter.unRetweetStatus(int(tweet['id']))
-    print('Unretweeted ' + str(tweet.getId()))
-    return format_tweet(tweet) if tweet else None
+    try:
+        tweet = api.twitter.unRetweetStatus(int(tweet['id']))
+    except TwitterException as e:      
+        print("Error: " + e.getErrorMessage())
+    else:
+        print('Unretweeted ' + str(tweet.getId()))
     
 def follow(user):
-    result = api.twitter.createFriendship("@" + user.strip("@"))
-    print('Followed user @' + user)
-    return True
+    try:
+        result = api.twitter.createFriendship("@" + user.strip("@"))
+    except TwitterException as e:      
+        print("Error: " + e.getErrorMessage())    
+    else:
+        print('Followed user @' + user)
     
 def unfollow(user):
-    result = api.twitter.destroyFriendship("@" + user.strip("@"))
-    return True
+    try:
+        result = api.twitter.destroyFriendship("@" + user.strip("@"))
+    except TwitterException as e:      
+        print("Error: " + e.getErrorMessage())    
+    else:
+        print('Unfollowed user @' + user)        
 
 def like(tweet):
-    result = api.twitter.createFavorite(int(tweet['id']))
-    print('Liked ' + str(result.getId()))
-    return True 
+    try:
+        result = api.twitter.createFavorite(int(tweet['id']))
+    except TwitterException as e:      
+        print("Error: " + e.getErrorMessage()) 
+    else:   
+        print('Liked ' + str(result.getId())) 
 
 def unlike(tweet):
-    result = api.twitter.destroyFavorite(int(tweet['id']))
-    return True                                                                         
+    try:
+        result = api.twitter.destroyFavorite(int(tweet['id']))
+    except TwitterException as e:      
+        print("Error: " + e.getErrorMessage())
+    else:
+        print('Unliked ' + str(result.getId())) 
                                                                                                     
 def quote(tweet, s):
-    update = StatusUpdate(s)
-    update.setAttachmentUrl(tweet['url'])
-    tweet = api.twitter.updateStatus(update)
-    print('Quoted ' + str(tweet.getId()))    
-    return format_tweet(tweet) if tweet else None
+    try:
+        update = StatusUpdate(s)
+        update.setAttachmentUrl(tweet['url'])
+        tweet = api.twitter.updateStatus(update)
+    except TwitterException as e:        
+        print("Error: " + e.getErrorMessage())
+    else:        
+        print('Quoted ' + str(tweet.getId()))    
                                     
 def timeline():
-    tweets = api.twitter.getHomeTimeline()
-    tweets = [format_tweet(tweet) for tweet in tweets]
-    return tweets    
+    try:
+        tweets = api.twitter.getHomeTimeline()
+        tweets = [format_tweet(tweet) for tweet in tweets]
+    except TwitterException as e:        
+        print("Error: " + e.getErrorMessage())        
+        return []        
+    else:
+        return tweets    
 
 def mentions():
-    tweets = api.twitter.getMentionsTimeline()
-    tweets = [format_tweet(tweet) for tweet in tweets]
-    return tweets                                        
+    try:
+        tweets = api.twitter.getMentionsTimeline()
+        tweets = [format_tweet(tweet) for tweet in tweets]
+    except TwitterException as e:        
+        print("Error: " + e.getErrorMessage())                
+        return []    
+    else:
+        return tweets                                        
                       
-def followers():
-    friends = []
-    while True:
-        cur = -1
-        result = api.twitter.getFriendsIDs(cur)
-        print(result)
-        for id in result.getIDs():
-            friends.append(id)
-        # cur = result.getNextCursor()
-        # if result == 0:
-        #     break    
-        break
-    print(friends)                        
+# def get_followed():
+#     friends = []
+#     while True:
+#         cur = -1
+#         result = api.twitter.getFriendsIDs(cur)
+#         print(result)
+#         for id in result.getIDs():
+#             friends.append(int(id))
+#         cur = result.getNextCursor()
+#         if result == 0:
+#             break    
+#         break
+#     print(friends)                        
 
 def list_methods():
     for item in dir(api.twitter):
@@ -114,37 +165,55 @@ def list_methods():
 
 
 def search(term):
-    query = Query(term)
-    query.setCount(100)
-    tweets = api.twitter.search(query).getTweets()
-    tweets = [format_tweet(tweet) for tweet in tweets]
-    return tweets
+    try:
+        query = Query(term)
+        query.setCount(100)
+        tweets = api.twitter.search(query).getTweets()
+        tweets = [format_tweet(tweet) for tweet in tweets]
+    except TwitterException as e:        
+        print("Error: " + e.getErrorMessage())        
+        return []                
+    else:
+        return tweets
     
     
 def format_tweet(data):
     # https://twitter4j.org/javadoc/twitter4j/Status.html
-    tweet = {}
-    tweet['id'] = str(data.getId())
-    tweet['text'] = data.getText()
-    tweet['time'] = data.getCreatedAt()
-    user = data.getUser()
-    tweet['user'] = user.getScreenName()
-    tweet['user_name'] = user.getName()
-    tweet['user_follows'] = user.getFriendsCount()
-    tweet['user_followers'] = user.getFollowersCount()
-    tweet['hashtags'] = [hash.getText() for hash in data.getHashtagEntities()]
-    tweet['mentions'] = [mention.getScreenName() for mention in data.getUserMentionEntities()]
-    tweet['links'] = [url.getExpandedURL() for url in data.getURLEntities()]
-    tweet['likes'] = data.getFavoriteCount()
-    tweet['retweets'] = data.getRetweetCount()
-    quote = data.getQuotedStatus()
-    tweet['is_quote'] = format_tweet(quote) if quote is not None else None
-    tweet['replies_to'] = data.getInReplyToScreenName()
-    tweet['url'] = "https://twitter.com/%s/statuses/%s" % (tweet['user'], tweet['id'])
-    return tweet    
+    if (data is None) or (type(data) is not dict) or ('id' not in data):
+        print('{}')
+        return
+    try:
+        tweet = {}
+        tweet['id'] = str(data.getId())
+        tweet['text'] = data.getText()
+        tweet['time'] = data.getCreatedAt()
+        user = data.getUser()
+        tweet['user'] = user.getScreenName()
+        tweet['user_name'] = user.getName()
+        tweet['user_follows'] = user.getFriendsCount()
+        tweet['user_followers'] = user.getFollowersCount()
+        tweet['hashtags'] = [hash.getText() for hash in data.getHashtagEntities()]
+        tweet['mentions'] = [mention.getScreenName() for mention in data.getUserMentionEntities()]
+        tweet['links'] = [url.getExpandedURL() for url in data.getURLEntities()]
+        tweet['likes'] = data.getFavoriteCount()
+        tweet['retweets'] = data.getRetweetCount()
+        quote = data.getQuotedStatus()
+        tweet['is_quote'] = True if quote is not None else False
+        tweet['replies_to'] = data.getInReplyToScreenName()
+        tweet['url'] = "https://twitter.com/%s/statuses/%s" % (tweet['user'], tweet['id'])
+        return tweet
+    except (Exception, TwitterException) as e:
+        print(e)    
 
 def print_tweet(tweet):
     print(json.dumps(tweet, indent=4, sort_keys=True, ensure_ascii=False, default=lambda o: unicode(o)))
 
+
+def choice(l):
+    try:
+        return rand_choice(l)
+    except IndexError:
+        print("No items to choose from!")
+        return None
 
 # http://www.java2s.com/example/java-api/twitter4j/twitter/index.html

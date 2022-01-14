@@ -216,7 +216,7 @@ retweet(tweet)
 
 Now, the tweet will show up on our bot's feed.
 
-### Advanced tweets: Replies and Quotes
+### Advanced Tweets: Replies and Quotes
 
 To raise the stakes a bit, let's reply to a tweet:
 ```py
@@ -250,6 +250,11 @@ user = tweet['user']
 follow(user)
 ```
 
+Alternately, we can follow people explicitly:
+```py
+follow("@Beyonce")
+```
+
 Once we're following a few people, we can pull the recent tweets from all of them, aka the "timeline", like this:
 
 ```py
@@ -260,15 +265,138 @@ for tweet in tweets:
 
 Notice how we've used the `for item in list` loop format to iterate through all of the tweets on our timeline and print them to the console.
 
-Additionally, we may want to see who we're following. Do this like
-
-### Posting images
+This may be useful if we want to assemble a list of particular public figures, for example, or a group of people interested in a particular subject.
 
 
-### Get tweet
+### Assembling Text
+
+- tweet a random phrase
 
 
-### Time
+
+### Posting Images
+
+Since we're working in Processing, a natural thing to want to do is to tweet a an image, whether that is a preexisting static image or one that we code dynamically. This is where the `post_iamge()` function comes in, which will post the contents of the canvas to Twitter along with a specified message.
+
+To tweet an image file, for example, first we use "Add File..." to include it in our sketch. Then we use Processing functions to display it like we would in any other sketch. Finally, we use `post_image()` to make it happen:
+
+```py
+size(400, 400)
+puffin = loadImage("puffin.png")
+image(puffin, 0, 0)
+
+post_image("This is a puffin")
+```
+
+If we want to make a generative image and post that instead, we can do it like this:
+```py
+size(400, 400)
+for i in range(20):
+    color(random(255), random(255), random(255))
+    square(random(400), random(400), random(200))
+
+post_image("This is not a puffin")
+```
+
+### Using Properties
+
+A slightly more nuanced example of how you might have your bot interact with the social context of Twitter is to search for a particular hashtag, harvest the links that have been shared with that hashtag, and repost the links with new, randomly generated captions.
+
+First, let's search for "#climatecrisis" and print out the number of results that we get back, just so we know what's going on:
+```py
+tweets = search("#climatecrisis")
+print(len(tweets))
+```
+
+Now, let's go through each of the tweets using a `for` loop. We can get the list of links included in each tweet (if there are any) by using `tweet['links']`. We can then print these out as well:
+```py
+tweets = search("#climatecrisis")
+print(len(tweets))
+for tweet in tweets:
+    for link in tweet['links']:
+        print(link)
+
+```
+```
+100
+https://thepeoplesmanifesto.blogspot.com
+https://twitter.com/sssmaldo/status/1482016511229407237
+https://youtu.be/-v3XzTp3TAg
+https://twitter.com/kodisimus/status/1482041246864621569
+https://youtu.be/c9q4FmJPcNc
+https://religionnews.com/2022/01/13/ahead-of-jewish-earth-day-more-jewish-institutions-claim-movement-on-climate-action/
+https://thepeoplesmanifesto.blogspot.com
+https://twitter.com/energyx/status/1482040887618285574
+https://twitter.com/DrMegWhitman/status/1482040873864990720
+https://twitter.com/SenSanders/status/1481984470160977921
+https://twitter.com/ayocaesar/status/1478699765592432641
+https://phys.org/news/2022-01-americans-alarmed-climate-leaders.html
+https://twitter.com/MaryHeglar/status/1481706383435255808
+https://twitter.com/stevebakerhw/status/1482030064665567239
+https://www.theguardian.com/environment/2022/jan/13/record-number-americans-alarmed-about-climate-crisis?CMP=Share_iOSApp_Other
+https://twitter.com/VFPNational/status/1479594811585753093
+https://braveneweurope.com/reuters-eu-court-rejects
+https://twitter.com/insideclimate/status/1482024710426836995
+https://braveneweurope.com/bloomberg-german-natural-gas
+https://braveneweurope.com/george-monbiot-the-tipping-point-that-will-destroy-the-world
+https://braveneweurope.com/renegade-inc-shannon-walsh-the
+https://twitter.com/ImmyKaur/status/1481991421905227776
+https://twitter.com/stopthespraybc/status/1482026581597966336
+https://twitter.com/FossilFreeWYPF/status/1482002132991721474
+https://twitter.com/thisworthing/status/1482029014697054217
+https://youtu.be/TW7bO23nAjE
+https://twitter.com/ClimateReality/status/1482032026312228865
+https://twitter.com/ipri_pak/status/1482037293103910915
+```
+
+This is now a potentially useful list of links having to do with the climate crisis. Notice, however, that many of them are links to other Twitter posts. These are quotes. If we don't want these, we can filter them out using `tweet['is_quote']` and an `if` statement:
+```py
+tweets = search("#climatecrisis")
+print(len(tweets))
+for tweet in tweets:
+    if tweet['is_quote'] is False:
+        for link in tweet['links']:
+            print(link)
+```
+```
+https://youtu.be/-v3XzTp3TAg
+https://share.newsbreak.com/c8478lz5
+https://youtu.be/-v3XzTp3TAg
+https://www.theguardian.com/australia-news/2022/jan/13/hottest-day-on-record-in-parts-of-western-australia-as-temperature-reaches-50c
+https://www.heraldnet.com/life/regenerative-gardening-helps-save-the-planet-one-garden-at-a-time/
+https://twitter.com/kodisimus/status/1482041246864621569
+http://www.iguanabooks.ca/books/beyond-what-separates-us
+https://share.newsbreak.com/c8478lz5
+https://www.theguardian.com/books/2022/jan/14/amitav-ghosh-european-colonialism-helped-create-a-planet-in-crisis
+https://thepeoplesmanifesto.blogspot.com
+https://youtu.be/-v3XzTp3TAg
+https://youtu.be/c9q4FmJPcNc
+https://religionnews.com/2022/01/13/ahead-of-jewish-earth-day-more-jewish-institutions-claim-movement-on-climate-action/
+https://thepeoplesmanifesto.blogspot.com
+https://phys.org/news/2022-01-americans-alarmed-climate-leaders.html
+```
+Now our links are all external to Twitter. Rather than printing them out, let's store them in a list:
+```py
+links = []
+tweets = search("#climatecrisis")
+print(len(tweets))
+for tweet in tweets:
+    if tweet['is_quote'] is False:
+        for link in tweet['links']:
+            links.append(link)
+
+```
+Now we can do something with them. For example, let's pick a random one and use it to make our own tweet:
+
+```py
+link = choice(links)
+post("People get ready: " + link)
+```
+
+### Rate Limiting and Time
+
+Rather than choosing one link and making one tweet in the previous example, why not use a loop and tweet every link? We _could_ do that. But posting too many things at once is usually a bad idea with Twitter. For one thing, that's not how a person would tweet, and we want our bots to reasonably approximate a human user. But secondly, there is also something called rate limiting.
+
 
 Rate limiting
 https://developer.twitter.com/en/docs/twitter-api/v1/rate-limits
@@ -276,6 +404,7 @@ https://developer.twitter.com/en/docs/twitter-api/v1/rate-limits
 ### Putting it together
 
 Here's a bot that follows people that are interested in douglas fir trees, for example. We'd first do a search for "douglas fir", and then follow all of those people.
+
 
 
 
