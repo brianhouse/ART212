@@ -227,5 +227,5 @@ def choice(l):
     except IndexError:
         print("No items to choose from!")
         return None
-
+    
 # http://www.java2s.com/example/java-api/twitter4j/twitter/index.html

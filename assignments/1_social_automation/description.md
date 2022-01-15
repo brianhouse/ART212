@@ -29,15 +29,17 @@ Next, we'll include some code that I've written to help us get up and running fa
 - [twitter_helper.py](social_automation_demo/twitter_helper.py)
 
 Finally, you may need some word lists. Download each of these and add them to your sketch:
-- [list_stop_words.txt](social_automation_demo/data/list_stop_words.txt)
 - [list_adjectives.txt](social_automation_demo/data/list_adjectives.txt)
 - [list_interjections.txt](social_automation_demo/data/list_interjections.txt)
 - [list_nouns.txt](social_automation_demo/data/list_nouns.txt)
+- [list_nouns_plural.txt](social_automation_demo/data/list_nouns_plural.txt)
 - [list_prepositions.txt](social_automation_demo/data/list_prepositions.txt)
 - [list_pronouns.txt](social_automation_demo/data/list_pronouns.txt)
-- [list_verbs.txt](social_automation_demo/data/list_verbs.txt)
+- [list_verbs_imperative.txt](social_automation_demo/data/list_verbs_imperative.txt)
+- [list_verbs_present.txt](social_automation_demo/data/list_verbs_present.txt)
+- [list_verbs_past.txt](social_automation_demo/data/list_verbs_past.txt)
 
-(We will be working with language in ways similar to the "Recombination" unit in Digital Media I. You can review that [here](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/code.md), and you may want to also include "word_helper.py" from that unit if you want to do more advanced operations.)
+<!-- (We will be working with language in ways similar to the "Recombination" unit in Digital Media I. You can review that [here](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/code.md), and you may want to also include "word_helper.py" from that unit if you want to do more advanced operations.) -->
 
 Download and add each of these files to your sketch.
 
@@ -270,9 +272,29 @@ This may be useful if we want to assemble a list of particular public figures, f
 
 ### Assembling Text
 
-- tweet a random phrase
+Similar to what we did in Recombination, we may want to assemble our tweets from word lists. Just like MadLibs, this will let us provide structure but randomize some of the details.
 
+Here's how to load one of the word lists that we've added to our sketch:
+```py
+nouns = open("list_nouns.txt").read().split()
+```
+To then get a random noun, we use `choice()`:
+```py
+choice(nouns)
+```
+So, making a full sentence and tweeting it might go something like this:
+```py
+# load lists (only do this once at the beginning)
+nouns = open("list_nouns.txt").read().split()
+adjectives = open("list_nouns.txt").read().split()
 
+# assemble sentence
+text = "My favorite " + choice(nouns) + " are the ones with " + choice(adjectives) + "."
+print(text)
+
+# tweet it out!
+post(text)
+```
 
 ### Posting Images
 
