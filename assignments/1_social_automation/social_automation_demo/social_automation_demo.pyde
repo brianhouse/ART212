@@ -21,6 +21,10 @@ access_token_secret("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
 nouns = open("list_nouns.txt").read().split()
 adjectives = open("list_nouns.txt").read().split()
+imperatives = open("list_verbs_imperative.txt").read().split()
+past = open("list_verbs_past.txt").read().split()
+interjections = open("list_interjections.txt").read().split()
 
-text = "My favorite " + choice(nouns) + " are the ones with " + choice(adjectives) + "."
+print("")
+text = choice(interjections).title() + "! The " + choice(nouns) + " has " + choice(past) + " the " + choice(nouns) + "!"
 print(text)

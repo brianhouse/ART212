@@ -287,14 +287,19 @@ So, making a full sentence and tweeting it might go something like this:
 # load lists (only do this once at the beginning)
 nouns = open("list_nouns.txt").read().split()
 adjectives = open("list_nouns.txt").read().split()
+imperatives = open("list_verbs_imperative.txt").read().split()
+pasts = open("list_verbs_past.txt").read().split()
+interjections = open("list_interjections.txt").read().split()
 
 # assemble sentence
-text = "My favorite " + choice(nouns) + " are the ones with " + choice(adjectives) + "."
+text = choice(interjections).title() + "! The " + choice(nouns) + " has " + choice(pasts) + " the " + choice(nouns) + "!"
 print(text)
 
 # tweet it out!
 post(text)
 ```
+
+This word lists are general purpose. But keep in mind that you can make your own!
 
 ### Posting Images
 
