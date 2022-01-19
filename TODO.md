@@ -1,4 +1,6 @@
 - session for people new to processing
+- finish getting the reading up
+- prep Paik
 
 ### discussion
 

@@ -30,7 +30,7 @@ This course is built around four projects completed over the course of the semes
 Each student will give a 10-minute presentation on an artist working in digital media. These presentations, which must be organized in slides, should give an overview of the context in which the artist is working and then precede to show one or two artworks in detail. Students should comment thoughtfully on how the work relates to the themes discussed in class as well as to their own practices. The presentation should end with a couple of questions posed to the class for discussion that relate to the technique or themes of the artist's work. Students will [sign up to present](https://docs.google.com/spreadsheets/d/1HHoVP1O-VfYFJsBo8tri8cBQmJLKuMkgraGmMaQAIxU/edit?usp=sharing) on an artist chosen from [a list](resources/artists.md) on a first-come, first-served basis. These presentations make up 10% of your final grade.
 
 ### Reading
-Each week we will read critical texts that situate digital media in society and its impact on the material world. These will are provided through the links on this syllabus. Reading is due on the day where the text is listed; a reading response must be submitted before class on the provided Google Doc. This can be a question raised by the text, a critique of it, a link to related artistic work, or some other brief comment which can stimulate our discussion. Responses make up 5% of your final grade.
+Each week we will read critical texts that situate digital media in society and its impact on the material world. These will are provided through the links on this syllabus. Reading is due on the day where the text is listed; a reading response must be submitted before class via Classroom. This can be a question raised by the text, a critique of it, a link to related artistic work, or some other brief comment which can stimulate our discussion. Responses make up 5% of your final grade.
 
 
 ## Policies
@@ -88,25 +88,25 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 - Project 1: [Social Automation](projects/1_social_automation/description.md)
 - Discussion and workshop: Twitter
 
-#### Wednesday 1/26 — Fields 205
+#### Wednesday 1/26 — ZOOM
 - Project 1: proposals due
 - Workshop: review of for-loops and lists
 
 
 ### Week 3
 
-#### Monday 1/31
+#### Monday 1/31 — ZOOM
 - Survey presentations 1
-- Reading response due for discussion: [Data & Society, "How to Think ABout Bots"](https://points.datasociety.net/how-to-think-about-bots-1ccb6c396326)"
+- Reading response due for discussion: [Data & Society, "How to Think About Bots"](https://points.datasociety.net/how-to-think-about-bots-1ccb6c396326)"
 - Work time
 
-#### Wednesday 2/2
+#### Wednesday 2/2 — ZOOM
 - Project 1: check-in
 
 
 ### Week 4
 
-#### Monday 2/7
+#### Monday 2/7 — Fields 205
 - Survey presentations 2
 - Reading response due for discussion: [Safiya Noble, "Google Has a Striking History of Bias Against Black Girls"](readings/safiya_noble_google_black_girls.pdf)
 - Work time
