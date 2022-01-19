@@ -64,3 +64,10 @@ you have to have the postscript in there. it's too classic.
 so... firmata really works. could use that straight to python for processing? does it work over wireless? pair with an accelerometer?
 
 point being, creating a hardware interface with the glowforge and controls is cool, the question is what it controls (and why) on the processing side
+
+
+////////
+
+sound art is the superior class. the exercise / project structure is good. and it also has readings.
+
+so eventually, is there a physical computing equivalent to that?

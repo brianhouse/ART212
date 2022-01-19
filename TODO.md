@@ -1,4 +1,4 @@
-- dates for artist presentations
+- session for people new to processing
 
 ### discussion
 

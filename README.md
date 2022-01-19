@@ -77,15 +77,15 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 
 #### Wednesday 1/19 — ZOOM
 - Introduction
-- In-class reading and discussion: [Nam June Paik, "Cybernated Art"](reading/paik_cybernated_art.pdf)
-- Project 0: [Cybernated Life](assignments/0_cybernated_life/description.md)
+- In-class reading and discussion: [Nam June Paik, "Cybernated Art"](readings/paik_cybernated_art.pdf)
+- Project 0: [Cybernated Life](projects/0_cybernated_life/description.md)
 
 ### Week 2
 
 #### Monday 1/24 — ZOOM
 - Reading response due for discussion: [Ingrid Burrington, "Effortless Slippage"](https://www.e-flux.com/architecture/dimensions-of-citizenship/178279/effortless-slippage/)
 - Project 0: crit
-- Project 1: [Social Automation](assignments/1_social_automation/description.md)
+- Project 1: [Social Automation](projects/1_social_automation/description.md)
 - Discussion and workshop: Twitter
 
 #### Wednesday 1/26 — Fields 205
@@ -108,7 +108,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 
 #### Monday 2/7
 - Survey presentations 2
-- Reading response due for discussion: [Safiya Noble, "Google Has a Striking History of Bias Against Black Girls"](reading/safiya_noble_google_black_girls.pdf)
+- Reading response due for discussion: [Safiya Noble, "Google Has a Striking History of Bias Against Black Girls"](readings/safiya_noble_google_black_girls.pdf)
 - Work time
 
 #### Wednesday 2/9
@@ -120,7 +120,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 #### Monday 2/14
 - Survey presentations 3
 - Reading response due for discussion: [Shannon Mattern, "Interfacing Urban Intelligence"](https://placesjournal.org/article/interfacing-urban-intelligence/)
-- Project 2: [Poetic Sensors](assignments/2_poetic_sensors/description.md)
+- Project 2: [Poetic Sensors](projects/2_poetic_sensors/description.md)
 - Workshop: microcontrollers + databases
 
 #### Wednesday 2/16
@@ -132,7 +132,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 
 #### Monday 2/21
 - Survey presentations 4
-- Reading response due for discussion: [Wendy Chun, "On Software, or the Persistence of Visual Knowledge"](reading/chun_software.pdf)
+- Reading response due for discussion: [Wendy Chun, "On Software, or the Persistence of Visual Knowledge"](readings/chun_software.pdf)
 - Work time
 
 
@@ -144,7 +144,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 
 #### Monday 2/28
 - Survey presentations 5
-- Reading response due for discussion: [Tara Rodgers, Interview with Laetitia Sonami](reading/rodgers_sonami.pdf)
+- Reading response due for discussion: [Tara Rodgers, Interview with Laetitia Sonami](readings/rodgers_sonami.pdf)
 - Work time
 
 #### Wednesday 3/2
@@ -155,8 +155,8 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 
 #### Monday 3/7
 - Survey presentations 6
-- Reading response due for discussion: [Jennifer Gabrys, "Digital Rubbish"](reading/gabrys_digital_rubbish.pdf)
-- Project 3: [Real Digital Objects](assignments/3_real_digital_objects/description.md)
+- Reading response due for discussion: [Jennifer Gabrys, "Digital Rubbish"](readings/gabrys_digital_rubbish.pdf)
+- Project 3: [Real Digital Objects](projects/3_real_digital_objects/description.md)
 - Workshop: 3D scanning + Meshmixer
 
 
@@ -192,8 +192,8 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 ### Week 11
 
 #### Monday 4/4
-- Reading due for discussion: [Florian Cramer, "What is 'Post-Digital'?"](reading/cramer_post_digital.pdf)
-- Project 4: [Hybrid Worlds](assignments/4_hybrid_worlds/description.md)
+- Reading due for discussion: [Florian Cramer, "What is 'Post-Digital'?"](readings/cramer_post_digital.pdf)
+- Project 4: [Hybrid Worlds](projects/4_hybrid_worlds/description.md)
 
 #### Wednesday 4/6
 - Project 4: proposals due
@@ -202,7 +202,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 ### Week 12
 
 #### Monday 4/11
-- Reading due for discussion: [Lisa Parks, "Mediating Animal-Infrastructure Relations"](reading/parks_animal_infrastructure.pdf)
+- Reading due for discussion: [Lisa Parks, "Mediating Animal-Infrastructure Relations"](readings/parks_animal_infrastructure.pdf)
 - Work time
 
 #### Wednesday 4/13
