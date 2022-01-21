@@ -9,6 +9,39 @@ This is a 3-week project. Next week you will present a proposal of your idea to 
 For your proposal, turn in a draft version of your title and description. Also include any references, links to other accounts bots, or text or images to fully explain your thinking.
 
 
+## Examples
+
+Examples of artist-made Twitter bots (click on the name for the artists' portfolio sites):
+- [Darius Kazemi](http://tinysubversions.com)
+    - https://twitter.com/BodegaBot
+    - https://twitter.com/moonshotbot
+    - https://twitter.com/WhichOneBot
+    - https://twitter.com/rapnamebot
+    - https://twitter.com/EatenBot
+- [Allison Parrish](https://www.decontextualize.com)
+    - https://twitter.com/deepquestionbot
+    - [@everyword](https://www.instarbooks.com/books/everyword.html)
+- [Ramsey Nasser](https://nas.sr)
+    - [Top Gun 555µhz](https://nas.sr/555µhz/)
+- [Everest Pipkin](https://everest-pipkin.com) and Loren Schmidt
+    - [Moth Generator](https://twitter.com/mothgenerator)
+- Brian House and [Kyle McDonald](http://kylemcdonald.net)      
+    - [Conversnitch](https://brianhouse.net/works/conversnitch/)
+- https://twitter.com/greatartbot
+- https://twitter.com/tinycarebot
+- https://twitter.com/RedScareBot
+- https://twitter.com/infinite_scream
+- [Constant Dullart](https://www.constantdullaart.com/)
+    - [_The Possibility of Raising an Army_](http://army.cheap), article in the [Guardian](https://www.theguardian.com/artanddesign/2015/nov/09/army-for-hire-the-artist-employing-ghost-soldiers-to-invade-facebook-constant-dullaart)
+
+
+Assigned reading (with many more examples):
+- Data & Society: [How to Think About Bots](https://points.datasociety.net/how-to-think-about-bots-1ccb6c396326)
+
+Artist writing about how to make a good bot:
+- Harry Josephine Giles, "[Some Strategies of Bot Poetics](https://harryjosephine.com/2016/04/06/some-strategies-of-bot-poetics/)"
+- Darius Kazemi, "[Basic Twitter Bot Etiquette](http://tinysubversions.com/2013/03/basic-twitter-bot-etiquette/)"
+
 
 ## Twitter
 
@@ -488,26 +521,3 @@ We haven't seen `while` before, but it's another way of constructing a loop. `wh
 `time.sleep()` pauses the code for a given number of seconds. In this case, we setting it to 10 times 60, or 600, which is 10 minutes. So every 10 minutes, `run()` will be called and this sketch will post an image to Twitter.
 
 And there it is. That's how you make an automated Twitter bot.
-
-## References
-
-Examples of artist-made bots:
-- [Darius Kazemi](http://tinysubversions.com)
-    - https://twitter.com/BodegaBot
-    - https://twitter.com/moonshotbot
-    - https://twitter.com/WhichOneBot
-    - https://twitter.com/rapnamebot
-    - https://twitter.com/EatenBot
-- [Everest Pipkin](https://everest-pipkin.com) and Loren Schmidt, [Moth Generator](https://twitter.com/mothgenerator)
-- Allison Parrish, [Deep Question Bot](https://twitter.com/deepquestionbot)
-- [Ramsey Nasser](https://nas.sr), [_Top Gun 555µhz_](https://nas.sr/555µhz/)
-- [Constant Dullart](https://www.constantdullaart.com/), [_The Possibility of Raising an Army_](http://army.cheap), article in the [Guardian](https://www.theguardian.com/artanddesign/2015/nov/09/army-for-hire-the-artist-employing-ghost-soldiers-to-invade-facebook-constant-dullaart)
-- Brian House and [Kyle McDonald](http://kylemcdonald.net), [_Conversnitch_](https://brianhouse.net/works/conversnitch/)
-- https://twitter.com/greatartbot
-- https://twitter.com/tinycarebot
-- https://twitter.com/infinite_scream
-
-
-Artist writing about how to make a good bot:
-- Harry Josephine Giles, "[Some Strategies of Bot Poetics](https://harryjosephine.com/2016/04/06/some-strategies-of-bot-poetics/)"
-- Darius Kazemi, "[Basic Twitter Bot Etiquette](http://tinysubversions.com/2013/03/basic-twitter-bot-etiquette/)"
