@@ -6,7 +6,21 @@ For this project, you will engage with sensor systems as an artistic medium. Cho
 
 To capture data, you will use a [ESP32 wireless microcontroller](https://www.espressif.com/en/products/hardware/esp32/overview) and the [Adafruit IO platform](https://io.adafruit.com). To interpret the data, you may program something yourself using [p5](https://p5js.org) or [node][https://nodejs.org], use [IFTTT](http://ifttt.com/)(If-This-Then-That, no programming required), or work with some other set of tools, including non-digital mediums.
 
-This is a 3-week project that you will complete individually. This week you will present a proposal of your idea to the class for feedback. Next week, you will present your progress. The following week will be a crit. You must have an underlying artistic concept that you can articulate in a 3-sentence artistic statement that you will present with the work.
+This is a 3-week project. Next week you will present a proposal of your idea to the class for feedback, and you will present your progress. The following week will be a crit. You must have a title and an underlying artistic concept articulated with a [3-sentence description](../../resources/description_guidelines.md) that you will present with the work.
+
+For your proposal, turn in a draft version of your title and description. Also include any references to fully explain your thinking.
+
+## Conceptual References
+- [Nathalie Miebach](https://nathaliemiebach.com) (weather data)
+- [Karolina Sobecka](http://cargocollective.com/karolinasobecka/filter/matterOfAir/Puff) (car exhaust)
+- [Georgia Lupi](http://giorgialupi.com) (hand-drawn data visualization)
+- [Martin Howse](http://www.1010.co.uk/org/radiomycelium.html) (mycelium)
+- [Afroditi Psarra](http://afroditipsarra.com/index.php?/older-projects/cosmic-bitcasting/) (cosmic rays)
+- [Jer Thorp](http://jerthorp.com/) (data visualization)
+- [Ali Momeni](http://alimomeni.net/gutwise) (the gut)
+- [Brian House](https://brianhouse.net/works/animas/) (water quality)
+- [Chris Woebken](https://chriswoebken.com/Amphibious-Architecture) (fish)
+- [Timo Toots](https://www.timo.ee/psa/) (ants)
 
 
 ## Code (and Wiring)
@@ -214,16 +228,3 @@ async function main() {
 
 main()
 ```
-
-
-## Conceptual References
-- [Nathalie Miebach](https://nathaliemiebach.com) (weather data)
-- [Karolina Sobecka](http://cargocollective.com/karolinasobecka/filter/matterOfAir/Puff) (car exhaust)
-- [Georgia Lupi](http://giorgialupi.com) (hand-drawn data visualization)
-- [Martin Howse](http://www.1010.co.uk/org/radiomycelium.html) (mycelium)
-- [Afroditi Psarra](http://afroditipsarra.com/index.php?/older-projects/cosmic-bitcasting/) (cosmic rays)
-- [Jer Thorp](http://jerthorp.com/) (data visualization)
-- [Ali Momeni](http://alimomeni.net/gutwise) (the gut)
-- [Brian House](https://brianhouse.net/works/animas/) (water quality)
-- [Chris Woebken](https://chriswoebken.com/Amphibious-Architecture) (fish)
-- [Timo Toots](https://www.timo.ee/psa/) (ants)

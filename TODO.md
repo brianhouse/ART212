@@ -1,6 +1,6 @@
-- session for people new to processing
-- finish getting the reading up
-- prep Paik
+- finish getting the reading up, with notes
+- bot display on a raspi or something
+
 
 ### discussion
 
@@ -16,11 +16,7 @@ So basically splitting the course into networks, pcomp, and 3D. That's not terri
 
 but could nix the 3D printing and do output. still have to keep Twitter because of the delayed start anyway.
 
-
-poetic sensors needs a processing template (and the p5 template)
-
 - port to micropython?
-
 
 Then do inputs connected to outputs
 
@@ -30,11 +26,6 @@ can the data vis all be within processing.py?
 
 could nix the environmental data question. except that's cool.
 
-
-### questions
-- twitter all within the IDE
-- data vis all within python
-- micropython IDE?
 
 ### pcomp futures
 
@@ -57,12 +48,5 @@ need an intro of basic electronics info? maybe no.
 
 
 ### code
-
-ok, so see if you can put things into the Processing IDE. that would be insane, but it could work.
-
-what does this get me, other than a pain in the ass?
-
-no terminal. ability for people to generate and put in images.
-
 
 https://randomnerdtutorials.com/esp32-touch-pins-arduino-ide/

@@ -1,18 +1,5 @@
-Networked automation:
-- --> Social Automation is a better title
-- no groups (or pairs at most)
-- use atom terminal package instead of terminal.app
-- use the data & society reading on bots
-- emphasize the "automation" bit: having them set up and running on a computer in the studio in the lab for 24-hours prior to crit
-- more time on text manipulation? was harder for non-cs
-    - make a template for madlibs. and provide the word-lists built-in, with credit to Darius
-- essentially, we're making this more about the social interaction and less about loading data
-- explicitly introduce the mechanics of twitter: hashtags, all the tweet types, etc
-- for the proposal, ask for a collection of examples of tweets in the world that the bot will mimic or otherwise relate to
-- emphasize title and description (well, these should go in the twitter header)
+Social automation:
 - display my twitter feed following all the bots (run on a rasperry pi)
-- for social automation, incorporate some apis like the random image service?
---> check if top-level await is available to make the template easier
 
 /
 
@@ -37,27 +24,6 @@ get a full setup
 https://makeradvisor.com/how-to-set-up-an-electronics-lab-tools-and-equipment/
 also a set of shallow drawers for tools from uline
 
-/
-
-Atoms
-
-
-
-
-/
-
-- the Chun wasn't great. choose a newer one? and swap with Anatomy of an AI?
-- Mattern was great
-- might need to have a participation grade, depending on how this is structured
-- add Gabrys, maybe "sensing an experimental forest"?
-- shit, what about Parikka? I feel like he's really accessible in a good way (summarizing discourse too)
-///
-
-templates for proposals, my work maybe
-
-
-you have to have the postscript in there. it's too classic.
-
 
 ////////
 
@@ -70,4 +36,6 @@ point being, creating a hardware interface with the glowforge and controls is co
 
 sound art is the superior class. the exercise / project structure is good. and it also has readings.
 
-so eventually, is there a physical computing equivalent to that?
+so eventually, this is a physical computing equivalent to that
+
+may need training prior

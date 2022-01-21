@@ -6,10 +6,12 @@ For this project, you will create an experimental "Twitter Bot" using code. Your
 
 This is a 3-week project. Next week you will present a proposal of your idea to the class for feedback, and you will present your progress. The following week will be a crit. You must have a title and an underlying artistic concept articulated with a [3-sentence description](../../resources/description_guidelines.md) that you will present with the work.
 
+Important: **You must have your bot up and running for at least 24-hours _prior_ to the crit.**
+
 For your proposal, turn in a draft version of your title and description. Also include any references, links to other accounts bots, or text or images to fully explain your thinking.
 
 
-## Examples
+## Conceptual References
 
 Examples of artist-made Twitter bots (click on the name for the artists' portfolio sites):
 - [Darius Kazemi](http://tinysubversions.com)
@@ -52,19 +54,21 @@ For this project, we'll be writing code in Processing using Python, just like in
 
 Additionally, we're going to need to need to add some library code in order to interface with Twitter's API. API stands for Application Programming Interface, and it's a way that your computer will communication with Twitter's servers in order to control your bot without using the normal web interface.
 
-Finally, we're going to add some files to our Processing sketch before we begin. First, open a new sketch, and save it. Then, to add files, remember that you can use Processing's "Add File..." menu option:
+First, open a new sketch, and save it.
+
+Next, remember that you can use Processing's "Add File..." menu option to add code, images, and data to your sketch:
 <p align="center">
   <img src="img/add_file.png" width=200 />
 </p>
 
-The first two files to add will allow us to access the Twitter API. Download each of these and add them to your sketch (click "raw" on the next page, and then save the file):
+We're going to add two code libraries that will allow us to access the Twitter API. Download each of these and add them to your sketch (click "download" on the next page):
 - [simpletweet.jar](social_automation_demo/code/simpletweet.jar)
 - [twitter4j-core-4.0.7.jar](social_automation_demo/code/twitter4j-core-4.0.7.jar)
 
-Next, we'll include some code that I've written to help us get up and running faster. Download this and add it to your sketch:
+We'll also include some code that I've written to help us get up and running faster. Download this and add it to your sketch (click "raw" on the next page and then save the result as a python file):
 - [twitter_helper.py](social_automation_demo/twitter_helper.py)
 
-Finally, you may need some word lists. Download each of these and add them to your sketch:
+Finally, you may need some word lists. Download each of these and add them to your sketch (click "raw" on the next page and then save the result as a text file):
 - [list_adjectives.txt](social_automation_demo/data/list_adjectives.txt)
 - [list_interjections.txt](social_automation_demo/data/list_interjections.txt)
 - [list_nouns.txt](social_automation_demo/data/list_nouns.txt)
@@ -77,12 +81,10 @@ Finally, you may need some word lists. Download each of these and add them to yo
 
 <!-- (We will be working with language in ways similar to the "Recombination" unit in Digital Media I. You can review that [here](https://github.com/brianhouse/ART112/blob/master/units/5_recombination/code.md), and you may want to also include "word_helper.py" from that unit if you want to do more advanced operations.) -->
 
-Download and add each of these files to your sketch.
-
 Once all of these files are in place, type these lines into your sketch, save it, and then run:
 
 ```py
-from twitter_functions import *
+from twitter_helper import *
 init(SimpleTweet(this))
 
 ```
