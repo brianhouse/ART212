@@ -1,13 +1,10 @@
-<!--## Prep
-- have the document projector to show paper work
--->
+# Donna Haraway, Cyborg Manifesto
 
-## Cyborg Manifesto (<60')
-How do we read theory as artists?  
-Theorists and historians are concerned with discourse  
-We can have a more naive reading where we take the ideas within at face value  
-But we're always looking for how to express this materially. If Haraway says it in words, what do these ideas look and feel like?  
-It's also ok to not totally understand what's being said here. We can feel our way through the text. And of course we don't have to agree with it.  
+How do we read theory as artists?
+Theorists and historians are concerned with discourse
+We can have a more naive reading where we take the ideas within at face value
+But we're always looking for how to express this materially. If Haraway says it in words, what do these ideas look and feel like?
+It's also ok to not totally understand what's being said here. We can feel our way through the text. And of course we don't have to agree with it.
 
 What is the context of this piece?
 - Haraway was born in the 40s, pre-boomer, she's from Colorado, and earned her PhD in biology at Yale
@@ -28,23 +25,3 @@ Let's all pick out a line from the text that you find interesting, or confusing.
 What's the call here? Find ways to be a cyborg. Figure out how this works. Science and technology can't be placed on one side, as tools of power, they have to be means of resistance as well.
 
 So how has that played out? Since 1985 we have the internet and everything that comes with it. Has that increased oppression? Or has it made forms of resistance possible?
-
-
-## Crit (<80')
-
-So let's take a look at the exercise. We won't formally critique this work, but let's have everyone show what they did. We'll either plug in, or use the document projector.
-
-What commonalities and patterns emerged?
-- energy usage?
-- ambient vs intentionally engaged?
-- layer?
-
-
-## Practicals
-- Discuss presentations and sign-up
-- This can be a question raised by the text, a critique of it, a link to related artistic work, or some other brief comment which can stimulate our discussion
-
-
-## Extra time
-- Sign up for twitter with your lclark address and send me the handle
-- Download and install Node.js

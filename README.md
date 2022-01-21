@@ -89,7 +89,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 - Discussion and workshop: Twitter
 
 #### Wednesday 1/26 — ZOOM
-- Project 1: proposals due
+- Reading response due for discussion: [Data & Society, "How to Think About Bots"](https://points.datasociety.net/how-to-think-about-bots-1ccb6c396326)"
 - Workshop: review of for-loops and lists
 
 
@@ -97,7 +97,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 
 #### Monday 1/31 — ZOOM
 - Survey presentations 1
-- Reading response due for discussion: [Data & Society, "How to Think About Bots"](https://points.datasociety.net/how-to-think-about-bots-1ccb6c396326)"
+- Project 1: proposals due
 - Work time
 
 #### Wednesday 2/2 — ZOOM

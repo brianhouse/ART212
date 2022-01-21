@@ -4,7 +4,10 @@ Much of the interaction that happens online is not between people, but between p
 
 For this project, you will create an experimental "Twitter Bot" using code. Your bot will maintain a presence online by automatically posting text and/or images, and it may interact socially by replying to others' comments. It may or may not be apparent to others that your bot is automated.
 
-This is a 3-week project. This week you will present a proposal of your idea to the class for feedback. Next week, you will present your progress. The following week will be a crit. You must have an underlying artistic concept articulated with a 3-sentence artistic statement that you will present with the work.
+This is a 3-week project. Next week you will present a proposal of your idea to the class for feedback, and you will present your progress. The following week will be a crit. You must have a title and an underlying artistic concept articulated with a [3-sentence description](../../resources/description_guidelines.md) that you will present with the work.
+
+For your proposal, turn in a draft version of your title and description. Also include any references, links to other accounts bots, or text or images to fully explain your thinking.
+
 
 
 ## Twitter
