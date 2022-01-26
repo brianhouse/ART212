@@ -54,8 +54,11 @@ def get_tweet(tweet_id):
 def post(s):
     try:
         tweet = api.twitter.updateStatus(s)
-    except TwitterException as e:        
-        print("Error: " + e.getErrorMessage())    
+    except TwitterException as e:  
+        try:      
+            print("Error: " + e.getErrorMessage())
+        except:
+            print(e)
     else:    
         print("Tweeted " + str(tweet.getId()))
 

@@ -354,7 +354,7 @@ If we want to make a generative image and post that instead, we can do it like t
 ```py
 size(400, 400)
 for i in range(20):
-    color(random(255), random(255), random(255))
+    fill(random(255), random(255), random(255))
     square(random(400), random(400), random(200))
 
 post_image("This is not a puffin")
@@ -484,7 +484,7 @@ size(400, 400) # size() stays outside the function
 def run():
     background(255)
     for i in range(20):
-        color(random(255), random(255), random(255))
+        fill(random(255), random(255), random(255))
         square(random(400), random(400), random(200))    
     post_image("A new generative drawing")
 ```
@@ -507,7 +507,7 @@ size(400, 400) # size() stays outside the function
 def run():
     background(255)
     for i in range(20):
-        color(random(255), random(255), random(255))
+        fill(random(255), random(255), random(255))
         square(random(400), random(400), random(200))    
     post_image("A new generative drawing")
 

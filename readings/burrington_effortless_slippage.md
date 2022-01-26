@@ -1,6 +1,7 @@
 # Ingrid Burrington, Effortless Slippage
 
 snark
+[Caelan: tone]
 
 "Effortless Slippage"—what is this? specifically that the map appears seamless
 - hides its infrastructure
@@ -14,3 +15,11 @@ Media Archeology as a mode—look at alternative ways things were understood in 
 
 
 Burrington makes an argument for adding friction (which is also present in Paglen) -- how do we feel about this?
+
+
+//
+
+[Isha: coal mining towns (aka vertical integration)]
+[Lauren: choose which version of the world to show you]
+[Lindsey: public->private]
+[Tal: contagious / virality]
