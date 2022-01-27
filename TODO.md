@@ -50,13 +50,16 @@ so... I test a machine that doesn't have a driver?
 I think yes. https://pythonforundergradengineers.com/how-to-install-micropython-on-an-esp32.html#install-the-silabs-driver-for-the-cp210x-chip
 
 REPL:
-```screen /dev/tty.usbserial-01D1D9CE 115200```
+```screen /dev/tty.usbserial-01D1D9CE 115200
+```
 
 https://docs.micropython.org/en/latest/esp32/quickref.html#installing-micropython
 
 - can the data vis all be within processing?
 
 - direct data reception by processing?
+
+Thonny install urequests
 
 
 ### pcomp futures
