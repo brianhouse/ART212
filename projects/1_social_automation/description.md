@@ -45,9 +45,12 @@ Artist writing about how to make a good bot:
 - Darius Kazemi, "[Basic Twitter Bot Etiquette](http://tinysubversions.com/2013/03/basic-twitter-bot-etiquette/)"
 
 
-## Tools
+## Code
 
 For this project, we'll be writing code in Processing using Python, just like in Digital Media I. If you're new to Processing or have used p5 instead, you may want to [review how to get set up](https://github.com/brianhouse/ART112/blob/master/units/0_algorithm/getting_started.md).
+
+
+### Getting set up with Processing
 
 Additionally, we're going to need to need to add some library code in order to interface with Twitter's API. API stands for Application Programming Interface, and it's a way that your computer will communication with Twitter's servers in order to control your bot without using the normal web interface.
 

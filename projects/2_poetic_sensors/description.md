@@ -2,9 +2,9 @@
 
 As of 2020, there are [30 billion devices connected to the internet](https://www.statista.com/statistics/471264/iot-number-of-connected-devices-worldwide/), which far exceeds the human population. Most of these devices include sensors to capture data about the physical world, whether by monitoring the environment, surveilling people, or otherwise providing input to machines. While we may be largely unaware of their presence, these sensors and the systems of which they are a part end up shaping the world around us.
 
-For this project, you will engage with sensor systems as an artistic medium. Choose some aspect of your physical environment and use a sensor to capture it—this could be as simple as how many times you sit at your desk, for example, or the amount of electromagnetic interference you pass during the day. These data will be transmitted to a server. Subsequently, you must interpret the data in some way, whether by visualizing it or using it to trigger some sort of action in the world.
+For this project, you will engage with sensor systems as an artistic medium. Choose some aspect of your physical environment and use a sensor to capture it—this could be as simple as how many times you sit at your desk, for example, or the amount of electromagnetic interference you pass during the day. These data will be transmitted to a server. Subsequently, you must interpret the data in some way, whether by visualizing it or connecting it to some other action in the world.
 
-To capture data, you will use a [ESP32 wireless microcontroller](https://www.espressif.com/en/products/hardware/esp32/overview) and the [Adafruit IO platform](https://io.adafruit.com). To interpret the data, you may program something yourself using [p5](https://p5js.org) or [node][https://nodejs.org], use [IFTTT](http://ifttt.com/)(If-This-Then-That, no programming required), or work with some other set of tools, including non-digital mediums.
+To capture data, you will use a [ESP32 wireless microcontroller](https://www.espressif.com/en/products/hardware/esp32/overview) and the [Adafruit IO platform](https://io.adafruit.com). You can use Python for Processing to interpret the data, or some other platform if you prefer.
 
 This is a 3-week project. Next week you will present a proposal of your idea to the class for feedback, and you will present your progress. The following week will be a crit. You must have a title and an underlying artistic concept articulated with a [3-sentence description](../../resources/description_guidelines.md) that you will present with the work.
 
@@ -27,31 +27,92 @@ For your proposal, turn in a draft version of your title and description. Also i
 
 ### Setup
 
-To write code for our ESP32s, we will be using the Arduino IDE:
+To write code for our ESP32s, we will be using Micropython on the Thonny IDE.
 
-- Download and install the [ESP driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers)
-- Download and install the [Arduino IDE](https://www.arduino.cc/en/main/software)
-- Add the ESP32 libraries
-    - Start the Arduino IDE and open Preferences window
-    - In the "Additional Boards Manager URLs" enter `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`
-    - Open Boards Manager from Tools > Board menu and install the esp32 platform by Espressif Systems
-    - Select "Adafruit ESP32 Feather" ESP32 board from Tools > Board menu
+##### Driver
+
+First, we have to download and install the [ESP driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) that will allow your machine to communicate with your ESP over a USB port.
+
+When this is finished installing, restart your machine, and then plug in your ESP.
+
+##### Thonny
+
+Next, download and install the [Thonny IDE](https://thonny.org). After opening the program, go to `Tools > Options` and choose `Interpreter`. Choose "MicroPython (ESP32)" for the interpreter, and find the UART Bridge Controller under "Port":
+
+<p align="center">
+  <img src="img/1_thonny.png" width=500 />
+</p>
+
+You will need to have your ESP plugged in for this to work. After you've closed the dialog box, click the "Stop/Restart" stop sign button. In the console, you should see something like:
+```
+MicroPython v1.18 on 2022-01-17; ESP32 module with ESP32
+Type "help()" for more information.
+>>>
+```
+
+In addition, we need to install the `urequests` and `ujson` packages. Go to `Tools > Manage Packages`. Search for `urequests` and install the first option. Do this with `ujson` as well (note that `ujson` will not show up in the left column as an installed package).
+
+Finally, download [esp_helper.py](esp/helper.py). Open this in Thonny. Then choose `File > Save copy...`, and select `MicroPython device`. Title the file `esp_helper.py` and save it. Once you've done this, close the file.
+
+##### AIO
 
 The Adafruit IO platform provides us with a server:
 
 - Sign up at https://io.adafruit.com
-- Create a new "feed" called "sensor-test" and one called "battery"
-- Note your AIO username and AIO key
+- Create a new "feed" called "hall-sensor" and one called "battery"
+- Note your AIO username and AIO key under "My Key"
+
+Back in Thonny, in the untitled file showing on the interface, paste your credentials, as well as the wifi info:
+```py
+SSID = "LC Wireless"
+PASS = ""
+AIO_USERNAME = "h0use"
+AIO_KEY = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+```
+Save this file as `credentials.py` to `MicroPython device` (your ESP).
+
+##### Testing
+
+Create a new file containing the following, and save it on your ESP:
+
+```py
+from esp_helper import *
+
+# connect_wifi()
+
+while True:
+    hall = esp32.hall_sensor()
+    print(hall)
+    # post_data("hall-sensor", hall)
+```
+
+The hall sensor is a built-in sensor on the ESP which detects magnetic fields. This code will read data from the sensor and print it to console. Run it by clicking the green triangle. You should see a stream of numbers in the console ("Shell"). If you choose `View > Plotter`, you should see a constantly changing graph:
+
+<p align="center">
+  <img src="img/2_hall.png" width=500 />
+</p>
+
+Now, by uncommenting the lines `connect_wifi()` and `post_data("hall-sensor", hall)`, you will be posting this data to your AIO feed. Do this, and save the file (you will have to click the stop sign before Thonny will be able to copy over the changed file).
+
+Your sensor will now be running much slower (in part to avoid AIO's rate limits):
+
+<p align="center">
+  <img src="img/3_aio.png" width=500 />
+</p>
+
+Congratulations! You've made a remote sensor. Go back to your feed on AIO, and you should see new data coming in.
+
+Note that this code is running on the ESP, not your computer—if you hook it up to a battery and disconnect it from your computer, it will still work.
 
 
-### ESP32 Reference
+### Sensors
 
 The technical specs on the [Adafruit ESP32 Feather](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather)
 
 Use A2, A3, and A4 for analog inputs and 32 and 33 for GPIOs. The other pins have various other functionality attached to them and may not work initially as expected.
 
 
-### Basic Sensors
+
 The following is a basic template for reporting a sensor value. This applies to force-sensitive resistors (bending or touching), photocells (light level), and motion sensors (presence). You will also need a 10k Ohm resistor.
 
 ##### Arduino Template
