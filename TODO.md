@@ -1,6 +1,9 @@
 - finish getting the reading up, with notes
 - bot display on a raspi or something
 
+- do I have enough wires and breadboards? Kits for everyone?
+- flash firmware on all ESPs
+
 ### poetic sensors
 
 - port to micropython?

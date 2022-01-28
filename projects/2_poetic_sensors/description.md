@@ -52,7 +52,7 @@ Type "help()" for more information.
 
 In addition, we need to install the `urequests` and `ujson` packages. Go to `Tools > Manage Packages`. Search for `urequests` and install the first option. Do this with `ujson` as well (note that `ujson` will not show up in the left column as an installed package).
 
-Finally, download [esp_helper.py](esp/helper.py). Open this in Thonny. Then choose `File > Save copy...`, and select `MicroPython device`. Title the file `esp_helper.py` and save it. Once you've done this, close the file.
+Finally, go to [esp_helper.py](esp/helper.py) and copy the contents. Open Thonny and make a new file, and paste the contents into this file. Then choose `File > Save`, and select `MicroPython device`. Title the file `esp_helper.py` and save it. Once you've done this, close the file.
 
 ##### AIO
 
@@ -62,7 +62,7 @@ The Adafruit IO platform provides us with a server:
 - Create a new "feed" called "hall-sensor" and one called "battery"
 - Note your AIO username and AIO key under "My Key"
 
-Back in Thonny, in the untitled file showing on the interface, paste your credentials, as well as the wifi info:
+Back in Thonny, in a new file (or the untitled file showing on the interface), paste your credentials, as well as the wifi info:
 ```py
 SSID = "LC Wireless"
 PASS = ""
@@ -107,185 +107,68 @@ Note that this code is running on the ESP, not your computer—if you hook it up
 
 ### Sensors
 
-The technical specs on the [Adafruit ESP32 Feather](https://learn.adafruit.com/adafruit-huzzah32-esp32-feather)
+The sensors at your disposal are the following:
 
-Use A2, A3, and A4 for analog inputs and 32 and 33 for GPIOs. The other pins have various other functionality attached to them and may not work initially as expected.
+- [Light level (photocell)](#photo)
+- [Contact (FSR)](#fsr)
+- [Temperature and humidity](#temp)
+- [Motion](#motion)
+- [Sound level](#sound)
+- [Heartrate](#heart)
+- [Touch](#touch)
 
+Note: on your ESP, use A2, A3, and A4 for analog inputs and 32 and 33 for GPIOs. The other pins have various other functionality attached to them and may not work initially as expected.
 
+#### <a name="photo"></a> Light (photocell)
 
-The following is a basic template for reporting a sensor value. This applies to force-sensitive resistors (bending or touching), photocells (light level), and motion sensors (presence). You will also need a 10k Ohm resistor.
+Product: https://www.adafruit.com/product/161
 
-##### Arduino Template
-[basic.ino](basic.ino)
-
-##### Wiring
 ![](basic.jpg)
 
 
-### Sound Level
+#### <a name="fsr"></a> Contact (FSR)
 
-You can monitor sound level with the [MAX9814](https://www.adafruit.com/product/1713). This setup sends a value when sound reaches above a certain threshold. For ambient sound level monitoring, set `window` to 1000 and take out the conditional around `sendData` in the code.
+Force-sensitive resistors measure contact. Requires a 10k Ohm resistor.
 
-##### Arduino Template
-[sound_level.ino](sound_level.ino)
+Product: https://www.adafruit.com/product/166
 
-##### Wiring
-![](sound_level.jpg)
+![](basic.jpg)
 
 
-### Temperature and Humidity
+#### <a name="temp"></a> Temperature and Humidity
 
-This variation works with [DHT11 (blue) breakout boards](https://www.amazon.com/HiLetgo-Temperature-Humidity-Digital-3-3V-5V/dp/B01DKC2GQ0/ref=sr_1_4?crid=29K0T2RXDWMKE&dchild=1&keywords=dht11+temperature+and+humidity+sensor&qid=1582840745&sprefix=DHT11%2Caps%2C204&sr=8-4). You'll also need to install the "Adafruit DHT Sensor" library and "Adafruit Unified Sensor" library through the Arduino IDE library manager (make sure these titles match exactly—there are a lot of similarly named modules). Connect the "out" pin from the sensor to pin 33 on your ESP32.
+Product: https://www.adafruit.com/product/386
+import dht
 
-##### Arduino Template
-[temp.ino](temp.ino)
-
-##### Wiring
 ![](temp.jpg)
 
+#### <a name="motion"></a> Motion
 
-### Heart Rate
+Product: https://www.adafruit.com/product/172
 
-A [Pulse Sensor](https://www.adafruit.com/product/1093) can be used to monitor your heart rate. Note that the sensor works best when the back is covered by something opaque like a piece of electrical tape, and try putting it on your earlobe—read the online guides at [PulseSensor.com](http://PulseSensor.com). You will need to install the PulseSensor Playground library through the Arduino IDE library manager. Look at the live data using the Serial Plotter; this code reports a BPM every minute.
+![](basic.jpg)
 
-##### Arduino Template
-[pulse.ino](pulse.ino)
+#### <a name="sound"></a> Sound level
 
+You can monitor sound level with the MAX9814. This setup sends a value when sound reaches above a certain threshold. For ambient sound level monitoring, set `window` to 1000 and take out the conditional around `sendData` in the code.
 
-##### Wiring
+Product: https://www.adafruit.com/product/1713
+-- use an FFT driver?
+
+![](sound_level.jpg)
+
+#### <a name="heart"></a> Heart rate
+
+Product: https://www.adafruit.com/product/1093
+
+https://www.mfitzp.com/invent/wemos-heart-rate-sensor-display-micropython/
+
+This sensor works best when the back is covered by something opaque like a piece of electrical tape, and try putting it on your earlobe—read the online guides at [PulseSensor.com](http://PulseSensor.com). You will need to install the PulseSensor Playground library through the Arduino IDE library manager. Look at the live data using the Serial Plotter; this code reports a BPM every minute.
+
 ![](pulse.jpg)
 
 
-### p5 Template (Data Visualization)
+#### <a name="touch"></a> Touch
 
-You will need to make your feed public to retrieve the data using javascript.
-
-```js
-const AIO_USERNAME = ""
-const AIO_KEY = ""
-
-let values = []
-let times = []
-
-let index = 0
-
-function setup() {
-
-    let canvas = createCanvas(640, 480)
-    canvas.parent('p5')
-
-    // fetch our data
-    let feed = 'sound-level'
-    let url = `https://io.adafruit.com/api/v2/${AIO_USERNAME}/feeds/${feed}/data`
-    httpGet(url, 'json', false, function(data) {
-
-        print(data)
-        // re-sort the array by time
-        data.sort((a, b) => (a.created_at > b.created_at) ? 1 : -1)
-
-        // make a new array with just the sensor values
-        // divide by the max value to "normalize" them to the range 0-1
-        for (let datum of data) {
-            values.push(datum.value / 4095)
-        }
-
-        // make a new array with just the timestamp
-        // this one is trickier to normalize so we'll do it separately
-        for (let datum of data) {
-            // convert the string into a numerical timestamp
-            let time = Date.parse(datum.created_at) / 1000
-            times.push(time)
-        }
-
-        // normalize the times to between 0 and 1
-        let start_time = min(times)
-        let stop_time = max(times)
-        for (let i=0; i<times.length; i++) {
-            let time = times[i]
-            times[i] = (time - start_time) / (stop_time - start_time)
-        }
-
-    })
-
-}
-
-function draw() {
-
-    background(255)
-
-    // make colors
-    // in this case, we want a line every pixel, and to interpolate between values
-    // colorMode(HSB) // https://p5js.org/reference/#/p5/colorMode
-    for (let i=1; i<values.length; i++) {
-        let x1 = int(times[i-1] * width)
-        let x2 = int(times[i] * width)
-        print(x1, x2)
-        let c1 = color(55, values[i-1] * 255, 255)
-        let c2 = color(55, values[i] * 255, 255)
-        for (let x=x1; x<=x2; x++) {
-            let interpolation = (x-x1) / (x2-x1)
-            print(x, interpolation)
-            let c = lerpColor(c1, c2, interpolation)
-            stroke(c)
-            line(x, 0, x, height)
-        }
-    }
-
-    // this one is just a breakpoint line, similar to the adafruit feed page
-    // note that to get the y axis right, we have to flip it by subtracting from 1
-    stroke(0)
-    strokeWeight(2)
-    for (let i=1; i<values.length; i++) {   // starting at 1, not 0
-        let x1 = times[i-1] * width
-        let y1 = (1 - values[i-1]) * height
-        let x2 = times[i] * width
-        let y2 = (1 - values[i]) * height
-        line(x1, y1, x2, y2)
-    }
-
-    // try an animation
-    circle(times[index] * width, (1 - values[index]) * height, 50)
-    index += 1
-    if (index == times.length) {
-        index = 0
-    }
-
-}
-```
-
-
-### Node Template
-
-You will need to make your feed public to retrieve the data using javascript.
-
-```js
-const request = require('request') // install with "npm install request"
-const print = console.log
-
-const AIO_USERNAME = "h0use"
-const AIO_KEY = "2507ddf88a73494884935ca76ed2ae0e"
-
-// helper function to fetch a feed
-async function fetchData(feed) {
-    return await new Promise((resolve, reject) => {
-        let url = `https://io.adafruit.com/api/v2/${AIO_USERNAME}/feeds/${feed}/data`
-        request(url, {json: true}, (error, response, body) => {
-            resolve(body)
-        })
-    })
-}
-
-// do stuff in here
-async function main() {
-
-    let results = await fetchData("sensor-test")    // note: await
-    print(results)
-
-    for (let result of results) {
-        print(result)
-    }
-
-}
-
-main()
-```
+- touch
+(built-in)

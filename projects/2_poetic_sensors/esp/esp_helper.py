@@ -1,20 +1,40 @@
 import esp32
 import network
-import machine
 import urequests
 import ujson
+import time
+from machine import ADC, Pin
 from time import sleep
 from credentials import *
 
+A2 = ADC(Pin(34), atten=ADC.ATTN_11DB)
+A3 = ADC(Pin(39), atten=ADC.ATTN_11DB)
+A4 = ADC(Pin(36), atten=ADC.ATTN_11DB)
+BAT = ADC(Pin(35), atten=ADC.ATTN_11DB)
+
+battery_t = 0
+
+wlan = network.WLAN(network.STA_IF)
+wlan.active(True)
+
+
 def connect_wifi():
-    wlan = network.WLAN(network.STA_IF)
-    wlan.active(True)
     if not wlan.isconnected():
         print("Connecting to network...")
         wlan.connect(SSID, PASS)
         while not wlan.isconnected():
             pass
-    print("--> connected")
+        print("--> connected")
+
+
+def check_battery():
+    global battery_t
+    t = time.time()
+    if t - battery_t > 5 * 60:
+        battery_level = (BAT.read() / 4096.0) * 3.3;
+        print(f"Battery at {battery_level}")
+        post_data("battery", battery_level)
+        battery_t = t
 
 
 def post_data(feed, datum):
@@ -39,5 +59,4 @@ def post_data(feed, datum):
 # temp = esp32.raw_temperature()
 # hall = esp32.hall_sensor()
 
-
-#https://io.adafruit.com/api/docs/#create-data
+# https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/pinouts
