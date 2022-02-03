@@ -160,25 +160,19 @@ def mentions():
         return []    
     else:
         return tweets                                        
-                      
-# def get_followed():
+                                            
+# def followees():
+#     # returns max 5000
+#     # this function is unusable because it always triggers rate limit errors
 #     friends = []
-#     while True:
-#         cur = -1
-#         result = api.twitter.getFriendsIDs(cur)
-#         print(result)
-#         for id in result.getIDs():
-#             friends.append(int(id))
-#         cur = result.getNextCursor()
-#         if result == 0:
-#             break    
-#         break
-#     print(friends)                        
+#     result = api.twitter.getFriendsIDs(-1)
+#     for id in result.getIDs():
+#         friends.append(int(id))
+#     return friends                        
 
 def list_methods():
     for item in dir(api.twitter):
         print(item)
-
 
 def search(term):
     try:
@@ -215,7 +209,9 @@ def format_tweet(data):
         quote = data.getQuotedStatus()
         tweet['is_quote'] = True if quote is not None else False
         tweet['replies_to'] = data.getInReplyToScreenName()
-        tweet['url'] = "https://twitter.com/%s/statuses/%s" % (tweet['user'], tweet['id'])
+        tweet['url'] = "https://twitter.com/%s/statuses/%s" % (tweet['user'], tweet['id'])        
+        media = data.getMediaEntities()
+        tweet['image'] = media[0].getMediaURL() if len(media) else None        
         return tweet
     except (Exception, TwitterException) as e:
         print(e)    
@@ -223,6 +219,14 @@ def format_tweet(data):
 def print_tweet(tweet):
     print(json.dumps(tweet, indent=4, sort_keys=True, ensure_ascii=False, default=lambda o: unicode(o)))
 
+def download_image(url):
+    try:
+        img = loadImage(url)
+        filename = url.split("/")[-1]
+        img.save(filename)
+        print("Saved " + filename)        
+    except Exception as e:
+        print(e)
 
 def choice(l):
     try:
