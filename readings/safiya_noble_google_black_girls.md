@@ -31,4 +31,6 @@ which is a good thing youre all at a liberal arts school
 how do you fix it?
 have to fix society. but for those people that don't think it's broken, that's received as a certain kind of policing
 
+/
+
 what role do artists play in this?

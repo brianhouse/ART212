@@ -1,6 +1,5 @@
 from esp_helper import *
 
-
 while True:
     connect_wifi()
     check_battery()

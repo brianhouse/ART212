@@ -4,12 +4,15 @@ import urequests
 import ujson
 import time
 from machine import ADC, Pin
+from dht import DHT11
 from time import sleep
 from credentials import *
 
 A2 = ADC(Pin(34), atten=ADC.ATTN_11DB)
 A3 = ADC(Pin(39), atten=ADC.ATTN_11DB)
 A4 = ADC(Pin(36), atten=ADC.ATTN_11DB)
+D32 = Pin(32)
+D33 = Pin(33)
 BAT = ADC(Pin(35), atten=ADC.ATTN_11DB)
 
 battery_t = 0
@@ -52,8 +55,23 @@ def post_data(feed, datum):
     response.close()
     sleep(2) # avoid rate limit
 
-  #   digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on
-  # digitalWrite(LED_BUILTIN, LOW);    // turn the LED off
+
+class Smoother():
+
+    def __init__(self, factor):
+        self.factor = factor
+        self.readings = [0] * int(self.factor)
+        self.index = 0
+
+    def smooth(self, v):
+        self.readings[self.index] = v
+        self.index = (self.index + 1) % self.factor
+        value = sum(self.readings) / float(self.factor)
+        return value
+
+
+# digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on
+# digitalWrite(LED_BUILTIN, LOW);    // turn the LED off
 
 
 # temp = esp32.raw_temperature()

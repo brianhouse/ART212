@@ -13,10 +13,10 @@ For your proposal, turn in a draft version of your title and description. Also i
 ## Conceptual References
 - [Nathalie Miebach](https://nathaliemiebach.com) (weather data)
 - [Karolina Sobecka](http://cargocollective.com/karolinasobecka/filter/matterOfAir/Puff) (car exhaust)
+- [Jer Thorp](https://www.jerthorp.com/herald-harbinger)
 - [Georgia Lupi](http://giorgialupi.com) (hand-drawn data visualization)
 - [Martin Howse](http://www.1010.co.uk/org/radiomycelium.html) (mycelium)
 - [Afroditi Psarra](http://afroditipsarra.com/index.php?/older-projects/cosmic-bitcasting/) (cosmic rays)
-- [Jer Thorp](http://jerthorp.com/) (data visualization)
 - [Ali Momeni](http://alimomeni.net/gutwise) (the gut)
 - [Brian House](https://brianhouse.net/works/animas/) (water quality)
 - [Chris Woebken](https://chriswoebken.com/Amphibious-Architecture) (fish)
@@ -27,7 +27,7 @@ For your proposal, turn in a draft version of your title and description. Also i
 
 ### Setup
 
-To write code for our ESP32s, we will be using Micropython on the Thonny IDE.
+To write code for our ESP32s, we will be using Micropython via the Thonny IDE.
 
 ##### Driver
 
@@ -78,9 +78,8 @@ Create a new file containing the following, and save it on your ESP:
 ```py
 from esp_helper import *
 
-# connect_wifi()
-
 while True:
+    # connect_wifi()
     hall = esp32.hall_sensor()
     print(hall)
     # post_data("hall-sensor", hall)
@@ -104,6 +103,26 @@ Congratulations! You've made a remote sensor. Go back to your feed on AIO, and y
 
 Note that this code is running on the ESP, not your computer—if you hook it up to a battery and disconnect it from your computer, it will still work.
 
+Going forward, our basic code template will look like this:
+
+```py
+from esp_helper import *    # import esp functions
+
+while True:                 # infinite loop
+    connect_wifi()          # connect to wifi
+    check_battery()         # check the battery level and log it
+
+    # read a sensor and divide by the maximum value
+    # result is a float between 0 and 1
+    value = A2.read() / 4096.0  
+    sleep(.1)  # include a short delay for stability
+    print(value)
+
+    # send to AIO
+    post_data("my-sensor", value)
+```
+The specifics of how the sensor is read may vary slightly between sensors, and are indicated below.
+
 
 ### Sensors
 
@@ -117,14 +136,29 @@ The sensors at your disposal are the following:
 - [Heartrate](#heart)
 - [Touch](#touch)
 
-Note: on your ESP, use A2, A3, and A4 for analog inputs and 32 and 33 for GPIOs. The other pins have various other functionality attached to them and may not work initially as expected.
+The job of the microcontroller is to provide a voltage to the sensor, take a reading, and then transmit the result over the network.
+
+To provide voltage to the sensor, you'll need to connect the sensor to the 3.3v pin on the microcontroller, and also to ground (electricity always flows in a "circuit"—out from the source and then back to the ground).
+
+To take a reading, you'll use the A2, A3, A4, D32, or D33 pins on the microcontroller (the others have various other functionality attached to them and may not work initially as expected) along with a resistor or some other component that helps regulate and scale the sensor's output to something the chip can read.
+
+In order to simply the process of hooking things up, we'll use breadboards.
+
+Sensors can break, but overall the ESP is pretty resilient. **The one thing you should not do is connect 3.3v to another pin or to ground without anything in between.**
 
 #### <a name="photo"></a> Light (photocell)
 
+A photocell measures the light level. Hook it up with 2.2k resistor.
+
 Product: https://www.adafruit.com/product/161
 
-![](basic.jpg)
+![](img/4_photocell.png)
 
+Code:
+```py
+    value = A2.read() / 4096.0  
+    sleep(.1)
+```
 
 #### <a name="fsr"></a> Contact (FSR)
 
@@ -132,21 +166,64 @@ Force-sensitive resistors measure contact. Requires a 10k Ohm resistor.
 
 Product: https://www.adafruit.com/product/166
 
-![](basic.jpg)
+![](img/5_fsr.png)
 
+Code:
+```py
+    value = A2.read() / 4096.0  
+    sleep(.1)
+```
 
 #### <a name="temp"></a> Temperature and Humidity
 
-Product: https://www.adafruit.com/product/386
-import dht
+Temperature and humidity with one sensor via a digital input. Use a 10k Ohm resistor.
 
-![](temp.jpg)
+Product: https://www.adafruit.com/product/386
+
+![](img/6_temp.png)
+
+Code:
+```py
+    sensor = DHT11(D32)
+    sensor.measure()
+    temp = sensor.temperature() * 1.8 + 32  # convert to F
+    humidity = sensor.humidity()
+    print(f"{temp}°F")
+    print(f"{humidity}%")
+    sleep(2)
+```
+
 
 #### <a name="motion"></a> Motion
 
+Ultrasonic range finder! Detects if something is in front of it, from 6 inches to about 20 feet, at a resolution of about an inch.
+
 Product: https://www.adafruit.com/product/172
 
-![](basic.jpg)
+![](img/7_motion.png)
+
+
+Code:
+```py
+from esp_helper import *
+
+smoother = Smoother(3)   # create a smoother (running averager)
+
+while True:
+    # convert sensor reading to feet
+    value = (((A2.read() / 4096.0) * 248) + 12) / 12.0
+    # smooth out subsequent values
+    value = smoother.smooth(value)
+    print(value)    
+    sleep(.1)
+
+    # trigger something if detects presence closer than 3 ft
+    if value < 3:
+        print("Closer than 3 ft!")
+```
+A more complete example is shown for this sensor which uses a smoother and a threshold. Smoothing simply takes subsequent values and averages them—a `Smoother(factor)` must be created outside of the main loop with a number that indicates over how many values to average. We can then use `smoother.smooth(value)` to smooth the readings as we go.
+
+Some additional math is used to convert the sensor reading to feet. This makes it simple to make something like a threshold that detects if something is present within a given distance.
 
 #### <a name="sound"></a> Sound level
 
