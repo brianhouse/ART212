@@ -3,9 +3,9 @@ import network
 import urequests
 import ujson
 import time
-from machine import ADC, Pin
+from machine import ADC, Pin, TouchPad
 from dht import DHT11
-from time import sleep
+from time import sleep, time
 from credentials import *
 
 A2 = ADC(Pin(34), atten=ADC.ATTN_11DB)
@@ -13,6 +13,9 @@ A3 = ADC(Pin(39), atten=ADC.ATTN_11DB)
 A4 = ADC(Pin(36), atten=ADC.ATTN_11DB)
 D32 = Pin(32)
 D33 = Pin(33)
+T12 = TouchPad(Pin(12))
+T14 = TouchPad(Pin(14))
+T15 = TouchPad(Pin(15))
 BAT = ADC(Pin(35), atten=ADC.ATTN_11DB)
 
 battery_t = 0
@@ -38,6 +41,21 @@ def check_battery():
         print(f"Battery at {battery_level}")
         post_data("battery", battery_level)
         battery_t = t
+
+
+def touch(pin):
+    try:
+        if pin == 12:
+            return T12.read()
+        elif pin == 14:
+            return T14.read()
+        elif pin == 15:
+            return T15.read()
+        else:
+            print("Not a touch pin")
+            return 0
+    except ValueError as e:
+        return 0
 
 
 def post_data(feed, datum):
