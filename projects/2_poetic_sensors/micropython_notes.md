@@ -1,22 +1,7 @@
-### installation
-
-```
-ls /dev/tty.*
-
-python3 -m pip install esptool --user
-
-python3 -m esptool --chip esp32 --port /dev/tty.usbserial-01D1D9CE erase_flash
-
-python3 -m esptool --chip esp32 --port /dev/tty.usbserial-01D1D9CE --baud 460800 write_flash -z 0x1000 esp32-20220117-v1.18.bin
-
-python3 -m pip install adafruit-ampy --user
-```
 boot.py is run at boot
 main.py is run next, which is the program
 
-
 https://docs.micropython.org/en/latest/esp32/quickref.html
-
 
 
 ### output futures

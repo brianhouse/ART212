@@ -1,4 +1,4 @@
-# Basic Microcontrollers
+# A Guide to Working with the ESP32
 
 - [Setup](#setup)
 - [Sensors](#sensors)
@@ -288,3 +288,24 @@ The outputs at your disposal are the following:
 - [Relay](#relay)
 - [Motor](#motor)
 - [Neopixels](#neopixel) -->
+
+
+
+<!-- Streaming:
+```py
+from esp_helper import *
+
+
+
+while True:
+    connect_wifi()
+
+    try:
+        hall = esp32.hall_sensor() / 4095.0
+        stream_data(hall, "192.168.8.211")
+        print(hall)
+    except OSError as e:
+        print("Error: " + str(e))
+
+    sleep(.01)
+``` -->

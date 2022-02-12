@@ -3,6 +3,7 @@ import network
 import urequests
 import ujson
 import time
+import socket
 from machine import ADC, Pin, TouchPad
 from dht import DHT11
 from time import sleep, time
@@ -22,7 +23,7 @@ battery_t = 0
 
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
-
+sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 def connect_wifi():
     if not wlan.isconnected():
@@ -72,6 +73,10 @@ def post_data(feed, datum):
         print(messages)
     response.close()
     sleep(2) # avoid rate limit
+
+
+def stream_data(data, ip, port=5005):
+    sock.sendto(str(data).encode('utf-8'), (ip, port))
 
 
 class Smoother():

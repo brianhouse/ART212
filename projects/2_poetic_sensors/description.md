@@ -10,10 +10,10 @@ This is a 3-week project. Next week you will present a proposal of your idea to 
 
 For your proposal, turn in a draft version of your title and description. Also include any references to fully explain your thinking.
 
-### Guide
+### Guides
 
-[A guide to basic microcontrollers](guide.md)
-[Data visualization basics](visualization.md)
+- [A Guide to Working with the ESP32](guide.md)
+- [Data Visualization Basics](visualization.md)
 
 ### Conceptual References
 - [Nathalie Miebach](https://nathaliemiebach.com) (weather data)

@@ -1,6 +1,7 @@
 import urllib2
 import json
 import time
+from credentials import *
 
 def pull_data(feed, start_time, end_time):
     print("Pulling data... ")
