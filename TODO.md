@@ -1,6 +1,5 @@
 - finish getting the reading up, with notes
+- also the assignments
 
 /
-- flash firmware on all ESPs
-
 - guide to visualization
