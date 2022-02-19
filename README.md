@@ -169,7 +169,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 
 #### Tuesday 3/14
 - Survey presentations 7
-- Reading response due for discussion: [Morehshin Allahyari and Daniel Rouke, "The 3D Additivist Cookbook"](https://additivism.org/cookbook)
+- Reading response due for discussion: [Morehshin Allahyari and Daniel Rourke, "The 3D Additivist Cookbook"](https://additivism.org/cookbook)
 - Work time
 
 #### Thursday 3/16

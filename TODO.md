@@ -1,4 +1,8 @@
-- finish getting the reading up, with notes
+- grade projects!
+
+/
+
+- reading notes
 - also the assignments
 
 /

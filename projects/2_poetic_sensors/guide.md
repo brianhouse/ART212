@@ -135,7 +135,7 @@ The specifics of how the sensor is read may vary slightly between sensors, and a
 
 #### <a name="photo"></a> Light (photocell)
 
-A photocell measures the light level. Hook it up with 2k resistor.
+A photocell measures the light level. Hook it up with 2k resistor and use A2, A3, A4.
 
 Product: https://www.adafruit.com/product/161
 
@@ -149,7 +149,7 @@ Product: https://www.adafruit.com/product/161
 
 #### <a name="fsr"></a> Contact (FSR)
 
-Force-sensitive resistors measure contact. Requires a 10k Ohm resistor.
+Force-sensitive resistors measure contact. Requires a 10k Ohm resistor and use A2, A3, A4.
 
 Product: https://www.adafruit.com/product/166
 
@@ -163,7 +163,7 @@ Product: https://www.adafruit.com/product/166
 
 #### <a name="temp"></a> Temperature and Humidity
 
-Temperature and humidity with one sensor via a digital input. Use a 10k Ohm resistor.
+Temperature and humidity with one sensor via a digital input. Use a 10k Ohm resistor and connect to pin D32 or D33.
 
 Product: https://www.adafruit.com/product/386
 
@@ -183,7 +183,7 @@ Product: https://www.adafruit.com/product/386
 
 #### <a name="range"></a> Range
 
-Ultrasonic range finder! Detects if something is in front of it, from 6 inches to about 20 feet, at a resolution of about an inch.
+Ultrasonic range finder! Detects if something is in front of it, from 6 inches to about 20 feet, at a resolution of about an inch. Use A2, A3, A4.
 
 Product: https://www.adafruit.com/product/172
 
@@ -214,7 +214,7 @@ Some additional math is used to convert the sensor reading to feet. This makes i
 
 #### <a name="sound"></a> Sound level
 
-You can monitor sound level with the MAX9814. You might keep track of the ambient sound level over time, or look for spikes in the level that cross a particular threshold.
+You can monitor sound level with the MAX9814. You might keep track of the ambient sound level over time, or look for spikes in the level that cross a particular threshold. Use A2, A3, A4.
 
 Product: https://www.adafruit.com/product/1713
 

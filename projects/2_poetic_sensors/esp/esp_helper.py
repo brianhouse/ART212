@@ -36,7 +36,7 @@ def connect_wifi():
 
 def check_battery():
     global battery_t
-    t = time.time()
+    t = time()
     if t - battery_t > 5 * 60:
         battery_level = (BAT.read() / 4096.0) * 3.3;
         print(f"Battery at {battery_level}")
