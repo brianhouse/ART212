@@ -10,7 +10,7 @@ Poetic sensors: (--> poetic sensing)
 
 https://makeradvisor.com/how-to-set-up-an-electronics-lab-tools-and-equipment/
 
-in guide, separate code into posting and streaming
+
 
 //
 

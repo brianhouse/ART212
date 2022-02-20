@@ -1,9 +1,8 @@
 # A Guide to Working with the ESP32
 
 - [Setup](#setup)
-- [Sensors](#sensors)
-<!-- - [Interface](#interface) -->
-<!-- - [Outputs](#outputs) -->
+- [Inputs](#inputs)
+- [Outputs](#outputs)
 
 
 ## <a name="setup"></a> Setup
@@ -87,9 +86,9 @@ Congratulations! You've made a remote sensor. Go back to your feed on AIO, and y
 Note that this code is running on the ESP, not your computer—if you hook it up to a battery and disconnect it from your computer, it will still work.
 
 
-## <a name="sensors"></a> Sensors
+## <a name="inputs"></a> Inputs
 
-The sensors at your disposal are the following:
+The input sensors at your disposal are the following:
 
 - [Light level (photocell)](#photo)
 - [Contact (FSR)](#fsr)
@@ -97,8 +96,13 @@ The sensors at your disposal are the following:
 - [Range](#range)
 - [Sound level](#sound)
 - [Touch](#touch)
-<!-- - [Heartrate](#heart) -->
+- [Heartrate](#heart)
+- [Toggle switch](#toggle)
+- [Momentary switch](#momentary)
+- [Tilt + Vibration](#tilt)
+- [Knob aka Potentiometer (pot)](#pot)
 <!-- - [Acceleration and orientation](#imu) -->
+
 
 The job of the microcontroller is to provide a voltage to the sensor, take a reading, and then transmit the result over the network.
 
@@ -143,8 +147,11 @@ Product: https://www.adafruit.com/product/161
 
 ###### Code
 ```py
+while True:
+    # ...
     value = A2.read() / 4095.0  
     sleep(.1)
+    # ...
 ```
 
 #### <a name="fsr"></a> Contact (FSR)
@@ -157,8 +164,11 @@ Product: https://www.adafruit.com/product/166
 
 ###### Code
 ```py
+while True:
+    # ...
     value = A2.read() / 4095.0  
     sleep(.1)
+    # ...
 ```
 
 #### <a name="temp"></a> Temperature and Humidity
@@ -171,6 +181,8 @@ Product: https://www.adafruit.com/product/386
 
 ###### Code
 ```py
+while True:
+    # ...
     sensor = DHT11(D32)
     sensor.measure()
     temp = sensor.temperature() * 1.8 + 32  # convert to F
@@ -178,6 +190,7 @@ Product: https://www.adafruit.com/product/386
     print(f"{temp}°F")
     print(f"{humidity}%")
     sleep(2)
+    # ...
 ```
 
 
@@ -191,12 +204,15 @@ Product: https://www.adafruit.com/product/172
 
 ###### Code
 
-At the top:
 ```py
+# ...
+
 smoother = Smoother(3)   # create a smoother (running averager)
-```
-In your main loop:
-```py
+triggered = False
+# ...
+while True:
+    # ...
+
     # convert sensor reading to feet
     value = (((A2.read() / 4095.0) * 248) + 12) / 12.0
     # smooth out subsequent values
@@ -206,7 +222,13 @@ In your main loop:
 
     # trigger something if detects presence closer than 3 ft
     if value < 3:
-        print("Closer than 3 ft!")
+        if triggered is False:
+            print("Closer than 3 ft!")
+            triggered = True
+    else:
+        triggered = False
+
+    # ...        
 ```
 A more complete example is shown for this sensor which uses a smoother and a threshold. Smoothing simply takes subsequent values and averages them—a `Smoother(factor)` must be created outside of the main loop with a number that indicates over how many values to average. We can then use `smoother.smooth(value)` to smooth the readings as we go.
 
@@ -224,11 +246,13 @@ Product: https://www.adafruit.com/product/1713
 
 Up top:
 ```py
+# ...
 window = 50 / 1000.0 # sample for 50ms if testing for a threshold
 window = 1.0    # sample for 1 second if monitoring ambient level
-```
-Main loop:
-```py
+# ...
+
+while True:
+    # ...    
     start_time = time()
     high = 0
     low = 4096
@@ -242,18 +266,8 @@ Main loop:
 
     level = 100 * ((high - low) / 4095.0)
     print(level)
+    # ...
 ```
-<!--
-#### <a name="heart"></a> Heart rate
-
-Product: https://www.adafruit.com/product/1093
-
-https://www.mfitzp.com/invent/wemos-heart-rate-sensor-display-micropython/
-
-This sensor works best when the back is covered by something opaque like a piece of electrical tape, and try putting it on your earlobe—read the online guides at [PulseSensor.com](http://PulseSensor.com). You will need to install the PulseSensor Playground library through the Arduino IDE library manager. Look at the live data using the Serial Plotter; this code reports a BPM every minute.
-
-![](pulse.jpg) -->
-
 
 #### <a name="touch"></a> Touch
 
@@ -263,31 +277,184 @@ The ESP32 has the built-in ability to measure the "capacitance" on several of it
 
 ![](img/9_touch.png)
 
-
 ###### Code
 ```py
+while True:
+    # ...
     value = touch(14)
     print(value)
     sleep(.1)
+
+    # threshold-based trigger
+    if value > 100:
+        print("Touch is happening!")
 ```
 
-<!-- ## <a name="interface"></a> Interface
 
-The interface elements at your disposal are the following:
-
-- [Momentary switch](#momentary)
-- [Knobs](#knob)
+#### <a name="heart"></a> Heart rate
 
 
-## <a name="interface"></a> Outputs
+Product: https://www.adafruit.com/product/1093
+
+This sensor works best when the back is covered by something opaque like a piece of electrical tape, and try putting it on your earlobe—read the online guides at [PulseSensor.com](http://PulseSensor.com).
+
+![](img/10_pulse.jpg)
+
+###### Code
+
+Note: I don't have demo code in Python for this yet, so this is for advanced experimentation. Possible info here:
+
+https://www.mfitzp.com/invent/wemos-heart-rate-sensor-display-micropython/
+
+#### <a name="toggle"></a> Toggle switch
+
+A simple switch that turns on and off and stays put. Use a 10k resistor. Keep track of the switch's status with a variable so that you can trigger things based on a change.
+
+Product: https://www.adafruit.com/product/805
+
+![](img/13_toggle.png)
+
+###### Code
+```py
+#...
+toggled = False
+#...
+
+while True:
+    #...
+    status = A2.read() > 0 # True or False
+    if status != toggled:
+        if status is True:
+            print("Switch turned on!")
+        else:
+            print("Switch turned off!")
+        toggled = status
+    sleep(.1)
+    #...
+
+```
+
+#### <a name="momentary"></a> Momentary switch
+
+A simple switch that is on when pushed and off otherwise. Use a 10k resistor. Keep track of the switch's status with a variable so that you can trigger things based on a change.
+
+Product: https://www.adafruit.com/product/1119
+
+![](img/11_momentary.png)
+
+###### Code
+```py
+#...
+pressed = False
+#...
+
+while True:
+    #...
+    status = A2.read() > 0 # True or False
+    if pressed != status:
+        if status is True:
+            print("Switch turned on!")
+        else:
+            print("Switch turned off!")
+        pressed = status
+    sleep(.01)  # make it a bit faster for an interface where timing counts
+    #...
+
+```
+
+#### <a name="tilt"></a> Tilt + Vibration
+
+These components are simple switches that turn on and off based on an internal spring or bearing changing position—they are useful for detecting movement in the sensor itself. Note that one of the legs is very fine and can be tricky with breadboards (especially with vibration sensors). Use a 10k resistor. Keep track of the switch's status with a variable so that you can trigger things based on a change.
+
+Products:
+- https://www.adafruit.com/product/1119
+- https://www.adafruit.com/product/1766
+
+![](img/12_tilt.png)
+
+###### Code
+```py
+#...
+tilted = False
+#...
+
+while True:
+    #...
+    status = A2.read() > 0 # True or False
+    if tilted != status:
+        print("Movement!")
+        tilted = status
+    sleep(.01)  # make it a bit faster for an interface where timing counts
+    #...
+
+```
+
+#### <a name="pot"></a> Knob aka Potentiometer (pot)
+
+This is a variable resistor—which means that as you turn the pot, more or less voltage is let through to the measuring pin.
+
+Product: https://www.adafruit.com/product/562
+
+![](img/14_pot.png)
+
+###### Code
+```py
+while True:
+    #...
+    pot = A2.read()
+    print(pot)
+    sleep(.1)
+    #...
+```
+
+## <a name="outputs"></a> Outputs
 
 The outputs at your disposal are the following:
 
 - [LEDs](#led)
-- [Piezo](#piezo)
-- [Relay](#relay)
-- [Motor](#motor)
-- [Neopixels](#neopixel) -->
+<!-- - [Piezo](#piezo) -->
+<!-- - [Relay](#relay) -->
+<!-- - [Motor](#motor) -->
+<!-- - [Neopixels](#neopixel) -->
+
+#### <a name="led"></a> LEDs
+
+Light-emitting diodes! Connect the long leg (+) of these all purpose lofi lights to a resistor and an output pin and the short leg (-) to ground.
+
+- The forward voltage of an LED is how much it takes out of the circuit to turn on.
+- The current of an LED is how bright it's going to be.
+- ...but LEDs don't have any inherent resistance, so an added resistor is always needed to limit the current to prevent a short (aka, no infinite brightness).
+
+To calculate the value of resistor given a 3.3v (ESP32) or 5v (Arduino) supply_voltage:
+`R = (supply_voltage - forward_voltage) / current` (or use a [resistor calculator](https://www.digikey.in/en/resources/conversion-calculators/conversion-calculator-led-series-resistor))
+
+Product: https://www.adafruit.com/product/4203
+
+Red, Yellow, Green (~2v forward voltage at 20mA):
+- Resistor @ 3.3v: 65 ohms
+- Resistor @ 5v: 150 ohms
+
+
+Blue, White (~3v forward voltage at 20mA):
+- Resistor @ 3.3v: 15 ohms
+- Resistor @ 5v: 100 ohms
+
+
+###### Code
+
+```py
+
+
+```
+
+
+
+
+
+
+
+
+
 
 
 
@@ -308,4 +475,5 @@ while True:
         print("Error: " + str(e))
 
     sleep(.01)
-``` -->
+```
+-->

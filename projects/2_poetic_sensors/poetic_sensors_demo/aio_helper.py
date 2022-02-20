@@ -5,7 +5,7 @@ from credentials import *
 
 def pull_data(feed, start_time, end_time):
     print("Pulling data... ")
-    url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + feed + "/data?start_time=" + str(start_time) + "&end_time=" + str(end_time) 
+    url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + feed + "/data?start_time=" + str(start_time) + "&end_time=" + str(end_time)
     request = urllib2.Request(url, headers={"X-AIO-Key": AIO_KEY})
     data = []
     try:
