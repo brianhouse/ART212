@@ -104,11 +104,11 @@ The input sensors at your disposal are the following:
 <!-- - [Acceleration and orientation](#imu) -->
 
 
-The job of the microcontroller is to provide a voltage to the sensor, take a reading, and then transmit the result over the network.
+The microcontroller provides a voltage to the sensor, takes a reading, and then transmits the result over the network if desired.
 
 To provide voltage to the sensor, you'll need to connect the sensor to the 3.3v pin on the microcontroller, and also to ground (electricity always flows in a "circuit"—out from the source and then back to the ground).
 
-To take a reading, you'll use the A2, A3, A4, D32, or D33 pins on the microcontroller (the others have various other functionality attached to them and may not work initially as expected) along with a resistor or some other component that helps regulate and scale the sensor's output to something the chip can read.
+To take a reading, you'll use the A2, A3, A4, 32 (`D32` in code), or 33 (`D33` in code) pins on the microcontroller (the others have various other functionality attached to them and may not work initially as expected) along with a resistor or some other component that helps regulate and scale the sensor's output to something the chip can read.
 
 In order to simply the process of hooking things up, we'll use breadboards.
 
@@ -173,7 +173,7 @@ while True:
 
 #### <a name="temp"></a> Temperature and Humidity
 
-Temperature and humidity with one sensor via a digital input. Use a 10k Ohm resistor and connect to pin D32 or D33.
+Temperature and humidity with one sensor via a digital input. Use a 10k Ohm resistor and connect to pin 32 or 33.
 
 Product: https://www.adafruit.com/product/386
 
@@ -359,7 +359,6 @@ while True:
         pressed = status
     sleep(.01)  # make it a bit faster for an interface where timing counts
     #...
-
 ```
 
 #### <a name="tilt"></a> Tilt + Vibration
@@ -413,19 +412,26 @@ The outputs at your disposal are the following:
 
 - [LEDs](#led)
 <!-- - [Piezo](#piezo) -->
+<!-- - [Neopixels](#neopixel) -->
 <!-- - [Relay](#relay) -->
 <!-- - [Motor](#motor) -->
-<!-- - [Neopixels](#neopixel) -->
+
+For outputs, the microcontroller turns voltage on or off across a specific pin, producing some effect in a component such as an LED or relay.
+
+For our purposes, use pins 21 and 27 on your ESP32 (`S21` and `S27` in your code).
+
 
 #### <a name="led"></a> LEDs
 
-Light-emitting diodes! Connect the long leg (+) of these all purpose lofi lights to a resistor and an output pin and the short leg (-) to ground.
+Light-emitting diodes! Connect the long leg (+) of these all purpose lofi lights to a resistor and an output pin (21 or 27) and the short leg (-) to ground.
 
 - The forward voltage of an LED is how much it takes out of the circuit to turn on.
 - The current of an LED is how bright it's going to be.
 - ...but LEDs don't have any inherent resistance, so an added resistor is always needed to limit the current to prevent a short (aka, no infinite brightness).
 
-To calculate the value of resistor given a 3.3v (ESP32) or 5v (Arduino) supply_voltage:
+For the 3.3v ESP32 and the resistors we have on hand, use an 100ohm resistor (or the smallest you can find).
+
+<!-- To calculate the value of resistor given a 3.3v (ESP32) or 5v (Arduino) supply_voltage:
 `R = (supply_voltage - forward_voltage) / current` (or use a [resistor calculator](https://www.digikey.in/en/resources/conversion-calculators/conversion-calculator-led-series-resistor))
 
 Product: https://www.adafruit.com/product/4203
@@ -437,26 +443,52 @@ Red, Yellow, Green (~2v forward voltage at 20mA):
 
 Blue, White (~3v forward voltage at 20mA):
 - Resistor @ 3.3v: 15 ohms
-- Resistor @ 5v: 100 ohms
+- Resistor @ 5v: 100 ohms -->
+
+![](img/15_led.png)
 
 
 ###### Code
 
+This example modifies the switch example to turn on and off an LED depending on whether the button is pressed:
 ```py
+#...
+pressed = False
+#...
 
-
+while True:
+    #...
+    status = A2.read() > 0 # True or False
+    if pressed != status:
+        if status is True:
+            print("Switch turned on!")
+            S21.on() # turn on output pin / LED
+        else:
+            print("Switch turned off!")
+            S21.off() # turn off output pin / LED
+        pressed = status
+    sleep(.01)  # make it a bit faster for an interface where timing counts
+    #...
 ```
 
 
+<!-- #### <a name="piezo"></a> Piezo -->
 
+<!-- from machine import Pin, PWM
+from utime import sleep
 
+# lower right corner with USB connector on top
+SPEAKER_PIN = 16
 
-
-
-
-
-
-
+# create a Pulse Width Modulation Object on this pin
+speaker = PWM(Pin(SPEAKER_PIN))
+# set the duty cycle to be 50%
+speaker.duty_u16(1000)
+speaker.freq(1000) # 50% on and off
+sleep(1) # wait a second
+speaker.duty_u16(0)
+# turn off the PWM circuits off with a zero duty cycle
+speaker.duty_u16(0) -->
 
 <!-- Streaming:
 ```py
