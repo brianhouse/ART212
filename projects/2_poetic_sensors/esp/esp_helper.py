@@ -4,7 +4,7 @@ import urequests
 import ujson
 import time
 import socket
-from machine import ADC, Pin, TouchPad
+from machine import ADC, Pin, TouchPad, PWM
 from dht import DHT11
 from time import sleep, time
 from credentials import *
@@ -14,8 +14,9 @@ A3 = ADC(Pin(39), atten=ADC.ATTN_11DB)
 A4 = ADC(Pin(36), atten=ADC.ATTN_11DB)
 D32 = Pin(32)
 D33 = Pin(33)
-S27 = Pin(27, Pin.OUT)
 S21 = Pin(21, Pin.OUT)
+S27 = Pin(27, Pin.OUT)
+LED = Pin(13, Pin.OUT)
 T12 = TouchPad(Pin(12))
 T14 = TouchPad(Pin(14))
 T15 = TouchPad(Pin(15))
@@ -29,11 +30,21 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 def connect_wifi():
     if not wlan.isconnected():
-        print("Connecting to network...")
-        wlan.connect(SSID, PASS)
-        while not wlan.isconnected():
-            pass
-        print("--> connected")
+        while True:
+            print("Connecting to network...")
+            LED.on()
+            try:
+                wlan.connect(SSID, PASS)
+                while not wlan.isconnected():
+                    LED.off() if LED.value() else LED.on()
+                    sleep(1)
+                print("--> connected")
+                LED.off()
+                break
+            except Exception as e:
+                print("Error: " + str(e))
+                LED.off()
+                sleep(1)
 
 
 def check_battery():
@@ -63,6 +74,7 @@ def touch(pin):
 
 def post_data(feed, datum):
     print("Posting data... ")
+    LED.on()
     url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + feed + "/data"
     post_data = ujson.dumps({"X-AIO-Key": AIO_KEY, "value": datum})
     response = urequests.post(url, headers={"content-type": "application/json"}, data=post_data)
@@ -75,6 +87,7 @@ def post_data(feed, datum):
         print(messages)
     response.close()
     sleep(2) # avoid rate limit
+    LED.off()
 
 
 def stream_data(data, ip, port=5005):
