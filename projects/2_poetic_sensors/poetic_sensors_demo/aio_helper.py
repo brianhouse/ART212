@@ -10,8 +10,8 @@ def pull_data(feed, start_time, end_time):
     data = []
     try:
         response = urllib2.urlopen(request)
-        time.sleep(2) # avoid going over rate limits
         results = json.loads(response.read())
+        time.sleep(2) # avoid going over rate limits        
         start_t = results[-1]['created_epoch']
         for item in results:
             data.append({'time': item['created_epoch'] - start_t, 'value': float(item['value'])})
@@ -20,6 +20,8 @@ def pull_data(feed, start_time, end_time):
         return data
     except Exception as e:
         print(e)
-    return {}
+    return []
 
-now = int(time.time())
+
+def now():
+    return int(time.time()) 

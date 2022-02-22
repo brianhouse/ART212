@@ -390,7 +390,7 @@ while True:
 
 #### <a name="pot"></a> Knob aka Potentiometer (pot)
 
-This is a variable resistor—which means that as you turn the pot, more or less voltage is let through to the measuring pin.
+This is a variable resistor—which means that as you turn the pot, more or less voltage is let through to the measuring pin. Pots in a 3.3v system can be jittery, so use a smoother to smooth some of that out.
 
 Product: https://www.adafruit.com/product/562
 
@@ -398,11 +398,15 @@ Product: https://www.adafruit.com/product/562
 
 ###### Code
 ```py
+#...
+smoother = Smoother(3)
+#...
 while True:
     #...
     pot = A2.read()
+    pot = smoother.smooth(pot)
     print(pot)
-    sleep(.1)
+    sleep(.01) # shorter delay
     #...
 ```
 
@@ -411,7 +415,7 @@ while True:
 The outputs at your disposal are the following:
 
 - [LEDs](#led)
-<!-- - [Piezo](#piezo) -->
+- [Piezos](#piezo)
 <!-- - [Neopixels](#neopixel) -->
 <!-- - [Relay](#relay) -->
 <!-- - [Motor](#motor) -->
@@ -472,25 +476,22 @@ while True:
 ```
 
 
-<!-- #### <a name="piezo"></a> Piezo -->
+#### <a name="piezo"></a> Piezo
 
-<!-- from machine import Pin, PWM
-from utime import sleep
+```py
+from esp_helper import *
 
-# lower right corner with USB connector on top
-SPEAKER_PIN = 16
+# a bug means min frequency is 700hz -- need to wait for firmware > 1.18
+pwm = PWM(S21)
+pwm.duty(512)
+pwm.freq(700)
+print(pwm)
+```
 
-# create a Pulse Width Modulation Object on this pin
-speaker = PWM(Pin(SPEAKER_PIN))
-# set the duty cycle to be 50%
-speaker.duty_u16(1000)
-speaker.freq(1000) # 50% on and off
-sleep(1) # wait a second
-speaker.duty_u16(0)
-# turn off the PWM circuits off with a zero duty cycle
-speaker.duty_u16(0) -->
 
-<!-- Streaming:
+
+<!--
+Streaming:
 ```py
 from esp_helper import *
 
@@ -507,5 +508,4 @@ while True:
         print("Error: " + str(e))
 
     sleep(.01)
-```
--->
+``` -->

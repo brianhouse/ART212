@@ -19,7 +19,7 @@ In your sketch, try the following:
 ```py
 from aio_helper import *
 
-data = pull_data("hall-sensor", now-360000, now)
+data = pull_data("hall-sensor", now()-360000, now())
 ```
 You should see this in your console:
 ```
@@ -27,7 +27,7 @@ Pulling data...
 --> success
 ```
 
-The `pull_data()` function connects to AIO and downloads all the sensor data between the start time and the end time. Here, the start time is "now-360000", which means the present time minus 360,000 seconds, which is 10 hours. The end time is simply "now". So every time this sketch is run, it will pull the most recent 10 hours worth of data.
+The `pull_data()` function connects to AIO and downloads all the sensor data between the start time and the end time. Here, the start time is "now()-360000", which means the present time minus 360,000 seconds, which is 10 hours. The end time is simply "now". So every time this sketch is run, it will pull the most recent 10 hours worth of data.
 
 `now` lets us work with relative time in this way. But we can also give the function absolute timestamps. Use this site to convert from "human" dates to a timestamp that the computer can understand: https://www.epochconverter.com
 
@@ -65,10 +65,10 @@ To begin, let's get the start time and end time of the data. The start time is e
 ```py
 from aio_helper import *
 
-data = pull_data("hall-sensor", now-360000, now)
+data = pull_data("hall-sensor", now()-360000, now())
 
-start_time = 0
-end_time = data[-1]['time']  # time field of the last dictionary in the list
+min_time = 0
+max_time = data[-1]['time']  # time field of the last dictionary in the list
 ```
 
 Now we need the min and max values of the data. This highly depends on the sensor and how you've coded the ESP32—it could be 0–1, or 0–4095, or some more constrained range in between (you might look on AIO and the auto-detected range to come up with some good parameters).
@@ -76,10 +76,10 @@ Now we need the min and max values of the data. This highly depends on the senso
 ```py
 from aio_helper import *
 
-data = pull_data("hall-sensor", now-360000, now)
+data = pull_data("hall-sensor", now()-360000, now())
 
-start_time = 0
-end_time = data[-1]['time']  # time field of the last dictionary in the list
+min_time = 0
+max_time = data[-1]['time']  # time field of the last dictionary in the list
 min_value = 0
 max_value = 4095
 ```
@@ -90,15 +90,15 @@ Once we have these parameters, we can iterate through all of our data with a `fo
 ```py
 from aio_helper import *
 
-data = pull_data("hall-sensor", now-360000, now)
+data = pull_data("hall-sensor", now()-360000, now())
 
-start_time = 0
-end_time = data[-1]['time']  # time field of the last dictionary in the list
+min_time = 0
+max_time = data[-1]['time']  # time field of the last dictionary in the list
 min_value = 0
 max_value = 4095
 
 for datapoint in data:
-    x = map(datapoint['time'], start_time, end_time, 0, width)
+    x = map(datapoint['time'], min_time, max_time, 0, width)
     y = map(datapoint['value'], min_value, max_value, height, 0)
 ```
 
@@ -109,10 +109,10 @@ Let's just put a point at each x, y coordinate, and use `strokeWeight()` ahead o
 ```py
 from aio_helper import *
 
-data = pull_data("hall-sensor", now-360000, now)
+data = pull_data("hall-sensor", now()-360000, now())
 
-start_time = 0
-end_time = data[-1]['time']  # time field of the last dictionary in the list
+min_time = 0
+max_time = data[-1]['time']  # time field of the last dictionary in the list
 min_value = 0
 max_value = 4095
 
@@ -120,7 +120,7 @@ size(640, 480)
 background(255)
 strokeWeight(5)
 for datapoint in data:
-    x = map(datapoint['time'], start_time, end_time, 0, width)
+    x = map(datapoint['time'], min_time, max_time, 0, width)
     y = map(datapoint['value'], min_value, max_value, height, 0)
     point(x, y)
 ```
@@ -138,7 +138,7 @@ background(255)
 strokeWeight(5)
 beginShape()
 for datapoint in data:
-    x = map(datapoint['time'], start_time, end_time, 0, width)
+    x = map(datapoint['time'], min_time, max_time, 0, width)
     y = map(datapoint['value'], min_value, max_value, height, 0)
     curveVertex(x, y)
 endShape()
@@ -163,8 +163,8 @@ source_2 = loadImage("lion_over.png")
 data = pull_data("hall-sensor", 1644308086, 1644390886)    
 # print(data)
 
-start_time = 0
-end_time = data[-1]['time']  # time field of the last dictionary in the list
+min_time = 0
+max_time = data[-1]['time']  # time field of the last dictionary in the list
 min_value = 30
 max_value = 90
 
@@ -173,7 +173,7 @@ background(255)
 ts = []
 vs = []
 for datapoint in data:
-    t = map(datapoint['time'], start_time, end_time, 0, height)
+    t = map(datapoint['time'], min_time, max_time, 0, height)
     v = map(datapoint['value'], min_value, max_value, 0, width)    
     ts.append(t)
     vs.append(v)
@@ -234,27 +234,26 @@ data.sort(key=lambda d: d['time']) -->
 ```py
 from aio_helper import *
 
-data = pull_data("switch", now-(24*3600), now)
+data = pull_data("switch", now()-(24*3600), now())
 
-start_time = 0
-end_time = data[-1]['time']  # time field of the last dictionary in the list
+min_time = 0
+max_time = data[-1]['time']  # time field of the last dictionary in the list
 ```
 
 Next, we only need to map the times:
 ```py
 from aio_helper import *
 
-data = pull_data("switch", now-360000, now)
+data = pull_data("switch", now()-360000, now())
 
-start_time = 0
-end_time = data[-1]['time']  # time field of the last dictionary in the list
+min_time = 0
+max_time = data[-1]['time']  # time field of the last dictionary in the list
 
 size(640, 480)
 background(255)
 strokeWeight(5)
-beginShape()
 for datapoint in data:
-    x = map(datapoint['time'], start_time, end_time, 0, width)
+    x = map(datapoint['time'], min_time, max_time, 0, width)
     point(x, height/2)
 ```
 
@@ -264,9 +263,8 @@ for datapoint in data:
 ```py
 size(640, 480)
 background(255)
-beginShape()
 for datapoint in data:
-    a = map(datapoint['time'], start_time, end_time, 0, 360)
+    a = map(datapoint['time'], min_time, max_time, 0, 360)
     x = width/2 + cos(radians(a)) * 200
     y = height/2 + sin(radians(a)) * 200
     strokeWeight(1)
@@ -314,7 +312,7 @@ def draw():
     if elapsed_time > 15:
         start_time = elapsed_time
 
-        data = pull_data("temperature", no1-3600, now)
+        data = pull_data("temperature", now()-3600, now())
         last_data_point = data[-1]
         value = data['value']
 
@@ -330,7 +328,7 @@ def draw():
     if elapsed_time > 15:
         start_time = elapsed_time
 
-        data = pull_data("temperature", no1-3600, now)
+        data = pull_data("temperature", now()-3600, now())
         last_data_point = data[-1]
         value = data['value']
 

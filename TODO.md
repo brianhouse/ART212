@@ -1,32 +1,30 @@
 - grade projects!
 
-/
-
-
 ///
 
 get: toggles, good 10k potentiometers + caps
-
-- light internal LED with data sending
+red, black, and green wires
 
 - accel
 - neopixels
+- piezos
 
+- make battery a percentage
 
+### FUTURE
 
-### GUIDE TODO
-
+#### GUIDE
 - section on breadboards and power rails
 - pulsesensor code
 - separate code into posting and streaming
 - more inputs? more outputs?
 - generalize away from AIO in the sections
+- more sound, with amps (https://www.coderdojotc.org/micropython/sound/01-intro/)
+- touch vs force is weird nomenclature; capacitance is undersold
 
 
-### FUTURE PROJECTS
+#### PROJECTS
 - autonomous sensor object (detect and display)
+- data visualization (poetic sensing)
 - instrument (real time stream accel)
 - + 3d something (start with this?)
-
-
---

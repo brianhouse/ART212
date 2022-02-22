@@ -108,10 +108,6 @@ class Smoother():
         return value
 
 
-# digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on
-# digitalWrite(LED_BUILTIN, LOW);    // turn the LED off
-
-
 # temp = esp32.raw_temperature()
 # hall = esp32.hall_sensor()
 
