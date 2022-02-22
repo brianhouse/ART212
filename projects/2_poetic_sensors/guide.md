@@ -296,15 +296,67 @@ while True:
 
 Product: https://www.adafruit.com/product/1093
 
-This sensor works best when the back is covered by something opaque like a piece of electrical tape, and try putting it on your earlobe—read the online guides at [PulseSensor.com](http://PulseSensor.com).
+This sensor works best when the back is covered by something opaque like a piece of electrical tape, and try putting it on your earlobe—read the online guides at [PulseSensor.com](http://PulseSensor.com). Warning: can be very finicky!
+
+Code below based on [this tutorial](https://www.mfitzp.com/invent/wemos-heart-rate-sensor-display-micropython/).
 
 ![](img/10_pulse.jpg)
 
+<!-- take out windowing in the future -->
+
 ###### Code
 
-Note: I don't have demo code in Python for this yet, so this is for advanced experimentation. Possible info here:
+```py
+from esp_helper import *
 
-https://www.mfitzp.com/invent/wemos-heart-rate-sensor-display-micropython/
+MAX_HISTORY = 250
+TOTAL_BEATS = 30
+WINDOW = 30    # sample heartrate for how many seconds?
+
+history = []
+beats = []
+beat = False
+bpm = 0
+
+while True:
+    connect_wifi()
+
+    start_time = time()
+    while time() - start_time < WINDOW:
+
+        # get a value from the sensor
+        value = A3.read()
+        print(value, bpm)
+
+        # keep a list of previous values and dynamically calculate a threshold
+        history.append(value)
+        history = history[-MAX_HISTORY:]
+        minima, maxima = min(history), max(history)
+        threshold_on = (minima + maxima * 3) // 4   # 3/4
+        threshold_off = (minima + maxima) // 2      # 1/2
+
+        # detect threshold crossing
+        if value > threshold_on and beat is False:
+            beat = True
+            # use the average time between beats to calculate bpm        
+            beats.append(time())
+            beats = beats[-TOTAL_BEATS:]
+            if len(beats):
+                beat_time = beats[-1] - beats[0]
+                if beat_time:
+                    bpm = (len(beats) / (beat_time)) * 60        
+            LED.on() # turn on the built-in LED (or trigger something else)
+
+        if value < threshold_off and beat is True:
+            beat = False
+            LED.off() # turn off the built-in LED
+
+        sleep(.05)
+
+    # after sampling for WINDOW time, report data here
+    post_data("heartrate", bpm)
+
+```
 
 #### <a name="toggle"></a> Toggle switch
 

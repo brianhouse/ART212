@@ -74,20 +74,27 @@ def touch(pin):
 
 def post_data(feed, datum):
     print("Posting data... ")
+    if not wlan.isconnected():
+        print("Error: not connected")
+        return
     LED.on()
     url = "https://io.adafruit.com/api/v2/" + AIO_USERNAME + "/feeds/" + feed + "/data"
     post_data = ujson.dumps({"X-AIO-Key": AIO_KEY, "value": datum})
-    response = urequests.post(url, headers={"content-type": "application/json"}, data=post_data)
-    messages = response.json()
-    if response.status_code == 200:
-        print("--> OK")
-    elif 'error' in messages:
-        print("Error: " + messages['error'])
+    try:
+        response = urequests.post(url, headers={"content-type": "application/json"}, data=post_data)
+        messages = response.json()
+    except Exception as e:
+        print("Error: " + str(e))
     else:
-        print(messages)
-    response.close()
+        if response.status_code == 200:
+            print("--> OK")
+            LED.off()
+        elif 'error' in messages:
+            print("Error: " + messages['error'])
+        else:
+            print(messages)
+        response.close()
     sleep(2) # avoid rate limit
-    LED.off()
 
 
 def stream_data(data, ip, port=5005):
