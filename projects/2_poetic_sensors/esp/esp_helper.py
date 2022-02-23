@@ -7,7 +7,10 @@ import socket
 from machine import ADC, Pin, TouchPad, PWM
 from dht import DHT11
 from time import sleep, time
-from credentials import *
+try:
+    from credentials import *
+except:
+    pass
 
 A2 = ADC(Pin(34), atten=ADC.ATTN_11DB)
 A3 = ADC(Pin(39), atten=ADC.ATTN_11DB)
@@ -51,23 +54,18 @@ def check_battery():
     global battery_t
     t = time()
     if t - battery_t > 5 * 60:
-        battery_level = (BAT.read() / 4096.0) * 3.3;
+        battery_level = (BAT.read() / 4095.0) * 3.3;
         print(f"Battery at {battery_level}")
         post_data("battery", battery_level)
         battery_t = t
 
 
 def touch(pin):
+    if pin != T12 and pin != T14 and pin != T15:
+        print("Not a touch pin")
+        return 0
     try:
-        if pin == 12:
-            return T12.read()
-        elif pin == 14:
-            return T14.read()
-        elif pin == 15:
-            return T15.read()
-        else:
-            print("Not a touch pin")
-            return 0
+        return pin.read()
     except ValueError as e:
         return 0
 

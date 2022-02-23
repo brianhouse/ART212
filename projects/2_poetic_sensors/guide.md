@@ -101,14 +101,14 @@ The input sensors at your disposal are the following:
 - [Momentary switch](#momentary)
 - [Tilt + Vibration](#tilt)
 - [Knob aka Potentiometer (pot)](#pot)
-<!-- - [Acceleration and orientation](#imu) -->
+- [Acceleration and orientation](#imu)
 
 
 The microcontroller provides a voltage to the sensor, takes a reading, and then transmits the result over the network if desired.
 
 To provide voltage to the sensor, you'll need to connect the sensor to the 3.3v pin on the microcontroller, and also to ground (electricity always flows in a "circuit"—out from the source and then back to the ground).
 
-To take a reading, you'll use the A2, A3, A4, 32 (`D32` in code), or 33 (`D33` in code) pins on the microcontroller (the others have various other functionality attached to them and may not work initially as expected) along with a resistor or some other component that helps regulate and scale the sensor's output to something the chip can read.
+To take a reading, you'll use the A2, A3, A4, 32 (`D32` in code), 33 (`D33` in code), 12 (`T12`), 13 (`T13`), 14 (`T14`), or SCL and SDA pins on the microcontroller depending on the type of sensor (the others have various other functionality attached to them and may not work initially as expected) along with a resistor or some other component that helps regulate and scale the sensor's output to something the chip can read.
 
 In order to simply the process of hooking things up, we'll use breadboards.
 
@@ -281,7 +281,7 @@ The ESP32 has the built-in ability to measure the "capacitance" on several of it
 ```py
 while True:
     # ...
-    value = touch(14)
+    value = touch(T14)
     print(value)
     sleep(.1)
 
@@ -461,6 +461,32 @@ while True:
     sleep(.01) # shorter delay
     #...
 ```
+
+#### <a name="imu"></a> Acceleration and Orientation
+
+An The MPU-6050 is an IMU (Inertial Measurement Unit) that includes an accelerometer and an gyroscope. Hook it up to the SCL and SDA pins (you will not need to specify the pins in your code, library does it automatically).
+
+Product: https://www.amazon.com/s?k=mpu-6050&ref=nb_sb_noss
+
+This is a more complex sensor that returns six measurements (aka 6-DoF, or Degrees of Freedom). It may or may not be useful without "sensor fusion."
+
+###### Code
+
+This code requires that you add the file [mpu6050.py](esp/mpu6050.py) to your ESP32.
+
+![](img/16_mpu6050.png)
+
+```py
+import mpu6050
+
+mpu = mpu6050.MPU()
+
+while True:
+    v = mpu.read()
+    print(v)
+    sleep(1/60.0) # about the speed of a gesture
+```
+
 
 ## <a name="outputs"></a> Outputs
 
