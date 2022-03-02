@@ -148,7 +148,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 - Work time
 
 #### Wednesday 3/2
-- Project 2: crit
+- Work time
 
 
 ### Week 8
@@ -156,24 +156,26 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 #### Monday 3/7
 - Survey presentations 6
 - Reading response due for discussion: [Jennifer Gabrys, "Digital Rubbish"](readings/gabrys_digital_rubbish.pdf)
+- Project 2: crit
+
+
+#### Wednesday 3/9
 - Project 3: [Real Digital Objects](projects/3_real_digital_objects/description.md)
 - Workshop: 3D scanning + Meshmixer
 
 
-#### Wednesday 3/9
-- Project 3: proposals due
-- Workshop: 3D printing
-
-
 ### Week 9
 
+<!-- sherman fairchild -->
 #### Tuesday 3/14
-- Survey presentations 7
-- Reading response due for discussion: [Morehshin Allahyari and Daniel Rourke, "The 3D Additivist Cookbook"](https://additivism.org/cookbook)
-- Work time
+- NO CLASS (Sherman Fairchild visit)
+
 
 #### Thursday 3/16
-- Project 3: check-in
+- Survey presentations 7
+- Reading response due for discussion: [Morehshin Allahyari and Daniel Rourke, "The 3D Additivist Cookbook"](https://additivism.org/cookbook)
+- Project 3: proposals due
+- Workshop: 3D printing
 
 
 ### Spring Break
@@ -183,7 +185,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 #### Monday 3/28
 - Survey presentations 8
 - Viewing due for discussion: [James Bridle, "Waving at the Machines"](http://booktwo.org/notebook/waving-at-machines/)
-- Work time
+- Project 3: check-in
 
 #### Wednesday 3/30
 - Project 3: crit

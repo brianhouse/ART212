@@ -21,6 +21,8 @@ red, black, and green wires
 - generalize away from AIO in the sections
 - more sound, with amps (https://www.coderdojotc.org/micropython/sound/01-intro/)
 - touch vs force is weird nomenclature; capacitance is undersold
+- have project examples for every sensor, or at least a list of the type of things they might detect (or do, in the case of outputs)
+
 
 
 #### PROJECTS

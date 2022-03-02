@@ -139,7 +139,7 @@ The specifics of how the sensor is read may vary slightly between sensors, and a
 
 #### <a name="photo"></a> Light (photocell)
 
-A photocell measures the light level. Hook it up with 2k resistor and use A2, A3, A4.
+A photocell measures the light level. Hook it up with 2k resistor and use A2, A3, A4. If the values you get with 2k are too high, reduce the resistor value until the numbers fall within a range that works for your application.
 
 Product: https://www.adafruit.com/product/161
 

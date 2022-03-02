@@ -1,26 +1,16 @@
-Social automation:
-- display my twitter feed following all the bots (run on a rasperry pi)
-
-/
-
-Poetic sensors: (--> poetic sensing)
-- use a ESP on the other side too?
-- “spooky action” and have an established set of inputs on one esp32 and outputs on the other ... doesn't have to be 1-1 time wise, does it?
-- explicitly split weeks into gathering / representing
-
 https://makeradvisor.com/how-to-set-up-an-electronics-lab-tools-and-equipment/
+
+
+- responsive object (sensor + output) [no network]
+- instrument (accelerometers + buttons + lights + streaming data) [what is it on the software side? use dedicated router]
+- data visualization (poetic sensing)
+/
+- 3D printing
 
 
 
 //
 
-Is this another unit?
-- outputs
-- neopixels
+twitter bot is too hard, ultimately. and so is data visualization, but maybe we can work up to it next time.
 
-modify visualization for spooky action?
-or just forget it for now.
-motor is going to be the key one.
-
-instrument is obvious in sound art.
-in the future, 212 is interactive sculpture.
+connecting to foreign wifi is really hard for data visualization
