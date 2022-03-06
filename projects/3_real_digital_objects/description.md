@@ -4,7 +4,7 @@ Digital fabrication attempts to close the gap between the speed and flexibility 
 
 In this project you will explore the relationship between object and information by 3D scanning something in the physical world, manipulating it digitally, and then 3D printing your modified copy. What you choose and how you manipulate it are up to you, but they must serve a conceptual purpose that relates to the themes of the class.
 
-To capture data, you may use the Structure Sensor + iPads from the Digital Media Studio for medium to large objects, or the EinScan-SE for small objects. For cleaning and manipulating 3D models, we will cover [Meshmixer](http://www.meshmixer.com) (free), but you can use any software that imports .obj files and exports .stls. For printing with the Prusa 3D printers (Bart and Lisa), we will use [PrusaSlicer](https://www.prusa3d.com/prusaslicer/).
+To capture data, you may use the Structure Sensor + iPads from the Digital Media Studio for medium to large objects, or the EinScan-SE for small objects. You may also use photogrammetry with [Regard3D](http://www.regard3d.org/index.php) or other software. For cleaning and manipulating 3D models, we will cover [Meshmixer](http://www.meshmixer.com) (free), but you can use any software that imports .obj files and exports .stls. For printing with the Prusa 3D printers (Bart and Lisa), we will use [PrusaSlicer](https://www.prusa3d.com/prusaslicer/).
 
 This is a 3-week project (not counting spring break) that you will complete individually. This week you will experimented with 3D tools. Next week, you will present a proposal and your progress. The Thursday of the week after spring break will be a crit. To present the work, you will display your prints (and any other objects as relevant) along with a (2D-printed) title and a 3-sentence artistic statement.
 
@@ -13,11 +13,10 @@ This is a 3-week project (not counting spring break) that you will complete indi
 
 - While you are 3D printing, you must be present in the digital media studio
 - Limit your print time for any given model to **4 hours**
-- Sign up for print time on the Google calendars for each of the 3D printers
-    - [Bart](https://calendar.google.com/calendar?cid=bGNsYXJrLmVkdV9wYmFsMTJzNGNydTR2YnI4bzYxaThzc3BqNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t) Original Prusa i3 MK3S
-    - [Lisa](https://calendar.google.com/calendar?cid=bGNsYXJrLmVkdV92M21vYTM4dW12MXM1MDBrb2tqZ3NuMHBzY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t) Original Prusa i3 MK3S
-    - [Lulzbot](https://calendar.google.com/calendar?cid=bGNsYXJrLmVkdV9vcmM5N3U2YXZiY2poZDQ2aG9zbWtla2QzZ0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t) Mini
-- Please use the iPads with Structure Sensors at the studio. If you want to scan an object that isn't at Fields, please email the professor before you take from the studio and when you have returned it.
+- Sign up for print time on the Google calendars for each of the 3D printers (Original Prusa i3 MK3S):
+    - [Bart](https://calendar.google.com/calendar?cid=bGNsYXJrLmVkdV9wYmFsMTJzNGNydTR2YnI4bzYxaThzc3BqNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
+    - [Lisa](https://calendar.google.com/calendar?cid=bGNsYXJrLmVkdV92M21vYTM4dW12MXM1MDBrb2tqZ3NuMHBzY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t)
+- Please use the iPads with Structure Sensors at the studio. If you want to scan an object that isn't at Fields, please email me before you take from the studio and when you have returned it.
 
 
 
@@ -30,9 +29,6 @@ Cleaning up meshes and sculpting solids:
 Manipulating 3D models and designing 3D shapes:
 - [Tinkercad](http://tinkercad.com/) (easy)
 - [Blender](http://blender.org/) (powerful)
-
-Utilities:
-- [fbx-converter](https://www.autodesk.com/developer-network/platform-technologies/fbx-converter-archives)
 
 3D printing prep:
 - [PrusaSlicer](https://www.prusa3d.com/prusaslicer/)

@@ -1,32 +1,66 @@
 - grade projects!
 
-///
+/
 
-get: toggles, good 10k potentiometers + caps
-red, black, and green wires
 
-- accel
-- neopixels
-- piezos
+- photogrammetry
+- EinScan-SE
+- Structure Scanner
 
-- make battery a percentage
 
-### FUTURE
+- meshmixer
+- TinkerCad
 
-#### GUIDE
-- section on breadboards and power rails
-- pulsesensor code
-- separate code into posting and streaming
-- more inputs? more outputs?
-- generalize away from AIO in the sections
-- more sound, with amps (https://www.coderdojotc.org/micropython/sound/01-intro/)
-- touch vs force is weird nomenclature; capacitance is undersold
-- have project examples for every sensor, or at least a list of the type of things they might detect (or do, in the case of outputs)
+- create 3D printer flow (and update firmware)
 
 
 
-#### PROJECTS
-- autonomous sensor object (detect and display)
-- data visualization (poetic sensing)
-- instrument (real time stream accel)
-- + 3d something (start with this?)
+## Notes
+
+
+### Photogrammetry
+
+imagemagick can bulk convert heic
+```
+brew install imagemagick
+mogrify -format jpg *.heic
+```
+
+Regard3D
+- Add Images
+- Compute Matches
+- Triangulate
+http://www.regard3d.org/index.php/documentation/tutorial
+
+
+talk about:
+point cloud vs mesh vs GCode
+
+Meshmixer tutorial
+https://all3dp.com/2/meshmixer-tutorial-easy-steps-beginners/
+
+#### Meshmixer procedure
+- discard jpg
+- import (replace)
+- show wireframe
+- Edit: transform
+- Edit: plane cut
+- Edit: close cracks!
+- Edit: Separate Shells
+- Select: lasso and X other hanging bits, especially from the inside
+- adjust size of select (down) -- escape cancels, x deletes
+
+- alternate with separate shells
+
+- use the inspector, click on the purple and
+- get to the point that you can then Edit: make solid
+
+
+Brushes: robust smooth
+
+planecut on the bottom again to make sure it's flat
+
+export as STL
+
+
+### EinScan SE

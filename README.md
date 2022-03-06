@@ -65,6 +65,7 @@ The College’s health and safety guidelines are applied in all settings across 
 
 Wear a face covering when inside, even when physical distancing can be maintained, and outside when physical distancing cannot be maintained.
 Stay at home if you have any of the following COVID symptoms, including cough, fever or chills, shortness of breath, difficulty breathing, muscle pain, headache, sore throat, new loss of taste or smell, diarrhea, nausea, vomiting, nasal congestion, or runny nose.
+
 The Art Department reserves the right to ask you to leave the studios if you exhibit symptoms. If you are present in the studios without a mask, we will remind you to put on a mask immediately or leave class. If necessary, masks may be removed for a short duration for drinking, but please minimize these temporary removals and do not consume food during class time.
 
 If you are experiencing COVID symptoms DO NOT come to campus. Information on COVID symptoms can be found on the LC Health and Safety Expectations webpage and on the CDC webpage.    
