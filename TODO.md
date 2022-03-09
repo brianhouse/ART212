@@ -46,13 +46,11 @@ https://all3dp.com/2/meshmixer-tutorial-easy-steps-beginners/
 - Edit: transform
 - Edit: plane cut
 - Edit: close cracks!
-- Edit: Separate Shells
+- Edit: Separate Shells, delete extraneous
 - Select: lasso and X other hanging bits, especially from the inside
 - adjust size of select (down) -- escape cancels, x deletes
-
 - alternate with separate shells
-
-- use the inspector, click on the purple and
+- use the inspector, do autorepair
 - get to the point that you can then Edit: make solid
 
 
