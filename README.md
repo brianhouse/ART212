@@ -168,11 +168,11 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 ### Week 9
 
 <!-- sherman fairchild -->
-#### Tuesday 3/14
+#### Monday 3/14
 - NO CLASS (Sherman Fairchild visit)
 
 
-#### Thursday 3/16
+#### Wednesday 3/16
 - Survey presentations 7
 - Reading response due for discussion: [Morehshin Allahyari and Daniel Rourke, "The 3D Additivist Cookbook"](https://additivism.org/cookbook)
 - Project 3: proposals due
