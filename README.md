@@ -24,10 +24,10 @@ Prerequisites: ART 112
 ## Assignments and Grading
 
 ### Projects
-This course is built around four projects completed over the course of the semester in the digital media studio, which will be [critiqued by the class](resources/crit_guidelines.md). While there are technical and conceptual parameters for each project, you are expected to be experimental and to develop a personal artistic trajectory. A title and [3-sentence description](resources/description_guidelines.md) must be included with each project. Cumulatively, the projects account for 85% of your final grade, with the final project given double weight. As work is evaluated via in-class crit, no late work can be accepted.
+This course is built around four projects completed over the course of the semester in the digital media studio, which will be [critiqued by the class](https://github.com/brianhouse/ART212/blob/master/resources/crit_guidelines.md). While there are technical and conceptual parameters for each project, you are expected to be experimental and to develop a personal artistic trajectory. A title and [3-sentence description](https://github.com/brianhouse/ART212/blob/master/resources/description_guidelines.md) must be included with each project. Cumulatively, the projects account for 85% of your final grade, with the final project given double weight. As work is evaluated via in-class crit, no late work can be accepted.
 
 ### Survey presentations
-Each student will give a 10-minute presentation on an artist working in digital media. These presentations, which must be organized in slides, should give an overview of the context in which the artist is working and then precede to show one or two artworks in detail. Students should comment thoughtfully on how the work relates to the themes discussed in class as well as to their own practices. The presentation should end with a couple of questions posed to the class for discussion that relate to the technique or themes of the artist's work. Students will [sign up to present](https://docs.google.com/spreadsheets/d/1HHoVP1O-VfYFJsBo8tri8cBQmJLKuMkgraGmMaQAIxU/edit?usp=sharing) on an artist chosen from [a list](resources/artists.md) on a first-come, first-served basis. These presentations make up 10% of your final grade.
+Each student will give a 10-minute presentation on an artist working in digital media. These presentations, which must be organized in slides, should give an overview of the context in which the artist is working and then precede to show one or two artworks in detail. Students should comment thoughtfully on how the work relates to the themes discussed in class as well as to their own practices. The presentation should end with a couple of questions posed to the class for discussion that relate to the technique or themes of the artist's work. Students will [sign up to present](https://docs.google.com/spreadsheets/d/1HHoVP1O-VfYFJsBo8tri8cBQmJLKuMkgraGmMaQAIxU/edit?usp=sharing) on an artist chosen from [a list](https://github.com/brianhouse/ART212/blob/master/resources/artists.md) on a first-come, first-served basis. These presentations make up 10% of your final grade.
 
 ### Reading
 Each week we will read critical texts that situate digital media in society and its impact on the material world. These will are provided through the links on this syllabus. Reading is due on the day where the text is listed; a reading response must be submitted before class via Classroom. This can be a question raised by the text, a critique of it, a link to related artistic work, or some other brief comment which can stimulate our discussion. Responses make up 5% of your final grade.
@@ -62,13 +62,10 @@ The Fields Art Center is built on land belonging to the Multnomah, Kathlamet, Cl
 ### COVID Health and Safety Expectations
 
 The College’s health and safety guidelines are applied in all settings across campus and comply with county guidelines. We each share responsibility to keep our community healthy by adhering to the following expectations:
-
-Wear a face covering when inside, even when physical distancing can be maintained, and outside when physical distancing cannot be maintained.
+- Wear a face covering when inside, even when physical distancing can be maintained, and outside when physical distancing cannot be maintained.
 Stay at home if you have any of the following COVID symptoms, including cough, fever or chills, shortness of breath, difficulty breathing, muscle pain, headache, sore throat, new loss of taste or smell, diarrhea, nausea, vomiting, nasal congestion, or runny nose.
-
-The Art Department reserves the right to ask you to leave the studios if you exhibit symptoms. If you are present in the studios without a mask, we will remind you to put on a mask immediately or leave class. If necessary, masks may be removed for a short duration for drinking, but please minimize these temporary removals and do not consume food during class time.
-
-If you are experiencing COVID symptoms DO NOT come to campus. Information on COVID symptoms can be found on the LC Health and Safety Expectations webpage and on the CDC webpage.    
+- The Art Department reserves the right to ask you to leave the studios if you exhibit symptoms. If you are present in the studios without a mask, we will remind you to put on a mask immediately or leave class. If necessary, masks may be removed for a short duration for drinking, but please minimize these temporary removals and do not consume food during class time.
+- If you are experiencing COVID symptoms DO NOT come to campus. Information on COVID symptoms can be found on the LC Health and Safety Expectations webpage and on the CDC webpage.    
 &nbsp;  
 &nbsp;   
 
@@ -78,15 +75,15 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 
 #### Wednesday 1/19 — ZOOM
 - Introduction
-- In-class reading and discussion: [Nam June Paik, "Cybernated Art"](readings/paik_cybernated_art.pdf)
-- Project 0: [Cybernated Life](projects/0_cybernated_life/description.md)
+- In-class reading and discussion: [Nam June Paik, "Cybernated Art"](https://github.com/brianhouse/ART212/blob/master/readings/paik_cybernated_art.pdf)
+- Project 0: [Cybernated Life](https://github.com/brianhouse/ART212/blob/master/projects/0_cybernated_life/description.md)
 
 ### Week 2
 
 #### Monday 1/24 — ZOOM
 - Reading response due for discussion: [Ingrid Burrington, "Effortless Slippage"](https://www.e-flux.com/architecture/dimensions-of-citizenship/178279/effortless-slippage/)
 - Project 0: crit
-- Project 1: [Social Automation](projects/1_social_automation/description.md)
+- Project 1: [Social Automation](https://github.com/brianhouse/ART212/blob/master/projects/1_social_automation/description.md)
 - Discussion and workshop: Twitter
 
 #### Wednesday 1/26 — ZOOM
@@ -109,7 +106,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 
 #### Monday 2/7 — Fields 205
 - Survey presentations 2
-- Reading response due for discussion: [Safiya Noble, "Google Has a Striking History of Bias Against Black Girls"](readings/safiya_noble_google_black_girls.pdf)
+- Reading response due for discussion: [Safiya Noble, "Google Has a Striking History of Bias Against Black Girls"](https://github.com/brianhouse/ART212/blob/master/readings/safiya_noble_google_black_girls.pdf)
 - Work time
 
 #### Wednesday 2/9
@@ -121,7 +118,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 #### Monday 2/14
 - Survey presentations 3
 - Reading response due for discussion: [Shannon Mattern, "Interfacing Urban Intelligence"](https://placesjournal.org/article/interfacing-urban-intelligence/)
-- Project 2: [Poetic Sensors](projects/2_poetic_sensors/description.md)
+- Project 2: [Poetic Sensors](https://github.com/brianhouse/ART212/blob/master/projects/2_poetic_sensors/description.md)
 - Workshop: microcontrollers + databases
 
 #### Wednesday 2/16
@@ -133,7 +130,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 
 #### Monday 2/21
 - Survey presentations 4
-- Reading response due for discussion: [Wendy Chun, "On Software, or the Persistence of Visual Knowledge"](readings/chun_software.pdf)
+- Reading response due for discussion: [Wendy Chun, "On Software, or the Persistence of Visual Knowledge"](https://github.com/brianhouse/ART212/blob/master/readings/chun_software.pdf)
 - Work time
 
 
@@ -145,7 +142,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 
 #### Monday 2/28
 - Survey presentations 5
-- Reading response due for discussion: [Tara Rodgers, Interview with Laetitia Sonami](readings/rodgers_sonami.pdf)
+- Reading response due for discussion: [Tara Rodgers, Interview with Laetitia Sonami](https://github.com/brianhouse/ART212/blob/master/readings/rodgers_sonami.pdf)
 - Work time
 
 #### Wednesday 3/2
@@ -156,12 +153,12 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 
 #### Monday 3/7
 - Survey presentations 6
-- Reading response due for discussion: [Jennifer Gabrys, "Digital Rubbish"](readings/gabrys_digital_rubbish.pdf)
+- Reading response due for discussion: [Jennifer Gabrys, "Digital Rubbish"](https://github.com/brianhouse/ART212/blob/master/readings/gabrys_digital_rubbish.pdf)
 - Project 2: crit
 
 
 #### Wednesday 3/9
-- Project 3: [Real Digital Objects](projects/3_real_digital_objects/description.md)
+- Project 3: [Real Digital Objects](https://github.com/brianhouse/ART212/blob/master/projects/3_real_digital_objects/description.md)
 - Workshop: 3D scanning + Meshmixer
 
 
@@ -195,8 +192,8 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 ### Week 11
 
 #### Monday 4/4
-- Reading due for discussion: [Florian Cramer, "What is 'Post-Digital'?"](readings/cramer_post_digital.pdf)
-- Project 4: [Hybrid Worlds](projects/4_hybrid_worlds/description.md)
+- Reading due for discussion: [Florian Cramer, "What is 'Post-Digital'?"](https://github.com/brianhouse/ART212/blob/master/readings/cramer_post_digital.pdf)
+- Project 4: [Hybrid Worlds](https://github.com/brianhouse/ART212/blob/master/projects/4_hybrid_worlds/description.md)
 
 #### Wednesday 4/6
 - Project 4: proposals due
@@ -205,7 +202,7 @@ If you are experiencing COVID symptoms DO NOT come to campus. Information on COV
 ### Week 12
 
 #### Monday 4/11
-- Reading due for discussion: [Lisa Parks, "Mediating Animal-Infrastructure Relations"](readings/parks_animal_infrastructure.pdf)
+- Reading due for discussion: [Lisa Parks, "Mediating Animal-Infrastructure Relations"](https://github.com/brianhouse/ART212/blob/master/readings/parks_animal_infrastructure.pdf)
 - Work time
 
 #### Wednesday 4/13

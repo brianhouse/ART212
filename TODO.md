@@ -1,8 +1,6 @@
 - grade projects!
 
 /
-
-
 - photogrammetry
 - EinScan-SE
 - Structure Scanner
@@ -62,3 +60,10 @@ export as STL
 
 
 ### EinScan SE
+
+
+### Printing
+
+- Load GCode onto SD card
+- Clean surface with alcohol
+- Power on
