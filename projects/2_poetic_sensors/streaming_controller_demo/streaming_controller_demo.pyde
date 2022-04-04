@@ -12,7 +12,7 @@ def draw():
     background(255)
     global sock
     data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
-    print(addr)
+    print(data, addr)
     ## would be better if this did not block
     # data = float(data.decode('utf-8'))
     # print("received message: %s" % data)

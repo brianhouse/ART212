@@ -12,7 +12,7 @@ Following your proposal, we will have multiple work-in-progress check-ins where 
 
 The final deliverable for your project will consist of a title, 3-sentence artist description, and a video. By now, we have seen a variety of artist portfolios with videos documenting their individual works. These are typically 2-5 mins long and give the viewer an understanding of the aesthetics of the piece and what is at stake conceptually. If aspects of your work are online, you can use screen capture and voice-over to present them. For objects and interactions in physical space, you should film them—while smartphone video is acceptable, use a tripod if possible, and pay attention to lighting and editing to create as clear documentation as possible.
 
-Your video should be uploaded to Vimeo with your title and description with a link posted to Slack. We will put these together on a website for a virtual final exhibition.
+Your video should be uploaded to Vimeo with your title and description with a link posted to Classroom. We will put these together on a website for a virtual final exhibition.
 
 Schedule:
 Please refer to the syllabus

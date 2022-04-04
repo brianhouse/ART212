@@ -31,7 +31,7 @@ https://microcontrollerslab.com/micropython-mpu-6050-esp32-esp8266/
 
 I2C: eye-squared-see
 
-Inertial Measurement Unit (IMU) 
+Inertial Measurement Unit (IMU)
 
 ### wifi
 
@@ -46,3 +46,12 @@ nc -vnzu 10.4.15.228 1-8000
 
 MPU-6050
 accel + gyro (6 degrees)
+
+
+
+
+copy folders
+
+ampy --port /dev/tty.usbserial-01D5EBF4 put uosc
+
+ls /dev/tty.*

@@ -196,6 +196,7 @@ Stay at home if you have any of the following COVID symptoms, including cough, f
 - Project 4: [Hybrid Worlds](https://github.com/brianhouse/ART212/blob/master/projects/4_hybrid_worlds/description.md)
 
 #### Wednesday 4/6
+- Survey presentations leftover
 - Project 4: proposals due
 
 
@@ -228,6 +229,11 @@ Stay at home if you have any of the following COVID symptoms, including cough, f
 - Project 4: draft of documentation video due
 
 
-### Exam Week
+### Exam Week: Monday 5/2 1:00–4:00PM
 - Final documentation due
 - Work installed in Fields lobby, final crit
+
+
+<!-- Monday / Wednesday 12:40–3:10 -->
+<!-- https://college.lclark.edu/offices/registrar/final_exam_schedule/spring/ -->
+<!-- 1:50P-2:50P	MWF	6  	MON	 05/02/22	1:00P-4:00P -->
