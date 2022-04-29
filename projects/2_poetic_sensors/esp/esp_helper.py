@@ -61,7 +61,7 @@ def check_battery():
 
 
 def touch(pin):
-    if pin != T12 and pin != T14 and pin != T15:
+    if pin != T12 and pin != T14 and pin != T15:            ## something about this is weird?
         print("Not a touch pin")
         return 0
     try:
@@ -96,7 +96,10 @@ def post_data(feed, datum):
 
 
 def stream_data(data, ip, port=5005):
-    sock.sendto(str(data).encode('utf-8'), (ip, port))
+    try:
+        sock.sendto(str(data).encode('utf-8'), (ip, port))
+    except Exception as e:
+        print("Error: " + str(e))
 
 
 class Smoother():
